@@ -1,0 +1,179 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions"><title>Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="active">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-201-red-team-audit-findings-and-200-historical-reproductions">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</h1>
+<h2 id="201-disposition">2.0.1 disposition</h2>
+<p>The findings below record the original 2.0.0 observations. The following changes were made for 2.0.1 and have regression coverage on Linux/GCC:</p>
+<table>
+<thead>
+<tr>
+  <th>Finding</th>
+  <th>2.0.1 status</th>
+  <th>Evidence / remaining boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>R0-01 empty-pattern replacement hang</td>
+  <td>Fixed</td>
+  <td>Empty search pattern raises <code>ValueError</code>; covered by <code>21_reliability_regressions.lucy</code>.</td>
+</tr>
+<tr>
+  <td>R0-02 UTF-8 byte splitting</td>
+  <td>Partially fixed</td>
+  <td><code>length</code>, <code>char_at</code>, <code>slice</code>, and <code>reverse</code> use code-point boundaries. Grapheme clusters and full Unicode case mapping remain unsupported.</td>
+</tr>
+<tr>
+  <td>R0-03 CSV synthetic rows</td>
+  <td>Fixed</td>
+  <td>Empty input returns an empty array; final newline does not create a record. Covered by regression tests.</td>
+</tr>
+<tr>
+  <td>R0-04 malformed CSV quoting</td>
+  <td>Fixed</td>
+  <td>Invalid quote placement and unterminated quotes are rejected; covered by expected-failure test.</td>
+</tr>
+<tr>
+  <td>R1-01 numeric prefix acceptance</td>
+  <td>Fixed</td>
+  <td>Trailing non-whitespace is rejected; regression coverage included.</td>
+</tr>
+<tr>
+  <td>R1-02 JSON surrogate handling</td>
+  <td>Fixed</td>
+  <td>Valid pairs are combined; isolated surrogates are rejected. Raw invalid UTF-8 validation remains incomplete.</td>
+</tr>
+<tr>
+  <td>R1-03 <code>Timeout</code> is not cancellation</td>
+  <td>Documented limitation</td>
+  <td>Callback execution cannot safely be interrupted by this synchronous runtime. Do not use as a hard deadline or sandbox.</td>
+</tr>
+<tr>
+  <td>R1-04 OptionParser validation</td>
+  <td>Partially fixed</td>
+  <td>Unknown options, missing values and unexpected positionals now fail; <code>--name=value</code> is supported. Short aliases, required-option metadata and automatic type conversion remain unsupported.</td>
+</tr>
+<tr>
+  <td>R1-05 empty CSV delimiter</td>
+  <td>Fixed</td>
+  <td>Delimiters must be one byte; empty/multi-byte values are rejected.</td>
+</tr>
+<tr>
+  <td>R1-06 Benchmark shell execution</td>
+  <td>Fixed</td>
+  <td>Benchmark now accepts a Lucy callback and does not pass the argument to a shell. Clock resolution is milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<p>Validation performed for this disposition: fresh CMake Debug build with SQLite enabled, 26/26 CTest cases passing, and three runnable end-to-end project examples. Windows/macOS builds, coverage-guided fuzzing, and adversarial network/security testing remain unverified. ASan/UBSan Debug build and the full CTest suite passed on Linux.</p>
+<hr />
+<p><strong>Audit scope:</strong> the supplied source archive, fresh Linux/GCC build, SQLite-enabled build, CTest, all shipped examples, independent documentation-snippet execution, three end-to-end scripts, string/CSV/JSON edge cases, and 500 randomized malformed source inputs.</p>
+<p><strong>Important limits:</strong> no Windows/macOS execution was available in this run; no external HTTP behavior was considered verified because the environment did not provide reliable network access; the 500-input run is a small smoke fuzz pass, not coverage-guided fuzzing. Absence of a crash in that pass is not evidence of memory safety.</p>
+<h2 id="severity-0-can-hang-or-corrupt-data">Severity 0 — can hang or corrupt data</h2>
+<h3 id="r0-01-empty-string-replacement-can-loop-forever">R0-01: empty-string replacement can loop forever</h3>
+<p><strong>Location:</strong> <code>src/runtime.cpp</code>, native string <code>replace</code> implementation.</p>
+<p>Reproduction:</p>
+<pre><code class="language-lucy">println &quot;abc&quot;.replace(&quot;&quot;, &quot;&quot;)
+</code></pre>
+<p>Observed: the process did not terminate within a two-second timeout. The loop searches for the empty string and advances by <code>to.size()</code>, which is zero in this case. This can permanently hang any script that reaches the call. The process must be killed externally.</p>
+<p><strong>Required fix:</strong> reject an empty <code>from</code> string with <code>ValueError</code>, or implement documented empty-pattern semantics with guaranteed forward progress. Add a regression test with a process-level timeout.</p>
+<h3 id="r0-02-unicode-string-operations-split-utf-8-sequences">R0-02: Unicode string operations split UTF-8 sequences</h3>
+<p><strong>Location:</strong> <code>src/runtime.cpp</code>, string methods.</p>
+<p>Observed with <code>&quot;é&quot;</code>:</p>
+<ul>
+<li><code>length()</code> returns <code>2</code>, because it counts bytes.</li>
+<li><code>char_at(0)</code> returns only the first UTF-8 byte, not the character.</li>
+<li><code>reverse()</code> reverses the two UTF-8 bytes and emits invalid UTF-8.</li>
+</ul>
+<p>The same design affects <code>slice()</code> and ASCII-only <code>toupper</code>/<code>tolower</code> transforms. This is not merely a display issue: returned strings can be malformed and downstream JSON, terminal, filesystem, or network consumers may reject them.</p>
+<p><strong>Required fix:</strong> explicitly define strings as byte strings and rename/document APIs accordingly, or implement UTF-8-aware code-point operations and separate grapheme-aware operations where required. Add tests for two-, three-, and four-byte sequences, combining marks, emoji, and invalid UTF-8.</p>
+<h3 id="r0-03-csv-parser-invents-records-for-empty-input-and-trailing-newlines">R0-03: CSV parser invents records for empty input and trailing newlines</h3>
+<p><strong>Location:</strong> <code>src/phase2.cpp</code>, <code>parse_csv</code>.</p>
+<p>Observed:</p>
+<ul>
+<li><code>data.csv.parse(&quot;&quot;)</code> returns <code>[ [&quot;&quot;] ]</code> rather than an empty document/record set under the likely expected contract.</li>
+<li><code>data.csv.parse(&quot;a,b\n&quot;)</code> returns <code>[[&quot;a&quot;,&quot;b&quot;],[&quot;&quot;]]</code>.</li>
+<li>CRLF input ending in CRLF also produces an extra blank row.</li>
+<li>The shipped <code>csv_pipeline.lucy</code> demonstrates this in a realistic parse/stringify/parse workflow.</li>
+</ul>
+<p><strong>Required fix:</strong> distinguish EOF from a real line terminator, define empty-file semantics, and test LF, CRLF, final newline/no final newline, empty fields, blank lines, quoted newlines, escaped quotes, malformed quotes, and custom delimiters.</p>
+<h3 id="r0-04-csv-parser-accepts-malformed-quoting">R0-04: CSV parser accepts malformed quoting</h3>
+<p><strong>Location:</strong> <code>src/phase2.cpp</code>, <code>parse_csv</code>.</p>
+<p>Observed: an input such as <code>a&quot;b,c\n</code> is accepted and returned as data instead of being rejected as malformed CSV. The parser toggles quote state only when a quote occurs at the start of a field; quotes inside unquoted fields are retained as ordinary characters. It also does not enforce that only a delimiter or record terminator may follow a closing quote.</p>
+<p><strong>Required fix:</strong> implement an explicit CSV state machine (field start, unquoted, quoted, after closing quote) and test malformed transitions. Document the accepted dialect if strict RFC-style behavior is not intended.</p>
+<h2 id="severity-1-incorrect-results-or-api-contract-violations">Severity 1 — incorrect results or API contract violations</h2>
+<h3 id="r1-01-numeric-string-conversions-accept-trailing-junk">R1-01: numeric string conversions accept trailing junk</h3>
+<p><strong>Location:</strong> <code>src/runtime.cpp</code>, <code>String.to_int()</code> and <code>String.to_float()</code>.</p>
+<p>Observed:</p>
+<pre><code class="language-lucy">println &quot;12x&quot;.to_int()      # returns 12
+println &quot;1.25abc&quot;.to_float() # returns 1.25
+</code></pre>
+<p><code>std::stoll</code>/<code>std::stod</code> are called without checking how many characters were consumed. Inputs that look invalid are silently truncated to a valid numeric prefix.</p>
+<p><strong>Required fix:</strong> require complete consumption after permitted whitespace, define sign/overflow behavior, and test suffixes, empty strings, whitespace, exponent tails, overflow, underflow, NaN/Inf spellings, and locale independence.</p>
+<h3 id="r1-02-json-escaped-surrogate-pairs-are-not-combined">R1-02: JSON escaped surrogate pairs are not combined</h3>
+<p><strong>Location:</strong> <code>src/phase2.cpp</code>, JSON parser <code>parse_unicode_escape</code>.</p>
+<p>Observed parsing <code>&quot;\\uD83D\\uDE00&quot;</code> yields the UTF-8 bytes for two surrogate code points (<code>ED A0 BD ED B8 80</code>) rather than the valid UTF-8 encoding of U+1F600. Surrogates are not Unicode scalar values; this output is invalid UTF-8.</p>
+<p><strong>Required fix:</strong> combine high/low surrogate pairs, reject isolated surrogates, and test BMP values, supplementary-plane values, lone high/low surrogates, malformed hex, and truncated escapes.</p>
+<h3 id="r1-03-apptimeout-is-not-a-timeoutcancellation-mechanism">R1-03: <code>app.timeout</code> is not a timeout/cancellation mechanism</h3>
+<p><strong>Location:</strong> <code>stdlib/app.lucy</code>, <code>Timeout.timeout</code>.</p>
+<p>The implementation runs <code>callback()</code> to completion, checks elapsed time afterward, and only then raises. A callback that blocks forever or hangs never reaches the check. Blocking I/O is not cancelled and work is not interrupted.</p>
+<p><strong>Required fix:</strong> rename this helper to reflect post-hoc duration checking, or implement actual cooperative cancellation/scheduler support. Documentation must not imply it protects against non-terminating work.</p>
+<h3 id="r1-04-command-line-parser-silently-ignores-unsupportedinvalid-input">R1-04: command-line parser silently ignores unsupported/invalid input</h3>
+<p><strong>Location:</strong> <code>stdlib/app.lucy</code>, <code>OptionParser.parse</code>.</p>
+<p>Observed from code inspection:</p>
+<ul>
+<li>unknown <code>--options</code> are ignored;</li>
+<li>short options are not implemented;</li>
+<li><code>--name=value</code> is not parsed;</li>
+<li>a value-taking option with no following value can silently retain its default;</li>
+<li>there is no required-option validation or typed conversion;</li>
+<li><code>on()</code> expects the bare name (for example <code>name</code>), not <code>--name</code>, because <code>parse()</code> strips the leading dashes before lookup.</li>
+</ul>
+<p><strong>Required fix:</strong> reject unknown flags by default, support or explicitly document unsupported forms, distinguish boolean flags from value options, detect missing values, and test duplicate flags and positional arguments.</p>
+<h3 id="r1-05-delimiter-argument-can-be-an-empty-string">R1-05: delimiter argument can be an empty string</h3>
+<p><strong>Location:</strong> <code>src/phase2.cpp</code>, <code>__csv_parse</code> / <code>__csv_stringify</code> builtins.</p>
+<p>The implementation reads <code>string_arg(args[1], ...)[0]</code> without validating that the delimiter string is non-empty. An empty delimiter is not rejected and effectively becomes a NUL byte on this standard-library implementation; a multi-byte delimiter is silently truncated to its first byte. This is a contract bug, but I did not establish an out-of-bounds access here.</p>
+<p><strong>Required fix:</strong> reject empty delimiters and define whether non-ASCII delimiters are supported; the current implementation silently takes the first byte. Add a regression test.</p>
+<h3 id="r1-06-benchmark-api-executes-a-shell-command-rather-than-measuring-a-lucy-callback">R1-06: Benchmark API executes a shell command rather than measuring a Lucy callback</h3>
+<p><strong>Location:</strong> <code>stdlib/app.lucy</code> (<code>Benchmark.realtime</code>) and <code>src/stdlib_native.cpp</code> (<code>__benchmark_realtime</code>).</p>
+<p>The public documentation described callback timing, but the native implementation requires a string and passes it to the process command runner. A callback fails with <code>TypeError: Benchmark.realtime expects a string</code>. This is a contract/documentation mismatch and creates command-execution risk if untrusted text reaches the API.</p>
+<p><strong>Required fix:</strong> either implement timing of callable values in the runtime, or rename the method to make shell execution explicit and document platform-dependent command syntax. Never interpolate untrusted input into the command string.</p>
+<h2 id="severity-2-documentation-and-discoverability-failures">Severity 2 — documentation and discoverability failures</h2>
+<h3 id="r2-01-api-examples-refer-to-nonexistent-or-mislocated-apis">R2-01: API examples refer to nonexistent or mislocated APIs</h3>
+<p>The initial audit found these documented examples failing against the shipped implementation:</p>
+<ul>
+<li><code>text.upper(&quot;hello&quot;)</code>: <code>upper</code> is a String instance method; use <code>&quot;hello&quot;.upper()</code>.</li>
+<li><code>runtime.type</code>: no public function with this name is defined in <code>stdlib/runtime.lucy</code>.</li>
+<li><code>result.success()</code> and <code>result.unwrap(0)</code>: public functions require the result map as the first argument; the example also shadows the module name when it uses <code>result</code> for both.</li>
+<li><code>app.template(&quot;Hello $name&quot;)</code>: the ERB implementation substitutes <code>{{name}}</code>, not <code>$name</code>.</li>
+<li>Benchmark examples claimed callback timing; the native implementation instead requires a shell command string. The earlier Lambda-based example therefore fails with a type error, not merely a syntax issue.</li>
+<li>The option parser example registered <code>--name</code> while the implementation expects <code>name</code>.</li>
+</ul>
+<p>Some of these examples were corrected during this audit in <code>STANDARD_LIBRARY.md</code> and <code>PROGRAMMING_GUIDE.md</code>. The source implementation was not changed by those documentation edits.</p>
+<h3 id="r2-02-standalone-execution-of-documentation-code-blocks-is-not-a-valid-universal-test">R2-02: standalone execution of documentation code blocks is not a valid universal test</h3>
+<p>The first automated pass attempted every <code>lucy</code> fenced block as a standalone program. Many failed because they intentionally omit setup, refer to a fictional function such as <code>work()</code>, depend on files not created in the block, or require live network access. The documentation does not machine-label blocks as standalone, illustrative fragments, expected errors, or network-dependent examples.</p>
+<p><strong>Required fix:</strong> add metadata or conventions for snippet classes and a CI harness that runs all standalone/offline snippets, asserts expected failures for negative examples, and skips only explicitly tagged environment-dependent examples.</p>
+<h3 id="r2-03-api-inventory-claims-source-derived-completeness-but-is-not-generated">R2-03: API inventory claims source-derived completeness but is not generated</h3>
+<p><code>STANDARD_LIBRARY_API_INVENTORY.md</code> says it is generated from source and should be regenerated, but the archive does not provide a generator/verification command that proves completeness. An inventory can drift even if the prose claims it is exhaustive.</p>
+<p><strong>Required fix:</strong> add a deterministic generator and CI diff/check. Decide explicitly whether class methods, native builtins, aliases, and REPL-only commands are public API.</p>
+<h3 id="r2-04-installation-and-platform-claims-exceed-the-tested-matrix">R2-04: installation and platform claims exceed the tested matrix</h3>
+<p>The code includes platform-specific branches and Windows networking linkage, but this audit only executed Linux/GCC. The archived <code>build-install</code> directory contains stale build state and absolute paths; moving a build tree is not a supported reproducible-build test. No Windows or macOS result is established by this report.</p>
+<p><strong>Required fix:</strong> add clean CI jobs for Linux, Windows (MSVC and MinGW if both are claimed), and macOS; test install from a fresh prefix, runtime library discovery, <code>LUCY_PATH</code>, SQLite enabled/disabled, and invocation from arbitrary working directories.</p>
+<h2 id="build-and-test-observations">Build and test observations</h2>
+<ul>
+<li>Fresh Linux/GCC Debug build with <code>LUCY_ENABLE_SQLITE=ON</code>: successful.</li>
+<li>CTest with SQLite disabled: 20/20 passed.</li>
+<li>CTest with SQLite enabled: 21/21 passed.</li>
+<li>CTest under AddressSanitizer + UndefinedBehaviorSanitizer with SQLite enabled: 21/21 passed. This does not cover every native path; the known string hang and data-format edge cases were established separately.</li>
+<li>Shipped examples: 25/25 exited successfully in the tested environment. This is only a smoke check; some examples have side effects and external-service assumptions.</li>
+<li>Three small end-to-end scripts (SQLite task CRUD/transaction rollback, CSV/JSON data pipeline, and CLI/file-backed notes) completed. The CSV project exposed the trailing-blank-row bug.</li>
+<li>Random malformed-source smoke fuzz: 500 inputs, no process crashes or timeouts. This does not replace libFuzzer/AFL++ with sanitizers.</li>
+<li>A build with additional warnings enabled surfaced an unused <code>longest_common_prefix</code> helper in <code>src/repl.cpp</code> (<code>-Wunused-function</code>).</li>
+</ul>
+<h2 id="required-next-test-campaign">Required next test campaign</h2>
+<ol>
+<li>Build and run under ASan + UBSan; include invalid delimiter, empty string replace, malformed JSON, huge numbers, deeply nested expressions/collections, and exception/finally paths.</li>
+<li>Add coverage-guided fuzz targets for lexer, parser, JSON parser, CSV parser, format strings, and extension boundary.</li>
+<li>Add semantic differential tests for integer overflow, division/modulo by zero, floating-point NaN/Inf, equality/hash behavior for maps/arrays, closure capture, shadowing, recursion depth, and mutation during iteration.</li>
+<li>Add stress tests for large files/strings, deeply nested input, repeated imports, repeated SQLite open/close, socket errors, subprocess timeouts, and memory growth in long-lived REPL sessions.</li>
+<li>Add security tests for command execution argument quoting, path traversal, symlink handling, filesystem permissions, TLS certificate validation, HTTP redirects, response-size limits, and secrets in exception/log output.</li>
+<li>Define contracts for Unicode, CSV dialect, JSON surrogate handling, timeout behavior, CLI parser behavior, and exit-code semantics before declaring 2.0 stable.</li>
+</ol>
+</article><div class="docs-page-nav"><a href="real_world_workflows.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="regression_and_release_process.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

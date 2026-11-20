@@ -1,0 +1,301 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow"><title>Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="active">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-repl-cli-tooling-packages-and-developer-workflow">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</h1>
+<p>This document is the operational manual for using Lucy every day. It combines the former REPL, CLI, package, testing, editor, limits, and tooling references so users do not have to search through small disconnected files.</p>
+<h2 id="1-cli">1. CLI</h2>
+<p>The current CLI forms are:</p>
+<pre><code class="language-text">lucy &lt;file.lucy&gt; [arguments...]
+lucy -i
+lucy --interactive
+lucy -h
+lucy --help
+lucy -v
+lucy --version
+lucy commands
+lucy run &lt;command&gt; [arguments...]
+lucy install-binstubs [directory]
+</code></pre>
+<p>With no program argument, Lucy starts the REPL.</p>
+<p>Command-line arguments are available as both <code>ARGV</code> and <code>argv</code> in Lucy code.</p>
+<p>Lucy does not provide <code>-e</code> or <code>-c</code> inline execution flags. Use a <code>.lucy</code> source file or the REPL. Project commands are declared under <code>[commands]</code> in <code>lucy.toml</code>; see <a href="command_metadata_and_binstubs.html">Command Metadata and Binstubs</a>.</p>
+<p>An uncaught script error is reported by the CLI and results in a non-zero process status. In the REPL, errors are printed and the interactive session continues when possible.</p>
+<h2 id="2-the-repl">2. The REPL</h2>
+<p>Start it with:</p>
+<pre><code class="language-text">lucy
+</code></pre>
+<p>The default prompt is provided by the editable <code>stdlib/repl.lucy</code> library. The banner and prompts use plain text with no ANSI color styling to avoid inconsistent rendering in Windows consoles. The editor still uses terminal cursor-control sequences for line editing; these are not color codes. The native editor can fall back to a native prompt if that library cannot be loaded.</p>
+<h3 id="repl-commands">REPL commands</h3>
+<table>
+<thead>
+<tr>
+  <th>Command</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>:help</code></td>
+  <td>Show REPL help</td>
+</tr>
+<tr>
+  <td><code>:clear</code></td>
+  <td>Clear the terminal and current input buffer</td>
+</tr>
+<tr>
+  <td><code>:history</code></td>
+  <td>Show recent history</td>
+</tr>
+<tr>
+  <td><code>:version</code></td>
+  <td>Show Lucy version</td>
+</tr>
+<tr>
+  <td><code>:about</code></td>
+  <td>Show the plain-text banner</td>
+</tr>
+<tr>
+  <td><code>:reset</code></td>
+  <td>Cancel a pending multiline input buffer</td>
+</tr>
+<tr>
+  <td><code>:vars</code></td>
+  <td>List user-defined global variables with values and runtime types</td>
+</tr>
+<tr>
+  <td><code>:vars --all</code></td>
+  <td>Include runtime, module, and built-in bindings in the listing</td>
+</tr>
+<tr>
+  <td><code>:functions</code></td>
+  <td>List built-in functions, user functions, and visible module methods</td>
+</tr>
+<tr>
+  <td><code>:modules</code></td>
+  <td>List discovered <code>.lucy</code> modules and filesystem paths</td>
+</tr>
+<tr>
+  <td><code>:where &lt;name&gt;</code></td>
+  <td>Show a module path or inspect a binding's runtime origin</td>
+</tr>
+<tr>
+  <td><code>:methods &lt;Type&gt;</code></td>
+  <td>List known methods for a built-in type or user class</td>
+</tr>
+<tr>
+  <td><code>:quit</code>, <code>:exit</code></td>
+  <td>Exit</td>
+</tr>
+<tr>
+  <td><code>Ctrl-D</code></td>
+  <td>Exit when the input buffer is empty</td>
+</tr>
+</tbody>
+</table>
+<p><code>:where</code> reports exact paths for discoverable modules and source-file-defined functions/classes. Interactive definitions do not retain source-line metadata, so they are identified as interactive rather than assigned a fabricated location. <code>:modules</code> lists <code>.lucy</code> files found in configured module search paths; it is not a complete operating-system filesystem index.</p>
+<h3 id="language-help">Language help</h3>
+<p>The REPL loads <code>repl.lucy</code> and exposes:</p>
+<pre><code class="language-lucy">help()
+help &quot;array&quot;
+help &quot;modules&quot;
+help &quot;exceptions&quot;
+repl.commands()
+repl.topics()
+</code></pre>
+<p>The help system is itself Lucy code, which means its user-facing wording can evolve without changing the C++ interpreter.</p>
+<h2 id="3-completion">3. Completion</h2>
+<p>Completion is a runtime feature, not a static list of documentation names.</p>
+<h3 id="31-what-can-be-completed">3.1 What can be completed</h3>
+<p>At the top level, completion includes:</p>
+<ul>
+<li>language keywords;</li>
+<li>global builtins;</li>
+<li>builtin type classes;</li>
+<li>variables/functions/classes in the current environment and parent environments;</li>
+<li>module names exposed in the environment.</li>
+</ul>
+<p>After <code>.</code>, completion resolves the actual runtime object and lists:</p>
+<ul>
+<li>module fields and public functions;</li>
+<li>class methods and inherited methods;</li>
+<li>instance fields and methods;</li>
+<li>array methods;</li>
+<li>string methods;</li>
+<li>map methods;</li>
+<li>number methods;</li>
+<li>members of chained expressions when the intermediate value can be resolved without executing arbitrary user code.</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-text">lucy&gt; fs.&lt;Tab&gt;
+lucy&gt; text.u&lt;Tab&gt;
+lucy&gt; values.&lt;Tab&gt;
+lucy&gt; point.x.to_&lt;Tab&gt;
+</code></pre>
+<h3 id="32-tab-behavior">3.2 Tab behavior</h3>
+<ul>
+<li>If there is one candidate, the first Tab completes it immediately.</li>
+<li>If there are multiple candidates, the first Tab completes the longest common prefix when possible.</li>
+<li>The next Tab prints the sorted candidate list; later Tabs cycle through candidates.</li>
+<li>Editing the line or moving the cursor resets the completion cycle.</li>
+<li>Candidates are sorted and deduplicated.</li>
+<li>Completion never intentionally executes arbitrary user expressions.</li>
+<li>Moving the cursor, editing the line, or navigating history resets the completion cycle.</li>
+</ul>
+<h3 id="33-why-completion-is-runtime-driven">3.3 Why completion is runtime-driven</h3>
+<p>Lucy ships a sizeable standard library. A manually maintained completion list inevitably becomes stale. The runtime now treats module objects and live environments as the source of completion candidates. This means a new public function added to a Pure-Lucy module becomes discoverable without adding another C++ completion entry.</p>
+<p>Public classes/constants/helper objects exported by a module are also completable. Native extensions that expose members through the normal module/instance representation participate in the same completion path.</p>
+<h2 id="4-line-editing">4. Line editing</h2>
+<p>The interactive editor supports:</p>
+<table>
+<thead>
+<tr>
+  <th>Key</th>
+  <th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Up / Down</td>
+  <td>history navigation</td>
+</tr>
+<tr>
+  <td>Left / Right</td>
+  <td>cursor movement</td>
+</tr>
+<tr>
+  <td>Home / End</td>
+  <td>line boundaries</td>
+</tr>
+<tr>
+  <td>Delete / Backspace</td>
+  <td>character editing</td>
+</tr>
+<tr>
+  <td>Ctrl-A / Ctrl-E</td>
+  <td>beginning/end</td>
+</tr>
+<tr>
+  <td>Ctrl-K</td>
+  <td>delete to end</td>
+</tr>
+<tr>
+  <td>Ctrl-U</td>
+  <td>delete to beginning</td>
+</tr>
+<tr>
+  <td>Tab</td>
+  <td>completion</td>
+</tr>
+<tr>
+  <td>Ctrl-D</td>
+  <td>exit on empty input</td>
+</tr>
+</tbody>
+</table>
+<p>The editor stores up to 1000 history entries.</p>
+<h2 id="5-history-files-and-platforms">5. History files and platforms</h2>
+<p>Windows uses:</p>
+<pre><code class="language-text">%USERPROFILE%\\.lucy_history
+</code></pre>
+<p>Unix-like systems use:</p>
+<pre><code class="language-text">$HOME/.lucy_history
+</code></pre>
+<p>The editor uses platform-native terminal APIs:</p>
+<ul>
+<li>Windows: console input and Win32 console configuration.</li>
+<li>Linux/macOS and other POSIX systems: <code>termios</code>/TTY handling.</li>
+</ul>
+<p>When stdin is not an interactive terminal, Lucy falls back to ordinary line-oriented input. This is important for scripts, CI, pipes, and redirected input.</p>
+<h2 id="6-multiline-repl-input">6. Multiline REPL input</h2>
+<p>The REPL tracks brace depth and changes from the primary prompt to the continuation prompt while a block remains open:</p>
+<pre><code class="language-text">lucy&gt; func greet(name) {
+...     println &quot;Hello, $name&quot;
+... }
+</code></pre>
+<p>Input is then parsed as one buffer. A syntax error does not permanently damage the next REPL prompt; the current buffer is reset after the attempt.</p>
+<h2 id="7-packages">7. Packages</h2>
+<p>The runtime recognizes project-local packages at <code>packages/&lt;name&gt;/src/init.lucy</code>. The Lucy-native <code>tools/paw/commands/package.lucy</code> manager (also exposed as <code>paw</code> through the root Binstubs) supports local <code>.lucy</code> source installation, update, listing, verification, and removal. The current workflow does not implement a remote registry or enforce a complete <code>lucy.toml</code> package manifest schema.</p>
+<p>A practical source package can look like:</p>
+<pre><code class="language-text">my_project/
+├── src/
+│   ├── init.lucy
+│   ├── parser.lucy
+│   └── utils.lucy
+├── examples/
+└── tests/
+</code></pre>
+<p>Use normal Lucy imports from the project environment. Local package commands are available, but registry downloads, transitive dependency resolution, and package publishing are not shipped.</p>
+<h2 id="8-native-extensions">8. Native extensions</h2>
+<p>Native extensions are shared libraries loaded through the extension API.</p>
+<p>Platform naming:</p>
+<table>
+<thead>
+<tr>
+  <th>Platform</th>
+  <th>Typical extension name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Windows</td>
+  <td><code>lucy_&lt;name&gt;.dll</code></td>
+</tr>
+<tr>
+  <td>Linux</td>
+  <td><code>liblucy_&lt;name&gt;.so</code> or <code>lucy_&lt;name&gt;.so</code></td>
+</tr>
+<tr>
+  <td>macOS</td>
+  <td><code>liblucy_&lt;name&gt;.dylib</code> or <code>lucy_&lt;name&gt;.dylib</code></td>
+</tr>
+</tbody>
+</table>
+<p>The runtime searches project, installation, and <code>LUCY_PATH</code> extension roots.</p>
+<p>The exported entry point is:</p>
+<pre><code class="language-cpp">extern &quot;C&quot; bool lucy_extension_init(lucy::ExtensionAPI&amp; api);
+</code></pre>
+<p>The current public API version is <code>1</code>. Extensions should be rebuilt when the runtime changes in ways that affect the API/ABI; there is no promise of permanent ABI stability.</p>
+<h2 id="9-testing">9. Testing</h2>
+<p>Lucy uses CTest for the regression suite. Tests are ordinary <code>.lucy</code> programs plus native tests where C++ behavior is being exercised.</p>
+<p>From a fresh build directory:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DLUCY_ENABLE_SQLITE=OFF
+cmake --build build
+ctest --test-dir build --output-on-failure
+</code></pre>
+<p>The suite currently includes language, lexical, semantics, standard-library, numeric-conversion, built-in type extension, module-path discovery, and REPL-completion coverage. The release verification script also runs every shipped <code>examples/*.lucy</code> program.</p>
+<p>When adding a language feature, add a focused regression test and run the complete suite.</p>
+<h2 id="10-editor-integration">10. Editor integration</h2>
+<p>The repository contains editor-related files, but Lucy 2.0.7 still does not ship a production language server (LSP), formatter, or debugger protocol. The LSP architecture is specified in <a href="lsp_spec.html">LSP Specification</a>; editor syntax assets remain editor configuration, not an LSP implementation.</p>
+<h2 id="11-troubleshooting-by-symptom">11. Troubleshooting by symptom</h2>
+<h3 id="sqliteerror-lucy-was-built-without-sqlite-support"><code>SQLiteError: Lucy was built without SQLite support</code></h3>
+<p>Reconfigure with:</p>
+<pre><code class="language-text">-DLUCY_ENABLE_SQLITE=ON
+</code></pre>
+<p>and make sure SQLite3 development libraries are available.</p>
+<h3 id="completion-shows-nothing">Completion shows nothing</h3>
+<p>Check whether the expression before <code>.</code> can be resolved in the current environment. Completion is intentionally advisory and will not execute arbitrary expressions to guess their result.</p>
+<h3 id="repl-behaves-like-ordinary-stdin">REPL behaves like ordinary stdin</h3>
+<p>Lucy falls back to line input when stdin is not a TTY. This is expected when piping input or running in some CI/terminal environments.</p>
+<h3 id="a-standard-module-is-missing">A standard module is missing</h3>
+<p>The shipped standard modules are loaded automatically, but optional SQLite support may be absent. Use <code>modules_info()</code> to inspect resolved module paths.</p>
+<h2 id="12-cross-platform-expectations">12. Cross-platform expectations</h2>
+<p>Lucy aims to keep language semantics identical across Windows, Linux, and macOS. Platform-specific differences are confined primarily to:</p>
+<ul>
+<li>terminal input implementation;</li>
+<li>shared-library extension suffixes;</li>
+<li>OS/process functions in <code>system</code>;</li>
+<li>filesystem path representation;</li>
+<li>availability of optional native dependencies such as SQLite.</li>
+</ul>
+<p>Application code should prefer <code>fs</code>, <code>system</code>, <code>text</code>, and other standard modules instead of embedding OS-specific shell assumptions.</p>
+<h3 id="known-editor-limitations">Known editor limitations</h3>
+<ul>
+<li>No syntax highlighting, bracket-pair highlighting, inline diagnostics, or completion documentation popup.</li>
+<li>No multiline cursor editing or persistent multiline history entries; each physical line is stored separately.</li>
+<li>Completion is advisory and may not infer every dynamic expression.</li>
+<li>Terminal cursor controls and display-cell widths vary by terminal; the REPL no longer emits ANSI color styling, but Windows behavior still needs native-console testing.</li>
+<li><code>Ctrl-C</code> cancels buffered source; it is not a general-purpose interrupt for a running Lucy program.</li>
+</ul>
+<h2 id="lucy-native-ecosystem-commands">Lucy-native ecosystem commands</h2>
+<p>The repository provides first-party Lucy scripts for project scaffolding, local package management, native extension scaffolding, build orchestration, and project test execution. REPL module completion includes project-local packages found beneath the nearest <code>lucy.toml</code> root. See <a href="ecosystem_tooling.html">Ecosystem Tooling</a> for commands and limitations. For process automation, prefer <code>system.exec(argv, options)</code> over shell command strings; it keeps arguments separate, captures stdout/stderr independently, and enforces a timeout.</p>
+<p>For the 2.0.7 diagnostics and stabilization workflow, see <a href="debugging_and_diagnostics.html">Debugging and Diagnostics</a> and <a href="regression_and_release_process.html">Regression and Release Process</a>. The LSP specification is not an executable server.</p>
+<h2 id="built-in-method-discovery">Built-in method discovery</h2>
+<p>The REPL completes the shared Object protocol (<code>to_s</code>, <code>inspect</code>, <code>type</code>, <code>is_a?</code>, and related methods) on values, plus type-specific String, Array, Map, and Number methods. <code>:methods Type</code> lists the built-in protocol and native methods known for a built-in type. <code>:help object</code>, <code>:help array</code>, <code>:help string</code>, <code>:help map</code>, and <code>:help number</code> describe the corresponding contracts. Completion is advisory; <code>respond_to?(name)</code> is the runtime capability check.</p>
+</article><div class="docs-page-nav"><a href="release_2_0_7.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="runtime_and_errors.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

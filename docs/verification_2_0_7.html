@@ -1,0 +1,276 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — Release Verification"><title>Lucy 2.0.7 — Release Verification · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="active">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — Release Verification</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-release-verification">Lucy 2.0.7 — Release Verification</h1>
+<h2 id="scope">Scope</h2>
+<p>Lucy 2.0.7 is an ecosystem architecture, diagnostics, and stabilization release. It synchronizes release metadata and adds specifications for the package registry, dependency resolver, and LSP. It does not claim those three systems are implemented.</p>
+<h2 id="original-release-candidate-verification-historical">Original release-candidate verification (historical)</h2>
+<p>The earlier 44-test / 45-runner figures below describe a previous source snapshot and are superseded by the dated ecosystem verification record at the end of this document.</p>
+<h2 id="automated-verification">Automated verification</h2>
+<p>The supplied source archive was inspected and edited for documentation/version consistency. A clean Linux Debug configuration and build completed with SQLite disabled. CTest passed all 44 tests. The Lucy-native runner reported 37 passed, 0 failed, and 1 skipped (optional SQLite test). Standard-library manifest validation passed. Documentation examples passed 16, with 1 network-dependent HTTP example skipped, using a separate SQLite-enabled executable. Windows and macOS were not tested.</p>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Status</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Archive integrity (<code>unzip -t</code>)</td>
+  <td>Passed</td>
+  <td>Final archive integrity check</td>
+</tr>
+<tr>
+  <td>Clean Linux Debug build</td>
+  <td>Passed</td>
+  <td>GNU C++ 14.2.0, CMake Debug, SQLite disabled</td>
+</tr>
+<tr>
+  <td>Linux CTest</td>
+  <td>Passed</td>
+  <td>44/44 passed, SQLite disabled</td>
+</tr>
+<tr>
+  <td>Lucy-native test runner</td>
+  <td>Passed</td>
+  <td>37 passed, 0 failed, 1 skipped (optional SQLite)</td>
+</tr>
+<tr>
+  <td>Documentation example verification</td>
+  <td>Passed</td>
+  <td>16 passed, 1 network-dependent skipped, 0 failed (SQLite-enabled executable)</td>
+</tr>
+<tr>
+  <td><code>lucy --version</code></td>
+  <td>Passed</td>
+  <td>Printed <code>2.0.7</code></td>
+</tr>
+<tr>
+  <td>Runtime <code>VERSION</code></td>
+  <td>Passed</td>
+  <td>Executed <code>println VERSION</code>; printed <code>2.0.7</code></td>
+</tr>
+<tr>
+  <td>Standard-library manifest validation</td>
+  <td>Passed</td>
+  <td>16 module records verified</td>
+</tr>
+<tr>
+  <td>Project-local package integration</td>
+  <td>Passed</td>
+  <td>CTest fixture passed</td>
+</tr>
+<tr>
+  <td>Native extension scaffold/build</td>
+  <td>Pending</td>
+  <td>Not exercised in this pass</td>
+</tr>
+<tr>
+  <td>Windows/MSVC build and tests</td>
+  <td>Pending</td>
+  <td>CI evidence required</td>
+</tr>
+<tr>
+  <td>Windows/MinGW build and tests</td>
+  <td>Pending</td>
+  <td>If supported by release matrix</td>
+</tr>
+<tr>
+  <td>macOS build and tests</td>
+  <td>Pending</td>
+  <td>CI evidence required</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metadata-consistency-checklist">Metadata consistency checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/><code>VERSION</code> set to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/>CMake project version set to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/>CLI version/banner strings updated to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/>Runtime <code>VERSION</code> and REPL banner strings updated to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/><code>stdlib/manifest.json</code> language version updated to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled checked/>Core API contract version updated to <code>2.0.7</code>.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Build and execute the version checks from a clean build.</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<p>The first documentation-example run used a SQLite-disabled build and correctly failed the SQLite example because the optional feature was not compiled in. The successful 16/1 result was obtained with a separate SQLite-enabled executable. The SQLite-enabled build compiled the runtime and CLI; its auxiliary REPL completion test target was not completed within the available build window, so no SQLite-enabled full CTest result is claimed.</p>
+<h2 id="required-commands">Required commands</h2>
+<pre><code class="language-sh">cmake -S . -B build-debug -DCMAKE_BUILD_TYPE=Debug
+cmake --build build-debug --parallel
+ctest --test-dir build-debug --output-on-failure
+./build-debug/lucy --version
+./build-debug/paw stdlib verify
+./build-debug/paw test ./build-debug/lucy
+./build-debug/paw docs-check ./build-debug/lucy
+unzip -t Lucy-2.0.7-source.zip
+</code></pre>
+<p>Adjust executable paths for Windows/macOS and the selected generator. Do not mark an item passed without retaining its output.</p>
+<h2 id="release-decision">Release decision</h2>
+<p>This archive is a prepared 2.0.7 source/documentation candidate, not a verified binary release. Publish only after all required platform checks have passed and the release evidence has been attached.</p>
+<h2 id="additive-objectapi-verification-2026-11-12">Additive object/API verification — 2026-11-12</h2>
+<p>This verification supplements the earlier release-candidate record above. The source tree now includes the additive built-in object protocol and native value APIs documented in <code>BUILTIN_REFERENCE.md</code>. Version metadata remains <code>2.0.7</code>; no grammar changes were made.</p>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Status</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Linux Release build</td>
+  <td>Passed</td>
+  <td>GCC 14.2.0, CMake 3.31.6, SQLite disabled</td>
+</tr>
+<tr>
+  <td>Linux CTest</td>
+  <td>Passed</td>
+  <td>53/53 passed, including four expected-failure contract tests</td>
+</tr>
+<tr>
+  <td>Object protocol tests</td>
+  <td>Passed</td>
+  <td><code>47_object_protocols.lucy</code></td>
+</tr>
+<tr>
+  <td>Collection API tests</td>
+  <td>Passed</td>
+  <td><code>48_collection_methods.lucy</code></td>
+</tr>
+<tr>
+  <td>Scalar API tests</td>
+  <td>Passed</td>
+  <td><code>49_scalar_methods.lucy</code></td>
+</tr>
+<tr>
+  <td>Invalid-input contracts</td>
+  <td>Passed</td>
+  <td>Array sort, Map fetch, numeric parity, and reduce arity tests</td>
+</tr>
+<tr>
+  <td>REPL completion</td>
+  <td>Passed</td>
+  <td>Built-in, object, function, class, and collection completion checks</td>
+</tr>
+<tr>
+  <td>Standard-library manifest</td>
+  <td>Passed</td>
+  <td>16 module records verified</td>
+</tr>
+<tr>
+  <td>Lucy-native test runner</td>
+  <td>Passed</td>
+  <td>45 passed, 0 failed, 1 optional SQLite test skipped</td>
+</tr>
+<tr>
+  <td>Documentation examples</td>
+  <td>Passed</td>
+  <td>15 passed, 2 skipped (SQLite disabled and network-dependent HTTP), 0 failed</td>
+</tr>
+<tr>
+  <td>Windows MinGW 9.2</td>
+  <td>Pending</td>
+  <td>Must be run on the user's Windows toolchain</td>
+</tr>
+<tr>
+  <td>Windows/MSVC and macOS</td>
+  <td>Pending</td>
+  <td>CI evidence required</td>
+</tr>
+</tbody>
+</table>
+<p>The Linux result does not establish Windows compatibility. The Windows process execution test and native resource/icon compilation still require the Windows CI matrix or a local MinGW/MSVC run.</p>
+<h2 id="ecosystem-command-and-binstub-verification-2026-11-12">Ecosystem command and binstub verification — 2026-11-12</h2>
+<p>The source tree was extended with declarative <code>[commands]</code> metadata, <code>lucy run</code>, command listing, and project-bound binstub generation. The Linux build was repeated after these changes.</p>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Status</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Clean Linux Release build</td>
+  <td>Passed</td>
+  <td>GCC 14.2.0, CMake, SQLite disabled</td>
+</tr>
+<tr>
+  <td>CTest</td>
+  <td>Passed</td>
+  <td>60/60 tests, including command dispatch, Binstubs, project scaffolding, global scaffolder Binstub, and local package workflow</td>
+</tr>
+<tr>
+  <td>Lucy-native test runner</td>
+  <td>Passed</td>
+  <td>45 passed, 0 failed, 1 optional SQLite test skipped</td>
+</tr>
+<tr>
+  <td>Standard-library manifest</td>
+  <td>Passed</td>
+  <td>16 module records verified</td>
+</tr>
+<tr>
+  <td>Documentation examples</td>
+  <td>Passed</td>
+  <td>15 passed, 2 skipped (optional SQLite and network-dependent HTTP), 0 failed</td>
+</tr>
+<tr>
+  <td>Project command argument forwarding</td>
+  <td>Passed</td>
+  <td>Multi-word argument preserved by <code>lucy run</code> and POSIX Binstub</td>
+</tr>
+<tr>
+  <td>Unsafe command path rejection</td>
+  <td>Passed</td>
+  <td>Duplicate entries, missing files, and project path traversal covered</td>
+</tr>
+<tr>
+  <td>Windows / macOS</td>
+  <td>Pending</td>
+  <td>Platform-specific CI evidence is still required</td>
+</tr>
+</tbody>
+</table>
+<p>The Binstub integration test executed on Linux. The Windows <code>.cmd</code> branch is implemented but was not executed in this environment. The release is not claimed to be cross-platform verified until Windows and macOS CI results are available.</p>
+<h2 id="paw-consolidation-and-standard-library-helper-apis-2026-11-13">Paw consolidation and standard-library helper APIs — 2026-11-13</h2>
+<p>The later Paw source snapshot supersedes the historical command/Binstub architecture described above.</p>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Linux CMake build</td>
+  <td>Passed</td>
+</tr>
+<tr>
+  <td>CTest</td>
+  <td>64/64 passed</td>
+</tr>
+<tr>
+  <td>Paw installed-prefix smoke test</td>
+  <td>Passed</td>
+</tr>
+<tr>
+  <td>Paw project create/run/test</td>
+  <td>Passed</td>
+</tr>
+<tr>
+  <td>Documentation examples</td>
+  <td>15 passed, 2 skipped, 0 failed</td>
+</tr>
+<tr>
+  <td>Standard-library manifest</td>
+  <td>16 modules verified</td>
+</tr>
+</tbody>
+</table>
+<p>The official repository CLI is now <code>paw</code>. First-party commands are implemented as Lucy modules under <code>tools/paw/commands/</code>; legacy individual tool files and root-project per-command Binstubs have been removed. Low-level <code>[commands]</code> support remains in the Lucy executable for existing user projects.</p>
+<p>Twenty-two additive Lucy-level helper APIs were added to each of <code>fs</code>, <code>system</code>, <code>data</code>, and <code>text</code>. Dedicated tests and module documentation were added. These are standard-library compositions, not new C++ native primitives.</p>
+<p>Only Linux was tested directly. Windows/macOS and SQLite-enabled configurations remain unverified for this snapshot.</p>
+</article><div class="docs-page-nav"><a href="verification_2_0_6.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="stdlib/app.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

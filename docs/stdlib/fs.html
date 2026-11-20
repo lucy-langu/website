@@ -1,0 +1,426 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: `fs` standard library — Lucy 2.0.7 · module 1.1.0"><title>`fs` standard library — Lucy 2.0.7 · module 1.1.0 · Lucy Docs</title><link rel="icon" href="../../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../../styles.css" rel="stylesheet"><link href="../../docs.css" rel="stylesheet"><link href="../../site-2.css" rel="stylesheet"><link href="../../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html"><span class="brand-mark"><img alt="Lucy" src="../../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="../getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="../language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="../language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="../programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="../real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="../runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="../object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="../standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="../standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="../builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="../paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="../ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="../ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="../ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="../packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="../tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="../command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="../package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="../dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="../lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="../changelog.html" class="">Lucy Changelog</a><a href="../history_and_migration.html" class="">Lucy History and Migration</a><a href="../release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="../verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="../verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="../verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="../verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="../verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="../environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="../repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="../developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="../implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="../debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="../regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="../phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="../red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="../audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="../audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="../audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="../project-overview.html" class="">Lucy</a><a href="../projects.html" class="">End-to-end Lucy projects</a><a href="../extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="../editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>`fs` standard library — Lucy 2.0.7 · module 1.1.0</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="fs-standard-library-lucy-207-module-110"><code>fs</code> standard library — Lucy 2.0.7 · module 1.1.0</h1>
+<p>Filesystem operations, path helpers, text/JSON convenience methods, and IO objects.</p>
+<h2 id="availability-and-imports">Availability and imports</h2>
+<p>The shipped module is loaded automatically in Lucy 2.x. Explicit <code>import</code> remains available when you want to make dependencies visible:</p>
+<pre><code class="language-lucy">import fs
+</code></pre>
+<p>Names beginning with <code>_</code> or <code>__</code> are implementation details unless a public API explicitly documents them.</p>
+<h2 id="quick-example">Quick example</h2>
+<pre><code class="language-lucy">fs.write(&quot;example.txt&quot;, &quot;hello\n&quot;)
+fs.append(&quot;example.txt&quot;, &quot;Lucy\n&quot;)
+println fs.read(&quot;example.txt&quot;)
+println fs.basename(&quot;src/lucy.cpp&quot;)
+</code></pre>
+<h2 id="module-level-functions">Module-level functions</h2>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>read</code></td>
+  <td><code>read(path)</code></td>
+</tr>
+<tr>
+  <td><code>write</code></td>
+  <td><code>write(path, content)</code></td>
+</tr>
+<tr>
+  <td><code>append</code></td>
+  <td><code>append(path, content)</code></td>
+</tr>
+<tr>
+  <td><code>read_lines</code></td>
+  <td><code>read_lines(path)</code></td>
+</tr>
+<tr>
+  <td><code>write_lines</code></td>
+  <td><code>write_lines(path, lines)</code></td>
+</tr>
+<tr>
+  <td><code>exists</code></td>
+  <td><code>exists(path)</code></td>
+</tr>
+<tr>
+  <td><code>size</code></td>
+  <td><code>size(path)</code></td>
+</tr>
+<tr>
+  <td><code>remove</code></td>
+  <td><code>remove(path)</code></td>
+</tr>
+<tr>
+  <td><code>copy</code></td>
+  <td><code>copy(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>move</code></td>
+  <td><code>move(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>replace</code></td>
+  <td><code>replace(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>touch</code></td>
+  <td><code>touch(path)</code></td>
+</tr>
+<tr>
+  <td><code>chmod</code></td>
+  <td><code>chmod(path, mode)</code></td>
+</tr>
+<tr>
+  <td><code>chown</code></td>
+  <td><code>chown(path, uid, gid)</code></td>
+</tr>
+<tr>
+  <td><code>chdir</code></td>
+  <td><code>chdir(path)</code></td>
+</tr>
+<tr>
+  <td><code>entries</code></td>
+  <td><code>entries(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>files</code></td>
+  <td><code>files(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>dirs</code></td>
+  <td><code>dirs(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>mkdir</code></td>
+  <td><code>mkdir(path, parents = false)</code></td>
+</tr>
+<tr>
+  <td><code>rmdir</code></td>
+  <td><code>rmdir(path, recursive = false)</code></td>
+</tr>
+<tr>
+  <td><code>empty</code></td>
+  <td><code>empty(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>glob</code></td>
+  <td><code>glob(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>walk</code></td>
+  <td><code>walk(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>join</code></td>
+  <td><code>join(parts)</code></td>
+</tr>
+<tr>
+  <td><code>absolute</code></td>
+  <td><code>absolute(path)</code></td>
+</tr>
+<tr>
+  <td><code>expand</code></td>
+  <td><code>expand(path)</code></td>
+</tr>
+<tr>
+  <td><code>basename</code></td>
+  <td><code>basename(path)</code></td>
+</tr>
+<tr>
+  <td><code>dirname</code></td>
+  <td><code>dirname(path)</code></td>
+</tr>
+<tr>
+  <td><code>extension</code></td>
+  <td><code>extension(path)</code></td>
+</tr>
+<tr>
+  <td><code>stem</code></td>
+  <td><code>stem(path)</code></td>
+</tr>
+<tr>
+  <td><code>link</code></td>
+  <td><code>link(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>symlink</code></td>
+  <td><code>symlink(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>open</code></td>
+  <td><code>open(path, mode = &quot;r&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>console</code></td>
+  <td><code>console(prompt = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>read_json</code></td>
+  <td><code>read_json(path)</code></td>
+</tr>
+<tr>
+  <td><code>write_json</code></td>
+  <td><code>write_json(path, value)</code></td>
+</tr>
+<tr>
+  <td><code>is_dir</code></td>
+  <td><code>is_dir(path)</code></td>
+</tr>
+<tr>
+  <td><code>is_file</code></td>
+  <td><code>is_file(path)</code></td>
+</tr>
+<tr>
+  <td><code>ensure_dir</code></td>
+  <td><code>ensure_dir(path)</code></td>
+</tr>
+<tr>
+  <td><code>ensure_parent</code></td>
+  <td><code>ensure_parent(path)</code></td>
+</tr>
+<tr>
+  <td><code>read_or</code></td>
+  <td><code>read_or(path, fallback = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>write_if_changed</code></td>
+  <td><code>write_if_changed(path, content)</code></td>
+</tr>
+<tr>
+  <td><code>append_line</code></td>
+  <td><code>append_line(path, line)</code></td>
+</tr>
+<tr>
+  <td><code>touch_if_missing</code></td>
+  <td><code>touch_if_missing(path)</code></td>
+</tr>
+<tr>
+  <td><code>remove_if_exists</code></td>
+  <td><code>remove_if_exists(path)</code></td>
+</tr>
+<tr>
+  <td><code>copy_if_exists</code></td>
+  <td><code>copy_if_exists(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>move_if_exists</code></td>
+  <td><code>move_if_exists(source, destination)</code></td>
+</tr>
+<tr>
+  <td><code>read_json_or</code></td>
+  <td><code>read_json_or(path, fallback = nil)</code></td>
+</tr>
+<tr>
+  <td><code>write_json_pretty</code></td>
+  <td><code>write_json_pretty(path, value)</code></td>
+</tr>
+<tr>
+  <td><code>list_files</code></td>
+  <td><code>list_files(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>list_dirs</code></td>
+  <td><code>list_dirs(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>file_count</code></td>
+  <td><code>file_count(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>dir_count</code></td>
+  <td><code>dir_count(path = &quot;.&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>with_extension</code></td>
+  <td><code>with_extension(path, extension_value)</code></td>
+</tr>
+<tr>
+  <td><code>is_absolute</code></td>
+  <td><code>is_absolute(path)</code></td>
+</tr>
+<tr>
+  <td><code>is_hidden</code></td>
+  <td><code>is_hidden(path)</code></td>
+</tr>
+<tr>
+  <td><code>same_path</code></td>
+  <td><code>same_path(left, right)</code></td>
+</tr>
+<tr>
+  <td><code>read_lines_or</code></td>
+  <td><code>read_lines_or(path, fallback = [])</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes-and-methods">Classes and methods</h2>
+<h3 id="io"><code>IO</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>initialize</code></td>
+  <td><code>initialize(path = nil, mode = &quot;r&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>print</code></td>
+  <td><code>print(values)</code></td>
+</tr>
+<tr>
+  <td><code>write</code></td>
+  <td><code>write(text)</code></td>
+</tr>
+<tr>
+  <td><code>read</code></td>
+  <td><code>read(prompt = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>ask</code></td>
+  <td><code>ask(prompt)</code></td>
+</tr>
+<tr>
+  <td><code>seek</code></td>
+  <td><code>seek(offset, whence = 0)</code></td>
+</tr>
+<tr>
+  <td><code>pos</code></td>
+  <td><code>pos()</code></td>
+</tr>
+<tr>
+  <td><code>rewind</code></td>
+  <td><code>rewind()</code></td>
+</tr>
+<tr>
+  <td><code>eof</code></td>
+  <td><code>eof()</code></td>
+</tr>
+<tr>
+  <td><code>fileno</code></td>
+  <td><code>fileno()</code></td>
+</tr>
+<tr>
+  <td><code>close</code></td>
+  <td><code>close()</code></td>
+</tr>
+<tr>
+  <td><code>pipe</code></td>
+  <td><code>pipe()</code></td>
+</tr>
+<tr>
+  <td><code>popen</code></td>
+  <td><code>popen(command)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contract-and-error-handling">Contract and error handling</h2>
+<p>Validate inputs at the application boundary. Runtime errors are reported as Lucy exceptions or native errors; exact messages may vary by platform and build. Do not assume network access, process privileges, filesystem permissions, or optional native dependencies are available.</p>
+<h2 id="source-of-truth">Source of truth</h2>
+<p>Implementation: <a href="https://github.com/nimacpp/lucy/blob/main/stdlib/fs.lucy"><code>stdlib/fs.lucy</code></a>. The signatures above are indexed from the current source file. Behavior is ultimately defined by implementation and regression tests; if you change the source API, regenerate this page and add tests for the new contract.</p>
+<h2 id="project-and-application-helpers">Project and application helpers</h2>
+<p>The following additive helpers are implemented in Lucy and do not introduce new native runtime primitives.</p>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>is_dir(path)</code></td>
+  <td>True when the path is a directory.</td>
+</tr>
+<tr>
+  <td><code>is_file(path)</code></td>
+  <td>True when the path is a regular file.</td>
+</tr>
+<tr>
+  <td><code>ensure_dir(path)</code></td>
+  <td>Create a directory tree if absent; return its absolute path.</td>
+</tr>
+<tr>
+  <td><code>ensure_parent(path)</code></td>
+  <td>Create the parent directory for a file path; return the absolute file path.</td>
+</tr>
+<tr>
+  <td><code>read_or(path, fallback = &quot;&quot;)</code></td>
+  <td>Read a file or return a fallback when it is absent.</td>
+</tr>
+<tr>
+  <td><code>write_if_changed(path, content)</code></td>
+  <td>Write only when contents differ; return whether a write occurred.</td>
+</tr>
+<tr>
+  <td><code>append_line(path, line)</code></td>
+  <td>Append one newline-terminated line.</td>
+</tr>
+<tr>
+  <td><code>touch_if_missing(path)</code></td>
+  <td>Create a missing file; return whether it was created.</td>
+</tr>
+<tr>
+  <td><code>remove_if_exists(path)</code></td>
+  <td>Remove a file or directory tree if present.</td>
+</tr>
+<tr>
+  <td><code>copy_if_exists(source, destination)</code></td>
+  <td>Copy an existing regular file; return false when absent.</td>
+</tr>
+<tr>
+  <td><code>move_if_exists(source, destination)</code></td>
+  <td>Move an existing entry; return false when absent.</td>
+</tr>
+<tr>
+  <td><code>read_json_or(path, fallback = nil)</code></td>
+  <td>Parse JSON or return fallback on missing/invalid input.</td>
+</tr>
+<tr>
+  <td><code>write_json_pretty(path, value)</code></td>
+  <td>Write pretty JSON followed by a newline.</td>
+</tr>
+<tr>
+  <td><code>list_files(path = &quot;.&quot;)</code></td>
+  <td>Return sorted direct child file names.</td>
+</tr>
+<tr>
+  <td><code>list_dirs(path = &quot;.&quot;)</code></td>
+  <td>Return sorted direct child directory names.</td>
+</tr>
+<tr>
+  <td><code>file_count(path = &quot;.&quot;)</code></td>
+  <td>Count direct child files.</td>
+</tr>
+<tr>
+  <td><code>dir_count(path = &quot;.&quot;)</code></td>
+  <td>Count direct child directories.</td>
+</tr>
+<tr>
+  <td><code>with_extension(path, extension)</code></td>
+  <td>Replace the filename extension.</td>
+</tr>
+<tr>
+  <td><code>is_absolute(path)</code></td>
+  <td>Detect POSIX-rooted and Windows-drive paths.</td>
+</tr>
+<tr>
+  <td><code>is_hidden(path)</code></td>
+  <td>Check whether the basename begins with <code>.</code>.</td>
+</tr>
+<tr>
+  <td><code>same_path(left, right)</code></td>
+  <td>Compare absolute path spellings.</td>
+</tr>
+<tr>
+  <td><code>read_lines_or(path, fallback = [])</code></td>
+  <td>Read lines or return fallback when absent.</td>
+</tr>
+</tbody>
+</table>
+<p><code>read_json_or</code> intentionally treats parse failures as fallback. Use <code>read_json</code> when malformed JSON must be reported.</p>
+</article><div class="docs-page-nav"><a href="flow.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="http.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../../version.js"></script><script src="../../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../../lucy-highlight.js"></script><script src="../../docs-complete.js"></script></body></html>

@@ -1,0 +1,314 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy"><title>Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="active">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-developing-debugging-testing-and-releasing-lucy">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</h1>
+<p>This is the maintainer/developer reference. It combines the implementation architecture, native extension API, build process, tests, migration/versioning policy, limits, and contribution workflow.</p>
+<h2 id="1-source-architecture">1. Source architecture</h2>
+<p>The runtime pipeline is:</p>
+<pre><code class="language-text">source
+  -&gt; lexer
+  -&gt; tokens
+  -&gt; parser
+  -&gt; AST
+  -&gt; interpreter/runtime
+       |-- environments and values
+       |-- builtins and object dispatch
+       |-- standard-library loading
+       |-- modules/packages
+       |-- REPL
+       `-- native extensions
+</code></pre>
+<h3 id="important-source-files">Important source files</h3>
+<table>
+<thead>
+<tr>
+  <th>Path</th>
+  <th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>src/lexer.cpp</code></td>
+  <td>lexical analysis and literal validation</td>
+</tr>
+<tr>
+  <td><code>src/parser.cpp</code></td>
+  <td>recursive-descent parsing and AST construction</td>
+</tr>
+<tr>
+  <td><code>src/runtime.cpp</code></td>
+  <td>interpreter, environments, calls, dispatch, builtins, modules, REPL integration</td>
+</tr>
+<tr>
+  <td><code>src/value.cpp</code></td>
+  <td>runtime value representation/operations</td>
+</tr>
+<tr>
+  <td><code>src/phase2.cpp</code></td>
+  <td>native/library support</td>
+</tr>
+<tr>
+  <td><code>src/stdlib_native.cpp</code></td>
+  <td>native standard-library facilities</td>
+</tr>
+<tr>
+  <td><code>src/repl.cpp</code></td>
+  <td>cross-platform line editor and completion</td>
+</tr>
+<tr>
+  <td><code>src/extension.cpp</code></td>
+  <td>shared-library extension loading</td>
+</tr>
+<tr>
+  <td><code>src/main.cpp</code></td>
+  <td>CLI entry point</td>
+</tr>
+<tr>
+  <td><code>include/lucy/*.hpp</code></td>
+  <td>public/runtime C++ interfaces</td>
+</tr>
+<tr>
+  <td><code>stdlib/*.lucy</code></td>
+  <td>user-facing Pure-Lucy standard library</td>
+</tr>
+<tr>
+  <td><code>tests/*.lucy</code></td>
+  <td>language/runtime regression programs</td>
+</tr>
+<tr>
+  <td><code>tests/repl_completion_test.cpp</code></td>
+  <td>runtime completion regression test</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-build-requirements">2. Build requirements</h2>
+<p>Lucy is a C++17/CMake project.</p>
+<p>Basic build:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+</code></pre>
+<p>Optional SQLite:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DLUCY_ENABLE_SQLITE=ON
+cmake --build build
+</code></pre>
+<p>On Windows with MinGW:</p>
+<pre><code class="language-text">cmake -S . -B build -G &quot;MinGW Makefiles&quot; -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+</code></pre>
+<p>Use a fresh build directory when switching generators or moving the source tree. CMake caches absolute paths and should not be reused across incompatible environments.</p>
+<h2 id="3-language-implementation-workflow">3. Language implementation workflow</h2>
+<p>A language feature normally crosses several layers:</p>
+<ol>
+<li><strong>Lexer:</strong> token spelling and literal validation.</li>
+<li><strong>Parser:</strong> grammar/AST construction.</li>
+<li><strong>AST/runtime:</strong> execution semantics.</li>
+<li><strong>Tests:</strong> positive and negative behavior.</li>
+<li><strong>Documentation:</strong> syntax, semantics, examples, and limitations.</li>
+<li><strong>REPL completion/help:</strong> discoverability if the feature is user-facing.</li>
+</ol>
+<p>Do not add documentation for a syntax form before the parser/runtime can execute it.</p>
+<h2 id="4-runtime-value-model">4. Runtime value model</h2>
+<p><code>Value</code> is a tagged C++ variant containing:</p>
+<pre><code class="language-text">Nil
+bool
+long long
+ double
+string
+ArrayPtr
+MapPtr
+FunctionPtr
+ClassPtr
+InstancePtr
+NativePtr
+</code></pre>
+<p>Arrays and maps use C++ heap-backed containers. Functions/classes/instances use shared ownership. The public language does not expose a garbage-collector API.</p>
+<h2 id="5-environments-and-closures">5. Environments and closures</h2>
+<p><code>Environment</code> stores named entries with:</p>
+<ul>
+<li><code>Value</code>;</li>
+<li>constant flag;</li>
+<li>optional declared type name;</li>
+<li>parent environment.</li>
+</ul>
+<p>Closures capture an environment chain. Assignments walk that chain according to runtime binding rules.</p>
+<h2 id="6-built-in-type-extension">6. Built-in type extension</h2>
+<p>The runtime creates builtin class objects for:</p>
+<pre><code class="language-text">Object Nil Bool Int Double Number String Array Map
+Function Class Instance Native
+</code></pre>
+<p>A Lucy declaration such as:</p>
+<pre><code class="language-lucy">class String {
+    func shout() {
+        return self.upper() + &quot;!&quot;
+    }
+}
+</code></pre>
+<p>extends the existing builtin class instead of replacing the primitive representation.</p>
+<p>This is intentionally public language behavior; application code should not depend on an internal <code>runtime.extend_type(...)</code> API.</p>
+<h2 id="7-standard-library-loading">7. Standard-library loading</h2>
+<p>At interpreter startup, the runtime attempts to load the shipped standard modules:</p>
+<pre><code class="language-text">app crypto data flow fs http math random repl result runtime set sqlite system text time
+</code></pre>
+<p>SQLite is optional. Other standard-library failures are fatal because a normal Lucy installation is expected to contain the shipped library.</p>
+<h2 id="8-modulepackage-resolution">8. Module/package resolution</h2>
+<p>The runtime searches project/install locations and <code>LUCY_PATH</code> for libraries/extensions. User packages conventionally expose <code>src/init.lucy</code>.</p>
+<p><code>LUCY_PATH</code> is a Lucy installation/project root rather than an arbitrary list syntax. Extension search roots are derived from it and the executable/project layout.</p>
+<p><code>lucy.toml</code> is currently project/package metadata used by repository tooling and project-root discovery; do not assume a remote registry or transitive dependency resolver is active. The 2.0.7 specifications define future contracts without claiming implementation.</p>
+<h2 id="9-repl-architecture">9. REPL architecture</h2>
+<p><code>src/repl.cpp</code> provides:</p>
+<ul>
+<li>platform-specific terminal mode;</li>
+<li>line editing;</li>
+<li>history;</li>
+<li>cursor movement;</li>
+<li>multiline input support through runtime brace-depth tracking;</li>
+<li>runtime-driven completion.</li>
+</ul>
+<p>Completion deliberately resolves the live environment and member structure instead of maintaining a second list of every standard-library function. This is a critical maintainability rule.</p>
+<p>When adding a new public module function, completion should discover it automatically if it is represented as a public module member.</p>
+<h2 id="10-native-extension-api">10. Native extension API</h2>
+<p>The public extension header is <code>include/lucy/extension.hpp</code>.</p>
+<p>The exported entry point is:</p>
+<pre><code class="language-cpp">extern &quot;C&quot; bool lucy_extension_init(lucy::ExtensionAPI&amp; api);
+</code></pre>
+<p>The current API version is <code>1</code>.</p>
+<p>An extension can register a module and expose functions/constants/native objects through <code>ExtensionAPI</code>.</p>
+<h3 id="example-shape">Example shape</h3>
+<pre><code class="language-cpp">#include &quot;lucy/extension.hpp&quot;
+
+extern &quot;C&quot; bool lucy_extension_init(lucy::ExtensionAPI&amp; api) {
+    api.module(&quot;example&quot;)
+        .function(&quot;answer&quot;, [](const std::vector&lt;lucy::Value&gt;&amp;) {
+            return lucy::Value(42);
+        });
+    return true;
+}
+</code></pre>
+<p>The exact builder methods are defined by the installed <code>extension.hpp</code>; the header is authoritative if this example ever diverges.</p>
+<h3 id="abi-policy">ABI policy</h3>
+<p>API versioning exists, but Lucy 2.0.7 does not promise that arbitrary extensions compiled against one runtime build remain binary-compatible forever. Rebuild extensions when the runtime/API changes.</p>
+<h3 id="platform-names">Platform names</h3>
+<ul>
+<li>Windows: <code>lucy_&lt;module&gt;.dll</code></li>
+<li>Linux: <code>liblucy_&lt;module&gt;.so</code> or <code>lucy_&lt;module&gt;.so</code></li>
+<li>macOS: <code>liblucy_&lt;module&gt;.dylib</code> or <code>lucy_&lt;module&gt;.dylib</code></li>
+</ul>
+<h2 id="11-optional-sqlite">11. Optional SQLite</h2>
+<p>CMake option:</p>
+<pre><code class="language-text">LUCY_ENABLE_SQLITE=ON|OFF
+</code></pre>
+<p>The default build can omit SQLite. The runtime then reports a clear <code>SQLiteError</code> rather than making the entire interpreter unbuildable.</p>
+<h2 id="12-testing-strategy">12. Testing strategy</h2>
+<p>Run the complete suite after source changes:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DLUCY_ENABLE_SQLITE=OFF
+cmake --build build
+ctest --test-dir build --output-on-failure
+</code></pre>
+<p>Language tests are intentionally small Lucy programs. Native behavior that cannot be expressed safely in Lucy can use a C++ test.</p>
+<h3 id="regression-test-rule">Regression-test rule</h3>
+<p>For every bug fix, prefer a test that fails on the old behavior and passes on the fixed behavior.</p>
+<p>For syntax features, test at least:</p>
+<ul>
+<li>valid minimal form;</li>
+<li>valid nested form;</li>
+<li>multiline form where relevant;</li>
+<li>invalid form and its error category;</li>
+<li>interaction with existing precedence/scope rules.</li>
+</ul>
+<p>For runtime features, test:</p>
+<ul>
+<li>normal path;</li>
+<li>boundary values;</li>
+<li>type errors;</li>
+<li>error propagation;</li>
+<li>interaction with modules/closures where relevant.</li>
+</ul>
+<h2 id="13-current-test-coverage-areas">13. Current test coverage areas</h2>
+<p>The repository includes coverage for:</p>
+<ul>
+<li>legacy 1.1.1 behavior;</li>
+<li>2.0 syntax;</li>
+<li>type errors;</li>
+<li>structs;</li>
+<li>language regressions;</li>
+<li>hexadecimal/binary validation;</li>
+<li>standard-library imports;</li>
+<li>builtin type extension and automatic standard modules;</li>
+<li>ranges and indexed <code>for</code>;</li>
+<li>numeric base conversions;</li>
+<li>lexical rules;</li>
+<li>semantics;</li>
+<li>REPL completion.</li>
+</ul>
+<p>The numbered filenames are historical test organization, not a public test API.</p>
+<h2 id="14-versioning">14. Versioning</h2>
+<p>Lucy uses semantic versioning intent:</p>
+<ul>
+<li>patch: compatible fixes/documentation/regressions;</li>
+<li>minor: backward-compatible features;</li>
+<li>major: syntax/semantic/API breaks.</li>
+</ul>
+<p>The 2.0 line is a major syntax/semantic generation. New documentation should not mix 1.x syntax into 2.0 examples.</p>
+<p>Deprecations should be documented before removal where practical. A release must update the language reference, standard-library reference, changelog, tests, and migration notes when a user-visible feature changes.</p>
+<h2 id="15-migration-policy-1x-to-20">15. Migration policy: 1.x to 2.0</h2>
+<p>The major migration themes are:</p>
+<ul>
+<li><code>end</code>-terminated blocks -&gt; brace-delimited blocks;</li>
+<li>older output conventions -&gt; <code>print</code> / <code>println</code>;</li>
+<li>older filesystem/OS namespace layouts -&gt; <code>fs</code> / <code>system</code>;</li>
+<li>expression lambdas -&gt; <code>lambda ... =&gt; ...</code>;</li>
+<li>runtime-enforced type contracts;</li>
+<li>automatic loading of shipped standard modules;</li>
+<li>quoted map keys;</li>
+<li>ranges and modern collection operations;</li>
+<li>built-in type extension;</li>
+<li>package/native-extension support.</li>
+</ul>
+<p>Old examples should be migrated semantically rather than mechanically. <code>HISTORY_AND_MIGRATION.md</code> remains useful as historical background, but the 2.0 language/reference documents are the current authority.</p>
+<h2 id="16-release-checklist">16. Release checklist</h2>
+<p>Before publishing a Lucy release:</p>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Update version constants and visible version strings.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Run a clean configure/build from an empty build directory.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Run the full CTest suite.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify standard-library files are packaged.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify docs are packaged.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify the CLI <code>--version</code> output.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify REPL startup and completion.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify Windows, Linux, and macOS-specific code paths where available.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Verify optional SQLite behavior for both enabled and disabled builds.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Update changelog and migration information.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Build release archives/installers without stale build caches.</li>
+</ul>
+<h2 id="17-documentation-maintenance-rule">17. Documentation maintenance rule</h2>
+<p>Documentation is organized around user tasks rather than implementation file count. The intended stable set is:</p>
+<ul>
+<li><code>README.md</code></li>
+<li><code>GETTING_STARTED.md</code></li>
+<li><code>LANGUAGE_REFERENCE.md</code></li>
+<li><code>STANDARD_LIBRARY.md</code></li>
+<li><code>REPL_AND_TOOLING.md</code></li>
+<li><code>DEVELOPING_LUCY.md</code></li>
+<li><code>CHANGELOG.md</code></li>
+</ul>
+<p>Small topic documents should only exist when they serve a genuinely independent audience or protocol. Otherwise, merge them into the appropriate canonical document so the same API is not described in multiple conflicting places.</p>
+<h2 id="18-architecture-decision-rule">18. Architecture decision rule</h2>
+<p>When adding functionality, choose the smallest correct layer:</p>
+<ul>
+<li>language syntax -&gt; lexer/parser/runtime;</li>
+<li>reusable pure language behavior -&gt; <code>stdlib/*.lucy</code>;</li>
+<li>OS/external-library primitive -&gt; native runtime/extension;</li>
+<li>user-facing discoverability -&gt; standard-library docs + REPL help/completion;</li>
+<li>regression -&gt; test suite.</li>
+</ul>
+<p>Avoid native wrappers for behavior that can be implemented cleanly in Lucy. Avoid hidden runtime APIs when a public Lucy feature can express the same operation.</p>
+<h2 id="release-verification-for-202">Release verification for 2.0.2</h2>
+<p>Use the reproducible verification script from a clean checkout:</p>
+<pre><code class="language-sh">./scripts/verify_release.sh
+</code></pre>
+<p>The script configures a Release build with SQLite enabled, compiles the runtime and CLI, runs CTest, and executes the JSON configuration, CSV report, and SQLite task-store projects. It removes generated fixture outputs after success. Set <code>BUILD_DIR</code> to choose a build directory. The script currently targets a POSIX shell; Windows validation requires a separate native Windows build/test job.</p>
+<p>For the source-derived per-module API pages, run:</p>
+<pre><code class="language-sh">./build/paw docs
+</code></pre>
+<p>Review the generated diff, especially after changing public method names or signatures. The generator indexes pure-Lucy declarations; native builtins and runtime-only methods still require the consolidated API inventory and behavior tests.</p>
+<h2 id="documentation-example-verification">Documentation example verification</h2>
+<p><code>scripts/verify_release.sh</code> runs all standalone <code>examples/*.lucy</code> programs and then executes each per-module quick example in <code>docs/stdlib/*.md</code> using <code>tools/paw/commands/docs-check.lucy</code>. Network-dependent <code>http</code> quick examples are explicitly skipped rather than treated as reliable offline tests. Run the checker directly with <code>./build/paw docs-check /path/to/lucy</code>.</p>
+<h2 id="207-ecosystem-specificationsnnthe-remote-registry-transitive-resolver-and-lsp-contracts-are-documented-in-docspackage_registry_specmd-docsdependency_resolver_specmd-and-docslsp_specmd-their-status-is-specification-only-in-this-archive-follow-docsdebugging_and_diagnosticsmd-and-docsregression_and_release_processmd-for-the-stabilization-workflown">2.0.7 ecosystem specifications\n\nThe remote registry, transitive resolver, and LSP contracts are documented in <code>docs/PACKAGE_REGISTRY_SPEC.md</code>, <code>docs/DEPENDENCY_RESOLVER_SPEC.md</code>, and <code>docs/LSP_SPEC.md</code>. Their status is specification-only in this archive. Follow <code>docs/DEBUGGING_AND_DIAGNOSTICS.md</code> and <code>docs/REGRESSION_AND_RELEASE_PROCESS.md</code> for the stabilization workflow.\n</h2>
+</article><div class="docs-page-nav"><a href="dependency_resolver_spec.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="ecosystem_2_0_7_status.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

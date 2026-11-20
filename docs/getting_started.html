@@ -1,0 +1,213 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — Getting Started"><title>Lucy 2.0.7 — Getting Started · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="active">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — Getting Started</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-getting-started">Lucy 2.0.7 — Getting Started</h1>
+<p>This is the practical tutorial. It assumes no previous Lucy knowledge and deliberately uses complete, runnable examples.</p>
+<h2 id="1-installation-and-first-run">1. Installation and first run</h2>
+<p>Build Lucy from the repository with CMake and C++17:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+</code></pre>
+<p>Optional SQLite support:</p>
+<pre><code class="language-text">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DLUCY_ENABLE_SQLITE=ON
+</code></pre>
+<p>Run a program:</p>
+<pre><code class="language-text">lucy hello.lucy
+</code></pre>
+<p>Run the interactive REPL:</p>
+<pre><code class="language-text">lucy
+</code></pre>
+<p>The exact executable location depends on the build/install layout. See <code>REPL_AND_TOOLING.md</code> for CLI and platform details.</p>
+<h2 id="2-your-first-program">2. Your first program</h2>
+<pre><code class="language-lucy">func square(value: Number) -&gt; Number {
+    return value * value
+}
+
+let values = [1, 2, 3, 4]
+let squares = values.map(lambda value =&gt; square(value))
+
+println squares
+</code></pre>
+<p>Lucy functions are first-class values, arrays provide functional methods, and lambdas use an expression-body syntax.</p>
+<h2 id="3-variables-and-constants">3. Variables and constants</h2>
+<pre><code class="language-lucy">let name = &quot;Lucy&quot;
+var counter = 0
+const language_version = &quot;2.0.7&quot;
+
+counter += 1
+println name
+println counter
+</code></pre>
+<p><code>let</code> and <code>const</code> create immutable bindings. <code>var</code> creates a mutable binding and can be reassigned.</p>
+<p>An uninitialized declaration receives <code>nil</code>:</p>
+<pre><code class="language-lucy">let value
+println value == nil
+</code></pre>
+<h2 id="4-type-contracts">4. Type contracts</h2>
+<p>Annotations are runtime contracts, not compile-time-only comments:</p>
+<pre><code class="language-lucy">func add(a: Int, b: Int) -&gt; Int {
+    return a + b
+}
+
+println add(2, 3)
+</code></pre>
+<p>Passing the wrong type or returning the wrong type raises <code>TypeError</code>.</p>
+<p>Available annotation names include <code>Nil</code>, <code>Bool</code>, <code>Int</code>, <code>Double</code>, <code>Number</code>, <code>String</code>, <code>Array</code>, <code>Map</code>, <code>Function</code>, <code>Class</code>, <code>Instance</code>, <code>Native</code>, and <code>Any</code>.</p>
+<h2 id="5-strings">5. Strings</h2>
+<p>Both quote styles produce strings:</p>
+<pre><code class="language-lucy">let name = &quot;Lucy&quot;
+let other = 'Lucy'
+println &quot;Hello, $name&quot;
+println name.upper()
+println name.replace(&quot;Lucy&quot;, &quot;Lucy 2&quot;)
+</code></pre>
+<p>String interpolation supports <code>$name</code>, dotted member paths such as <code>$user.name</code>, and full expressions inside <code>${...}</code>. Use <code>${system.platform()}</code> when calling a function; <code>$system.platform</code> refers to the function value itself. Examples: <code>println &quot;Hello, $name&quot;</code> and <code>println &quot;Platform: ${system.platform()}&quot;</code>.</p>
+<h2 id="6-arrays">6. Arrays</h2>
+<pre><code class="language-lucy">let values = [10, 20, 30]
+values.push 40
+
+println values[0]
+println values[-1]
+println values[1..2]
+println values.map(lambda x =&gt; x * 2)
+println values.filter(lambda x =&gt; x &gt; 20)
+</code></pre>
+<p>Indexes start at zero. Negative indexes count from the end. <code>a..b</code> is inclusive; <code>a...b</code> has an exclusive end.</p>
+<h2 id="7-maps">7. Maps</h2>
+<pre><code class="language-lucy">let user = {
+    &quot;name&quot;: &quot;Lucy&quot;,
+    &quot;version&quot;: 2
+}
+
+println user[&quot;name&quot;]
+user.set &quot;version&quot;, 3
+println user.get(&quot;version&quot;)
+</code></pre>
+<p>Map keys are strings in the current runtime. Use quoted keys when the spelling is not a valid identifier.</p>
+<h2 id="8-conditions-and-loops">8. Conditions and loops</h2>
+<pre><code class="language-lucy">if user.has(&quot;name&quot;) {
+    println &quot;named user&quot;
+} else {
+    println &quot;anonymous&quot;
+}
+
+for value, index in [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] {
+    println &quot;$index -&gt; $value&quot;
+}
+
+let n = 0
+while n &lt; 3 {
+    println n
+    n += 1
+}
+</code></pre>
+<p>Post-test loops use <code>repeat</code> or <code>do</code>:</p>
+<pre><code class="language-lucy">repeat {
+    n += 1
+} while n &lt; 5
+</code></pre>
+<p>The body executes at least once.</p>
+<h2 id="9-functions-defaults-named-arguments-and-variadics">9. Functions, defaults, named arguments, and variadics</h2>
+<pre><code class="language-lucy">func connect(host: String, port: Int = 80) -&gt; String {
+    return &quot;$host:$port&quot;
+}
+
+println connect(&quot;localhost&quot;)
+println connect(host: &quot;example.com&quot;, port: 443)
+</code></pre>
+<p>Variadic parameters use <code>*name</code> and must be last:</p>
+<pre><code class="language-lucy">func collect(first, *rest) {
+    return [first, rest]
+}
+
+println collect(1, 2, 3, 4)
+</code></pre>
+<p>Defaults are evaluated at call time. Positional arguments cannot appear after a named argument.</p>
+<h2 id="10-classes">10. Classes</h2>
+<pre><code class="language-lucy">class User {
+    func initialize(name: String) {
+        self.name = name
+    }
+
+    func greet() {
+        return &quot;Hello, $self.name&quot;
+    }
+}
+
+let user = User.new(&quot;Lucy&quot;)
+println user.greet()
+</code></pre>
+<p>Inheritance is single-parent:</p>
+<pre><code class="language-lucy">class Admin &lt; User {
+    func is_admin() -&gt; Bool {
+        return true
+    }
+}
+</code></pre>
+<p>Lucy supports <code>public</code>, <code>protected</code>, and <code>private</code> visibility, plus static methods and single-parent inheritance. Interfaces, mixins, and multiple inheritance are not currently part of the object model.</p>
+<h2 id="11-structs">11. Structs</h2>
+<p>Structs use the same runtime object machinery as classes but are marked as struct classes:</p>
+<pre><code class="language-lucy">struct Point {
+    x: Int
+    y: Int
+}
+
+let p = Point.new(10, 20)
+println p.x
+</code></pre>
+<p>They are not C++-style stack value types.</p>
+<h2 id="12-modules">12. Modules</h2>
+<p>The shipped standard modules are loaded automatically. For example:</p>
+<pre><code class="language-lucy">println fs.read(&quot;hello.txt&quot;)
+println &quot;hello&quot;.upper()
+println system.platform()
+println time.now()
+</code></pre>
+<p>You still use <code>import</code> for user modules and packages:</p>
+<pre><code class="language-lucy">import tools
+import tools as t
+from tools import helper
+</code></pre>
+<h2 id="13-file-and-system-work">13. File and system work</h2>
+<pre><code class="language-lucy">fs.write(&quot;notes.txt&quot;, &quot;hello&quot;)
+let content = fs.read(&quot;notes.txt&quot;)
+println content
+
+println system.cwd()
+println system.platform()
+println system.env(&quot;PATH&quot;)
+</code></pre>
+<p>For command execution, use the <code>system</code> module or backtick expressions as described in the language and standard-library references.</p>
+<h2 id="14-error-handling">14. Error handling</h2>
+<pre><code class="language-lucy">try {
+    println int(&quot;not-a-number&quot;)
+} catch ValueError as error {
+    println &quot;conversion failed: $error&quot;
+} finally {
+    println &quot;finished&quot;
+}
+</code></pre>
+<p>The caught value is currently the textual error message; a public exception-object hierarchy is not part of the 2.0.7 runtime contract.</p>
+<h2 id="15-discovering-lucy-interactively">15. Discovering Lucy interactively</h2>
+<p>Start with:</p>
+<pre><code class="language-text">lucy&gt; :help
+lucy&gt; help()
+lucy&gt; help &quot;modules&quot;
+</code></pre>
+<p>Use Tab aggressively:</p>
+<pre><code class="language-text">lucy&gt; fs.&lt;Tab&gt;
+lucy&gt; text.u&lt;Tab&gt;
+lucy&gt; values.&lt;Tab&gt;
+</code></pre>
+<p>For multiple matches, the first Tab completes the shared prefix if possible, the second Tab displays candidates, and subsequent Tabs cycle through them.</p>
+<p>Useful inspection commands include <code>:vars</code> (user-defined globals), <code>:vars --all</code> (including runtime bindings), <code>:functions</code>, <code>:modules</code>, <code>:where fs</code>, and <code>:methods String</code>. In a Lucy script, <code>modules_info()</code> returns discovered module names mapped to their source paths.</p>
+<p>Use <code>repl.topics()</code> to see the built-in help topics and <code>repl.commands()</code> for REPL commands.</p>
+<h2 id="16-recommended-learning-order">16. Recommended learning order</h2>
+<ol>
+<li>Variables, values, strings, arrays, and maps.</li>
+<li>Conditions and loops.</li>
+<li>Functions, defaults, named arguments, and lambdas.</li>
+<li>Classes and built-in type extension.</li>
+<li>Modules and the standard library.</li>
+<li>Errors and filesystem/system APIs.</li>
+<li>Packages and native extensions.</li>
+</ol>
+<p>The complete semantics are in <code>LANGUAGE_REFERENCE.md</code>; do not infer a feature from an example alone.</p>
+</article><div class="docs-page-nav"><a href="environment_and_installation.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="history_and_migration.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

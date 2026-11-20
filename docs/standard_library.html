@@ -1,0 +1,921 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — Standard Library Reference"><title>Lucy 2.0.7 — Standard Library Reference · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="active">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — Standard Library Reference</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-standard-library-reference">Lucy 2.0.7 — Standard Library Reference</h1>
+<p>This is the canonical user-facing standard-library reference. Every shipped module is covered here, including the public functions/classes, common usage patterns, return conventions, and important platform/build notes.</p>
+<p>The final section contains the complete source-derived API inventory. That inventory is intentionally exhaustive: if a public function or class is shipped in <code>stdlib/*.lucy</code>, it should appear there.</p>
+<h2 id="1-standard-library-model">1. Standard-library model</h2>
+<p>Lucy 2.0.7 automatically loads these shipped modules:</p>
+<pre><code class="language-text">app crypto data flow fs http math random repl result runtime set sqlite system text time
+</code></pre>
+<p>Therefore this works without an explicit import:</p>
+<pre><code class="language-lucy">println fs.read(&quot;README.md&quot;)
+println &quot;hello&quot;.upper()
+println system.platform()
+</code></pre>
+<p>Imports remain useful for user modules, packages, and explicit selective bindings:</p>
+<pre><code class="language-lucy">import text as t
+from fs import read
+</code></pre>
+<p>Public APIs are intentionally shallow. Prefer <code>fs.read(...)</code> over deep namespace chains.</p>
+<p>Names beginning with <code>_</code> or <code>__</code> are implementation details unless a public reference explicitly lists them.</p>
+<hr />
+<h1 id="2-app-command-line-applications-and-utilities">2. <code>app</code> — command-line applications and utilities</h1>
+<p><code>app</code> contains application-level helpers written in Lucy.</p>
+<h3 id="optionparser">OptionParser</h3>
+<p>Use <code>OptionParser</code> for simple command-line option parsing:</p>
+<pre><code class="language-lucy">let parser = app.parser()
+parser.banner(&quot;Lucy example&quot;)
+parser.on(&quot;name&quot;, &quot;user name&quot;, &quot;Lucy&quot;)
+let options = parser.parse(ARGV)
+println options
+</code></pre>
+<p>Important methods include <code>banner</code>, <code>separator</code>, <code>version</code>, <code>program_name</code>, <code>on</code>, <code>parse</code>, <code>help</code>, <code>summarize</code>, and <code>abort</code>.</p>
+<h3 id="logger">Logger</h3>
+<pre><code class="language-lucy">let log = app.logger()
+log.info(&quot;server started&quot;)
+log.warn(&quot;configuration is incomplete&quot;)
+</code></pre>
+<p>Levels are controlled with <code>level</code>, <code>set_level</code>, and <code>level_set</code>. Predicate methods such as <code>debug?()</code> and <code>error?()</code> can be used before expensive log construction.</p>
+<h3 id="benchmark">Benchmark</h3>
+<pre><code class="language-lucy">func work() {
+    return 1 + 1
+}
+let elapsed = app.benchmark().realtime(lambda() =&gt; work())
+println elapsed
+</code></pre>
+<p><code>Benchmark.realtime</code> and <code>Benchmark.measure</code> accept a callable, execute it in the current Lucy process, and return elapsed seconds. The current clock has millisecond resolution; very short operations can therefore report <code>0.0</code>. These methods do not execute shell text.</p>
+<h3 id="timeout">Timeout</h3>
+<p><code>app.timeout().timeout(seconds, callback)</code> measures elapsed time and raises only after the callback returns if the duration exceeded the limit. It does <strong>not</strong> interrupt a callback, cancel blocking I/O, or enforce a hard deadline. Do not use it as a safety boundary or to contain untrusted/possibly non-terminating code.</p>
+<h3 id="erb">ERB</h3>
+<p><code>ERB</code> provides template rendering from a template string:</p>
+<pre><code class="language-lucy">let template = app.template(&quot;Hello {{name}}&quot;)
+println template.result({&quot;name&quot;: &quot;Lucy&quot;})
+</code></pre>
+<hr />
+<h1 id="3-crypto-hashing-and-native-cryptographic-facilities">3. <code>crypto</code> — hashing and native cryptographic facilities</h1>
+<p><code>crypto</code> exposes digest/HMAC helpers and native OpenSSL-backed objects where the build provides them.</p>
+<p>Common helpers:</p>
+<pre><code class="language-lucy">println crypto.hexdigest(&quot;hello&quot;)
+println crypto.base64digest(&quot;hello&quot;)
+println crypto.hmac(&quot;secret&quot;, &quot;message&quot;)
+</code></pre>
+<p>The module also exposes <code>Digest</code>, <code>HMAC</code>, <code>SSLContext</code>, <code>SSLSocket</code>, <code>Certificate</code>, <code>RSA</code>, <code>Cipher</code>, <code>X509</code>, <code>PKey</code>, and <code>OpenSSL</code> classes/factories.</p>
+<p>Crypto operations can fail with native/runtime errors. Availability depends on the build and linked crypto support.</p>
+<hr />
+<h1 id="4-data-json-yaml-csv-and-collection-transforms">4. <code>data</code> — JSON, YAML, CSV, and collection transforms</h1>
+<h3 id="basic-transforms">Basic transforms</h3>
+<pre><code class="language-lucy">let user = {name: &quot;Ada&quot;, email: &quot;ada@example.test&quot;, password: &quot;secret&quot;}
+let left = {name: &quot;Ada&quot;}
+let right = {active: true}
+let keys = [&quot;name&quot;, &quot;age&quot;]
+let values = [&quot;Ada&quot;, 37]
+let selected = data.pick(user, [&quot;name&quot;, &quot;email&quot;])
+let without_secret = data.omit(user, [&quot;password&quot;])
+let combined = data.merge(left, right)
+let pairs = data.zip(keys, values)
+println selected
+println without_secret
+println combined
+println pairs
+</code></pre>
+<h3 id="json">JSON</h3>
+<pre><code class="language-lucy">let object = data.parse(&quot;{\&quot;name\&quot;:\&quot;Lucy\&quot;}&quot;)
+println data.stringify(object)
+println data.pretty(object)
+
+data.json_write(&quot;config.json&quot;, object)
+let loaded = data.json_read(&quot;config.json&quot;)
+</code></pre>
+<p>The <code>JSON</code> class exposes the same family through <code>JSON.parse</code>, <code>JSON.stringify</code>, <code>JSON.pretty</code>, <code>JSON.load</code>, and <code>JSON.dump</code>.</p>
+<h3 id="yaml">YAML</h3>
+<pre><code class="language-lucy">let value = data.yaml_load(&quot;name: Lucy&quot;)
+println data.yaml_dump(value)
+</code></pre>
+<h3 id="csv">CSV</h3>
+<pre><code class="language-lucy">let rows = data.csv_parse(&quot;name,age\nLucy,2&quot;)
+println data.csv_stringify(rows)
+</code></pre>
+<hr />
+<h1 id="5-flow-small-functional-control-helpers">5. <code>flow</code> — small functional control helpers</h1>
+<pre><code class="language-lucy">let result = flow.pipe(
+    5,
+    [lambda x =&gt; x * 2, lambda x =&gt; x + 1]
+)
+
+flow.tap(result, lambda x =&gt; println x)
+</code></pre>
+<p>Public functions:</p>
+<ul>
+<li><code>pipe(value, steps)</code> — applies callbacks in order.</li>
+<li><code>tap(value, action)</code> — performs an action and preserves the value.</li>
+<li><code>branch(value, predicate, yes, no = nil)</code> — selects a callback based on a predicate.</li>
+<li><code>repeat(value, count, step)</code> — repeatedly applies a transformation.</li>
+</ul>
+<hr />
+<h1 id="6-fs-filesystem-and-io">6. <code>fs</code> — filesystem and I/O</h1>
+<p><code>fs</code> is the primary portable filesystem API.</p>
+<h3 id="files">Files</h3>
+<pre><code class="language-lucy">fs.write(&quot;hello.txt&quot;, &quot;Hello Lucy&quot;)
+fs.append(&quot;hello.txt&quot;, &quot;\nSecond line&quot;)
+println fs.read(&quot;hello.txt&quot;)
+println fs.exists(&quot;hello.txt&quot;)
+println fs.size(&quot;hello.txt&quot;)
+</code></pre>
+<p>Use <code>read_lines</code>/<code>write_lines</code> for line-oriented work.</p>
+<h3 id="file-management">File management</h3>
+<pre><code class="language-lucy">fs.copy(&quot;a.txt&quot;, &quot;b.txt&quot;)
+fs.move(&quot;b.txt&quot;, &quot;archive/b.txt&quot;)
+fs.touch(&quot;empty.txt&quot;)
+fs.remove(&quot;empty.txt&quot;)
+</code></pre>
+<h3 id="directories-and-paths">Directories and paths</h3>
+<pre><code class="language-lucy">fs.mkdir(&quot;build&quot;, true)
+println fs.entries(&quot;.&quot;)
+println fs.files(&quot;.&quot;)
+println fs.dirs(&quot;.&quot;)
+println fs.basename(&quot;src/lucy.cpp&quot;)
+println fs.extension(&quot;src/lucy.cpp&quot;)
+println fs.stem(&quot;src/lucy.cpp&quot;)
+println fs.dirname(&quot;src/lucy.cpp&quot;)
+</code></pre>
+<p><code>join</code>, <code>absolute</code>, and <code>expand</code> are the portable path helpers.</p>
+<h3 id="searching">Searching</h3>
+<p><code>glob(pattern)</code> returns matching paths and <code>walk(path)</code> recursively visits a tree.</p>
+<h3 id="io-objects">IO objects</h3>
+<p><code>fs.open(path, mode)</code> returns an <code>IO</code> object. It provides <code>print</code>, <code>write</code>, <code>read</code>, <code>ask</code>, <code>seek</code>, <code>pos</code>, <code>rewind</code>, <code>eof</code>, <code>fileno</code>, <code>close</code>, <code>pipe</code>, and <code>popen</code>.</p>
+<p>Use <code>IO</code> for streaming/interactive operations where <code>fs.read</code>/<code>fs.write</code> are too high-level.</p>
+<h3 id="json-convenience">JSON convenience</h3>
+<p><code>fs.read_json(path)</code> and <code>fs.write_json(path, value)</code> are convenience wrappers for common file/data workflows.</p>
+<hr />
+<h1 id="7-http-http-and-sockets">7. <code>http</code> — HTTP and sockets</h1>
+<h3 id="simple-http">Simple HTTP</h3>
+<pre><code class="language-lucy">let response = http.get(&quot;https://example.com&quot;)
+println response.status
+println response.ok
+println response.body
+println response.headers
+</code></pre>
+<p>Every high-level HTTP request returns a map with exactly these primary fields:</p>
+<table>
+<thead>
+<tr>
+  <th>Field</th>
+  <th>Type</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>status</code></td>
+  <td>Int</td>
+  <td>HTTP status code</td>
+</tr>
+<tr>
+  <td><code>body</code></td>
+  <td>String</td>
+  <td>response body</td>
+</tr>
+<tr>
+  <td><code>headers</code></td>
+  <td>Map</td>
+  <td>lower-case response-header names to values</td>
+</tr>
+<tr>
+  <td><code>ok</code></td>
+  <td>Bool</td>
+  <td><code>true</code> for status 200–299</td>
+</tr>
+</tbody>
+</table>
+<p>The module also exposes <code>post</code>, <code>put</code>, <code>patch</code>, <code>delete</code>, <code>head</code>, and the generic <code>request</code> function.</p>
+<h3 id="http-client">HTTP client</h3>
+<pre><code class="language-lucy">let client = http.client(&quot;https://example.com&quot;)
+client.headers({&quot;Accept&quot;: &quot;application/json&quot;})
+client.timeout(10)
+client.follow_redirects(true)
+let response = client.get()
+</code></pre>
+<p>Timeout values for the high-level HTTP client are expressed in seconds by the public API.</p>
+<p><code>HTTPRequest</code> exposes an explicit request object with method, URL, body, headers, and options.</p>
+<h3 id="sockets">Sockets</h3>
+<p><code>Socket.connect</code>, <code>bind</code>, <code>listen</code>, <code>accept</code>, <code>recv</code>, <code>send</code>, and <code>close</code> expose lower-level network operations.</p>
+<h3 id="dns">DNS</h3>
+<p><code>resolve(host)</code> / <code>reverse(address)</code> and the <code>Resolv</code> class provide forward/reverse resolution.</p>
+<p>Network failures raise HTTP/process/native errors rather than silently returning a successful response.</p>
+<hr />
+<h1 id="8-math-numerical-helpers">8. <code>math</code> — numerical helpers</h1>
+<pre><code class="language-lucy">println math.square(5)
+println math.factorial(6)
+println math.gcd(48, 18)
+println math.lerp(0, 100, 0.25)
+</code></pre>
+<p>The module provides both a <code>Math</code> class and flat helper functions for the common operations: <code>square</code>, <code>cube</code>, <code>clamp</code>, <code>factorial</code>, <code>gcd</code>, <code>lcm</code>, <code>average</code>, <code>lerp</code>, and <code>sign</code>.</p>
+<p><code>Math.even</code> and <code>Math.odd</code> are available as class methods.</p>
+<hr />
+<h1 id="9-random-random-values-and-sampling">9. <code>random</code> — random values and sampling</h1>
+<pre><code class="language-lucy">let n = random.int(1, 10)
+let x = random.float()
+let item = random.choice([&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;])
+</code></pre>
+<p><code>shuffle(items)</code> and <code>sample(items, count)</code> operate on arrays according to the library's current implementation.</p>
+<p>Do not use these helpers as a cryptographic random source.</p>
+<hr />
+<h1 id="10-repl-interactive-help">10. <code>repl</code> — interactive help</h1>
+<p>The REPL's help surface is implemented in Lucy itself:</p>
+<pre><code class="language-lucy">println repl.version()
+println repl.commands()
+println repl.topics()
+help &quot;array&quot;
+</code></pre>
+<p>Public functions are <code>banner</code>, <code>version</code>, <code>prompt</code>, <code>commands</code>, <code>topics</code>, and <code>help</code>.</p>
+<hr />
+<h1 id="11-result-explicit-successerror-values">11. <code>result</code> — explicit success/error values</h1>
+<pre><code class="language-lucy">let outcome = result.ok(42)
+println result.success(outcome)
+println result.unwrap(outcome)
+</code></pre>
+<p>The module provides <code>ok</code>, <code>err</code>, <code>success</code>, <code>unwrap</code>, and <code>message</code>.</p>
+<p>Use it when a function wants to represent expected failure as data rather than immediately throwing a runtime exception.</p>
+<hr />
+<h1 id="12-runtime-reflection-and-callable-helpers">12. <code>runtime</code> — reflection and callable helpers</h1>
+<p><code>runtime</code> is the closest thing to a reflection/tooling module in the standard library.</p>
+<pre><code class="language-lucy">let value = [1, 2, 3]
+println runtime.inspect(value)
+println runtime.methods(value)
+println runtime.responds(value, &quot;push&quot;)
+println runtime.call(value, &quot;push&quot;, [10])
+</code></pre>
+<p>The module also exposes convenience wrappers around the <code>Kernel</code> class and collection algorithms. There is no public <code>runtime.type(...)</code> helper in the shipped implementation; use <code>runtime.inspect(value)</code>, <code>runtime.methods(value)</code>, and <code>runtime.responds(value, name)</code> where appropriate.</p>
+<p>Important functions include:</p>
+<ul>
+<li><code>printf</code>, <code>format</code></li>
+<li><code>catch</code>, <code>rescue</code>, <code>ensure</code></li>
+<li><code>methods</code>, <code>responds</code>, <code>call</code></li>
+<li><code>inspect</code></li>
+<li><code>variables</code>, <code>globals</code></li>
+<li><code>ancestors</code>, <code>superclass</code></li>
+</ul>
+<p><code>runtime</code> is not a promise that every C++ runtime implementation detail is public. Internal helpers remain private.</p>
+<hr />
+<h1 id="13-set-set-algebra">13. <code>set</code> — set algebra</h1>
+<pre><code class="language-lucy">let a = set.new([1, 2, 3])
+let b = set.new([3, 4])
+
+println a.union(b)
+println a.intersection(b)
+println a.difference(b)
+</code></pre>
+<p><code>Set</code> provides membership, iteration, transformation, selection, and algebraic operations. Flat helper functions are also available.</p>
+<hr />
+<h1 id="14-sqlite-sqlite-database-access">14. <code>sqlite</code> — SQLite database access</h1>
+<p>SQLite is optional at build time.</p>
+<pre><code class="language-lucy">let db = sqlite.open(&quot;app.db&quot;)
+db.execute(&quot;CREATE TABLE IF NOT EXISTS users (name TEXT)&quot;)
+db.execute(&quot;INSERT INTO users (name) VALUES (?)&quot;, [&quot;Lucy&quot;])
+let rows = db.query(&quot;SELECT name FROM users&quot;)
+println rows
+db.close()
+</code></pre>
+<p><code>Database</code> provides <code>execute</code>, <code>query</code>, <code>prepare</code>, transaction operations, change/insert-id inspection, and <code>close</code>.</p>
+<p>If Lucy was built without SQLite support, using this module reports:</p>
+<pre><code class="language-text">SQLiteError: Lucy was built without SQLite support
+</code></pre>
+<p>Enable it with CMake:</p>
+<pre><code class="language-text">-DLUCY_ENABLE_SQLITE=ON
+</code></pre>
+<hr />
+<h1 id="15-system-operating-system-and-process-apis">15. <code>system</code> — operating-system and process APIs</h1>
+<p><code>system</code> is the portable boundary for OS-specific operations.</p>
+<pre><code class="language-lucy">println system.platform()
+println system.version()
+println system.cwd()
+println system.env(&quot;HOME&quot;)
+println system.temp_dir()
+</code></pre>
+<p><code>exec(argv, options)</code> launches a process without a shell, captures stdout/stderr separately, returns its status and PID, and supports a working directory and timeout. Prefer it for build/package/test tooling. Compatibility helpers include <code>run</code>, <code>capture</code>, <code>success</code>, <code>output</code>, <code>spawn</code>, <code>wait</code>, <code>waitpid</code>, and <code>kill</code>.</p>
+<p>Environment helpers include <code>env</code>, <code>setenv</code>, and <code>unsetenv</code>.</p>
+<p>The module also exposes identity, signal, clock, login/user, and shell-quoting helpers. Availability of some identity/signal operations is platform-dependent.</p>
+<p>For shell construction, prefer <code>shell_escape</code> / <code>shell_join</code> rather than manually concatenating untrusted arguments.</p>
+<hr />
+<h1 id="16-text-text-processing-and-encoding-helpers">16. <code>text</code> — text processing and encoding helpers</h1>
+<pre><code class="language-lucy">println text.match(&quot;^Lucy&quot;, &quot;Lucy 2&quot;)
+println text.replace_regex(&quot;[0-9]+&quot;, &quot;N&quot;, &quot;Lucy 2&quot;)
+println text.base64_encode(&quot;hello&quot;)
+println text.hex_encode(&quot;hello&quot;)
+println text.url_encode(&quot;hello world&quot;)
+</code></pre>
+<p>The module provides regex operations, Base64, hexadecimal, URL encoding/decoding, and shell-token helpers.</p>
+<p><code>StringScanner</code> provides incremental scanning:</p>
+<pre><code class="language-lucy">let scanner = text.scanner(&quot;abc123&quot;)
+println scanner.scan(&quot;[a-z]+&quot;)
+println scanner.scan(&quot;[0-9]+&quot;)
+</code></pre>
+<hr />
+<h1 id="17-time-time-date-and-formatting">17. <code>time</code> — time, date, and formatting</h1>
+<pre><code class="language-lucy">let now = time.now()
+println now.year()
+println now.format(&quot;%Y-%m-%d&quot;)
+println time.timestamp()
+</code></pre>
+<p><code>Time</code>, <code>Date</code>, and <code>DateTime</code> provide construction, parsing, formatting, component access, arithmetic, and comparison.</p>
+<p>Important unit rule:</p>
+<ul>
+<li><code>Time.add</code>, <code>subtract</code>, <code>plus</code>, <code>minus</code>, and <code>add_ms</code>/<code>subtract_ms</code> use milliseconds where the signature says <code>milliseconds</code>.</li>
+<li><code>Date.add</code>/<code>subtract</code> operate in days.</li>
+<li><code>Date.shift_months</code> / <code>add_months</code> / <code>subtract_months</code> operate in months.</li>
+<li><code>sleep(milliseconds)</code> uses milliseconds in the public <code>time</code> API.</li>
+<li>HTTP timeout APIs use seconds.</li>
+</ul>
+<p>Read the signature inventory below when a function name has both a high-level and low-level form.</p>
+<hr />
+<h1 id="18-global-builtins-and-standard-library-overlap">18. Global builtins and standard-library overlap</h1>
+<p>The following are global runtime builtins rather than module members:</p>
+<pre><code class="language-text">print println input exit
+len str int float type typeof
+range sum min max abs sqrt sin cos tan exp floor ceil log log10 pow
+assert bin hex oct
+</code></pre>
+<p>There are also compatibility/runtime globals such as <code>read_file</code>, <code>write_file</code>, <code>exists</code>, <code>cwd</code>, <code>getenv</code>, <code>sleep</code>, and <code>millis</code>.</p>
+<p>Prefer the module APIs in new application code when an equivalent exists. For example, prefer <code>fs.read(path)</code> over compatibility <code>read_file(path)</code> and <code>system.cwd()</code> over global <code>cwd()</code>.</p>
+<hr />
+<h1 id="19-complete-api-inventory">19. Complete API inventory</h1>
+<p>The following inventory is source-derived from the shipped <code>stdlib/*.lucy</code> files. It is deliberately exhaustive and is the checklist used to prevent documentation drift.</p>
+<ul>
+<li><code>class OptionParser</code></li>
+<li><code>OptionParser.initialize()</code></li>
+<li><code>OptionParser.new()</code></li>
+<li><code>OptionParser.banner(text)</code></li>
+<li><code>OptionParser.separator(text = &quot;&quot;)</code></li>
+<li><code>OptionParser.version(text)</code></li>
+<li><code>OptionParser.program_name(text)</code></li>
+<li><code>OptionParser.on(name, description = &quot;&quot;, default = nil)</code></li>
+<li><code>OptionParser.parse(arguments = ARGV)</code></li>
+<li><code>OptionParser.help()</code></li>
+<li><code>OptionParser.summarize()</code></li>
+<li><code>OptionParser.abort(message)</code></li>
+<li><code>class Logger</code></li>
+<li><code>Logger.initialize(output = nil, level = 0)</code></li>
+<li><code>Logger.new(output = nil, level = 0)</code></li>
+<li><code>Logger.level()</code></li>
+<li><code>Logger.set_level(value)</code></li>
+<li><code>Logger.level_set(value)</code></li>
+<li><code>Logger.add(level, message)</code></li>
+<li><code>Logger.log(level, message)</code></li>
+<li><code>Logger.debug(message)</code></li>
+<li><code>Logger.info(message)</code></li>
+<li><code>Logger.warn(message)</code></li>
+<li><code>Logger.error(message)</code></li>
+<li><code>Logger.fatal(message)</code></li>
+<li><code>Logger.debug?()</code></li>
+<li><code>Logger.info?()</code></li>
+<li><code>Logger.warn?()</code></li>
+<li><code>Logger.error?()</code></li>
+<li><code>Logger.fatal?()</code></li>
+<li><code>class Benchmark</code></li>
+<li><code>Benchmark.realtime(callback)</code></li>
+<li><code>Benchmark.measure(callback)</code></li>
+<li><code>class Timeout</code></li>
+<li><code>Timeout.timeout(seconds, callback)</code></li>
+<li><code>class ERB</code></li>
+<li><code>ERB.initialize(template)</code></li>
+<li><code>ERB.src()</code></li>
+<li><code>ERB.result(values = {})</code></li>
+<li><code>ERB.run(values = {})</code></li>
+<li><code>parser()</code></li>
+<li><code>logger(output = nil, level = 0)</code></li>
+<li><code>benchmark()</code></li>
+<li><code>timeout()</code></li>
+<li><code>template(source)</code></li>
+</ul>
+<h3 id="complete-inventory-crypto">Complete inventory: <code>crypto</code></h3>
+<ul>
+<li><code>class Digest</code></li>
+<li><code>Digest.digest(text)</code></li>
+<li><code>Digest.hexdigest(text)</code></li>
+<li><code>Digest.base64digest(text)</code></li>
+<li><code>Digest.file(path)</code></li>
+<li><code>class HMAC</code></li>
+<li><code>HMAC.digest(key, data)</code></li>
+<li><code>HMAC.hexdigest(key, data)</code></li>
+<li><code>class SSLContext</code></li>
+<li><code>SSLContext.initialize(options = {})</code></li>
+<li><code>class SSLSocket</code></li>
+<li><code>SSLSocket.initialize(socket = nil, context = nil)</code></li>
+<li><code>SSLSocket.connect(host, port)</code></li>
+<li><code>SSLSocket.close()</code></li>
+<li><code>class Certificate</code></li>
+<li><code>Certificate.initialize(data = &quot;&quot;)</code></li>
+<li><code>class RSA</code></li>
+<li><code>RSA.initialize(pem = &quot;&quot;)</code></li>
+<li><code>class Cipher</code></li>
+<li><code>Cipher.initialize(name = &quot;&quot;)</code></li>
+<li><code>class X509</code></li>
+<li><code>X509.certificate(data = &quot;&quot;)</code></li>
+<li><code>class PKey</code></li>
+<li><code>PKey.rsa(pem = &quot;&quot;)</code></li>
+<li><code>class OpenSSL</code></li>
+<li><code>OpenSSL.hmac()</code></li>
+<li><code>OpenSSL.ssl_context(options = {})</code></li>
+<li><code>OpenSSL.ssl_socket(socket = nil, context = nil)</code></li>
+<li><code>OpenSSL.certificate(data = &quot;&quot;)</code></li>
+<li><code>OpenSSL.rsa(pem = &quot;&quot;)</code></li>
+<li><code>OpenSSL.x509()</code></li>
+<li><code>OpenSSL.pkey()</code></li>
+<li><code>OpenSSL.cipher(name = &quot;&quot;)</code></li>
+<li><code>digest(text)</code></li>
+<li><code>hexdigest(text)</code></li>
+<li><code>hash(text)</code></li>
+<li><code>base64digest(text)</code></li>
+<li><code>file(path)</code></li>
+<li><code>hmac(key, data)</code></li>
+</ul>
+<h3 id="complete-inventory-data">Complete inventory: <code>data</code></h3>
+<ul>
+<li><code>pick(source, keys)</code></li>
+<li><code>omit(source, keys)</code></li>
+<li><code>merge(left, right)</code></li>
+<li><code>values(source, keys)</code></li>
+<li><code>zip(keys, values)</code></li>
+<li><code>class JSON</code></li>
+<li><code>JSON.parse(text)</code></li>
+<li><code>JSON.stringify(value)</code></li>
+<li><code>JSON.pretty(value)</code></li>
+<li><code>JSON.load(path)</code></li>
+<li><code>JSON.dump(path, value)</code></li>
+<li><code>parse(text)</code></li>
+<li><code>stringify(value)</code></li>
+<li><code>pretty(value)</code></li>
+<li><code>json_read(path)</code></li>
+<li><code>json_write(path, value)</code></li>
+<li><code>class YAML</code></li>
+<li><code>YAML.load(text)</code></li>
+<li><code>YAML.dump(value)</code></li>
+<li><code>YAML.load_file(path)</code></li>
+<li><code>yaml_load(text)</code></li>
+<li><code>yaml_dump(value)</code></li>
+<li><code>class CSV</code></li>
+<li><code>CSV.parse(text, delimiter = &quot;,&quot;)</code></li>
+<li><code>CSV.stringify(rows, delimiter = &quot;,&quot;)</code></li>
+<li><code>CSV.load(path, delimiter = &quot;,&quot;)</code></li>
+<li><code>CSV.dump(path, rows, delimiter = &quot;,&quot;)</code></li>
+<li><code>csv_parse(text, delimiter = &quot;,&quot;)</code></li>
+<li><code>csv_stringify(rows, delimiter = &quot;,&quot;)</code></li>
+</ul>
+<h3 id="complete-inventory-flow">Complete inventory: <code>flow</code></h3>
+<ul>
+<li><code>pipe(value, steps)</code></li>
+<li><code>tap(value, action)</code></li>
+<li><code>branch(value, predicate, yes, no = nil)</code></li>
+<li><code>repeat(value, count, step)</code></li>
+</ul>
+<h3 id="complete-inventory-fs">Complete inventory: <code>fs</code></h3>
+<ul>
+<li><code>read(path)</code></li>
+<li><code>write(path, content)</code></li>
+<li><code>append(path, content)</code></li>
+<li><code>read_lines(path)</code></li>
+<li><code>write_lines(path, lines)</code></li>
+<li><code>exists(path)</code></li>
+<li><code>size(path)</code></li>
+<li><code>remove(path)</code></li>
+<li><code>copy(source, destination)</code></li>
+<li><code>move(source, destination)</code></li>
+<li><code>touch(path)</code></li>
+<li><code>chmod(path, mode)</code></li>
+<li><code>chown(path, uid, gid)</code></li>
+<li><code>entries(path = &quot;.&quot;)</code></li>
+<li><code>files(path = &quot;.&quot;)</code></li>
+<li><code>dirs(path = &quot;.&quot;)</code></li>
+<li><code>mkdir(path, parents = false)</code></li>
+<li><code>rmdir(path)</code></li>
+<li><code>empty(path = &quot;.&quot;)</code></li>
+<li><code>glob(pattern)</code></li>
+<li><code>walk(path = &quot;.&quot;)</code></li>
+<li><code>join(parts)</code></li>
+<li><code>absolute(path)</code></li>
+<li><code>expand(path)</code></li>
+<li><code>basename(path)</code></li>
+<li><code>dirname(path)</code></li>
+<li><code>extension(path)</code></li>
+<li><code>stem(path)</code></li>
+<li><code>link(source, destination)</code></li>
+<li><code>symlink(source, destination)</code></li>
+<li><code>open(path, mode = &quot;r&quot;)</code></li>
+<li><code>console(prompt = &quot;&quot;)</code></li>
+<li><code>read_json(path)</code></li>
+<li><code>write_json(path, value)</code></li>
+<li><code>class IO</code></li>
+<li><code>IO.initialize(path = nil, mode = &quot;r&quot;)</code></li>
+<li><code>IO.print(values)</code></li>
+<li><code>IO.write(text)</code></li>
+<li><code>IO.read(prompt = &quot;&quot;)</code></li>
+<li><code>IO.ask(prompt)</code></li>
+<li><code>IO.seek(offset, whence = 0)</code></li>
+<li><code>IO.pos()</code></li>
+<li><code>IO.rewind()</code></li>
+<li><code>IO.eof()</code></li>
+<li><code>IO.fileno()</code></li>
+<li><code>IO.close()</code></li>
+<li><code>IO.pipe()</code></li>
+<li><code>IO.popen(command)</code></li>
+</ul>
+<h3 id="complete-inventory-http">Complete inventory: <code>http</code></h3>
+<ul>
+<li><code>class HTTPRequest</code></li>
+<li><code>HTTPRequest.initialize(method, url, body = &quot;&quot;, headers = nil, options = nil)</code></li>
+<li><code>HTTPRequest.execute()</code></li>
+<li><code>class HTTP</code></li>
+<li><code>HTTP.initialize(url = &quot;&quot;, proxy = nil)</code></li>
+<li><code>HTTP.headers(value)</code></li>
+<li><code>HTTP.timeout(seconds)</code></li>
+<li><code>HTTP.connect_timeout(seconds)</code></li>
+<li><code>HTTP.proxy(proxy_url)</code></li>
+<li><code>HTTP.user_agent(value)</code></li>
+<li><code>HTTP.follow_redirects(value)</code></li>
+<li><code>HTTP.insecure(value = true)</code></li>
+<li><code>HTTP.get(path = &quot;&quot;)</code></li>
+<li><code>HTTP.post(path = &quot;&quot;, body = &quot;&quot;)</code></li>
+<li><code>HTTP.put(path = &quot;&quot;, body = &quot;&quot;)</code></li>
+<li><code>HTTP.patch(path = &quot;&quot;, body = &quot;&quot;)</code></li>
+<li><code>HTTP.delete(path = &quot;&quot;)</code></li>
+<li><code>HTTP.head(path = &quot;&quot;)</code></li>
+<li><code>HTTP.request(method, path = &quot;&quot;, body = &quot;&quot;, headers = nil)</code></li>
+<li><code>request(method, url, body = &quot;&quot;, headers = nil, options = nil)</code></li>
+<li><code>get(url, headers = nil, options = nil)</code></li>
+<li><code>post(url, body = &quot;&quot;, headers = nil, options = nil)</code></li>
+<li><code>put(url, body = &quot;&quot;, headers = nil, options = nil)</code></li>
+<li><code>patch(url, body = &quot;&quot;, headers = nil, options = nil)</code></li>
+<li><code>delete(url, headers = nil, options = nil)</code></li>
+<li><code>head(url, headers = nil, options = nil)</code></li>
+<li><code>client(url = &quot;&quot;, proxy = nil)</code></li>
+<li><code>class Socket</code></li>
+<li><code>Socket.initialize()</code></li>
+<li><code>Socket.connect(host, port)</code></li>
+<li><code>Socket.bind(host, port)</code></li>
+<li><code>Socket.listen(backlog = 16)</code></li>
+<li><code>Socket.accept()</code></li>
+<li><code>Socket.recv(size = 4096)</code></li>
+<li><code>Socket.send(data)</code></li>
+<li><code>Socket.close()</code></li>
+<li><code>class SocketAPI</code></li>
+<li><code>SocketAPI.new()</code></li>
+<li><code>class Resolv</code></li>
+<li><code>Resolv.getaddress(host)</code></li>
+<li><code>Resolv.getname(address)</code></li>
+<li><code>connect(host, port)</code></li>
+<li><code>bind(host, port)</code></li>
+<li><code>listen(socket, backlog = 16)</code></li>
+<li><code>accept(socket)</code></li>
+<li><code>recv(socket, size = 4096)</code></li>
+<li><code>send(socket, data)</code></li>
+<li><code>close(socket)</code></li>
+<li><code>resolve(host)</code></li>
+<li><code>reverse(address)</code></li>
+</ul>
+<h3 id="complete-inventory-math">Complete inventory: <code>math</code></h3>
+<ul>
+<li><code>class Math</code></li>
+<li><code>Math.square(x)</code></li>
+<li><code>Math.cube(x)</code></li>
+<li><code>Math.clamp(x, low, high)</code></li>
+<li><code>Math.even(x)</code></li>
+<li><code>Math.odd(x)</code></li>
+<li><code>Math.factorial(n)</code></li>
+<li><code>Math.gcd(a, b)</code></li>
+<li><code>Math.lcm(a, b)</code></li>
+<li><code>Math.average(values)</code></li>
+<li><code>Math.lerp(a, b, t)</code></li>
+<li><code>Math.sign(x)</code></li>
+<li><code>square(x)</code></li>
+<li><code>cube(x)</code></li>
+<li><code>clamp(x, low, high)</code></li>
+<li><code>factorial(n)</code></li>
+<li><code>gcd(a, b)</code></li>
+<li><code>lcm(a, b)</code></li>
+<li><code>average(values)</code></li>
+<li><code>lerp(a, b, t)</code></li>
+<li><code>sign(x)</code></li>
+</ul>
+<h3 id="complete-inventory-random">Complete inventory: <code>random</code></h3>
+<ul>
+<li><code>int(low, high)</code></li>
+<li><code>float()</code></li>
+<li><code>bool()</code></li>
+<li><code>choice(items)</code></li>
+<li><code>shuffle(items)</code></li>
+<li><code>sample(items, count)</code></li>
+</ul>
+<h3 id="complete-inventory-repl">Complete inventory: <code>repl</code></h3>
+<ul>
+<li><code>banner()</code></li>
+<li><code>version()</code></li>
+<li><code>prompt(depth = 0)</code></li>
+<li><code>commands()</code></li>
+<li><code>topics()</code></li>
+<li><code>help(topic = nil)</code></li>
+</ul>
+<h3 id="complete-inventory-result">Complete inventory: <code>result</code></h3>
+<ul>
+<li><code>ok(value)</code></li>
+<li><code>err(message)</code></li>
+<li><code>success(result)</code></li>
+<li><code>unwrap(result, fallback = nil)</code></li>
+<li><code>message(result)</code></li>
+</ul>
+<h3 id="complete-inventory-runtime">Complete inventory: <code>runtime</code></h3>
+<ul>
+<li><code>class Kernel</code></li>
+<li><code>Kernel.printf(format_string, values = [])</code></li>
+<li><code>Kernel.p(value)</code></li>
+<li><code>Kernel.pp(value)</code></li>
+<li><code>Kernel.format(format_string, values = [])</code></li>
+<li><code>Kernel.sprintf(format_string, values = [])</code></li>
+<li><code>Kernel.catch(callback)</code></li>
+<li><code>Kernel.rescue(callback, handler)</code></li>
+<li><code>Kernel.ensure(callback, cleanup)</code></li>
+<li><code>Kernel.system(command)</code></li>
+<li><code>Kernel.spawn(command)</code></li>
+<li><code>Kernel.trap(signal_number, callback)</code></li>
+<li><code>Kernel.global_variables()</code></li>
+<li><code>Kernel.local_variables()</code></li>
+<li><code>Kernel.methods(value)</code></li>
+<li><code>Kernel.respond_to?(value, name)</code></li>
+<li><code>Kernel.send(value, name, args = [])</code></li>
+<li><code>Kernel.inspect(value)</code></li>
+<li><code>Kernel.to_a(value)</code></li>
+<li><code>Kernel.to_h(value)</code></li>
+<li><code>Kernel.to_sym(value)</code></li>
+<li><code>Kernel.ancestors(value)</code></li>
+<li><code>Kernel.superclass(value)</code></li>
+<li><code>Kernel.singleton_class(value)</code></li>
+<li><code>Kernel.proc(callback)</code></li>
+<li><code>Kernel.lambda(callback)</code></li>
+<li><code>class Collections</code></li>
+<li><code>Collections.first(items)</code></li>
+<li><code>Collections.last(items)</code></li>
+<li><code>Collections.reverse(items)</code></li>
+<li><code>Collections.contains(items, value)</code></li>
+<li><code>Collections.count(items, value)</code></li>
+<li><code>Collections.index(items, value)</code></li>
+<li><code>Collections.compact(items)</code></li>
+<li><code>Collections.unique(items)</code></li>
+<li><code>Collections.flatten(items)</code></li>
+<li><code>Collections.sum(items)</code></li>
+<li><code>Collections.min(items)</code></li>
+<li><code>Collections.max(items)</code></li>
+<li><code>printf(format_string, values = [])</code></li>
+<li><code>format(format_string, values = [])</code></li>
+<li><code>catch(callback)</code></li>
+<li><code>rescue(callback, handler)</code></li>
+<li><code>ensure(callback, cleanup)</code></li>
+<li><code>methods(value)</code></li>
+<li><code>responds(value, name)</code></li>
+<li><code>call(value, name, args = [])</code></li>
+<li><code>inspect(value)</code></li>
+<li><code>variables()</code></li>
+<li><code>globals()</code></li>
+<li><code>ancestors(value)</code></li>
+<li><code>superclass(value)</code></li>
+</ul>
+<h3 id="complete-inventory-set">Complete inventory: <code>set</code></h3>
+<ul>
+<li><code>class Set</code></li>
+<li><code>Set.initialize(values = [])</code></li>
+<li><code>Set.new(values = [])</code></li>
+<li><code>Set.add(value)</code></li>
+<li><code>Set.delete(value)</code></li>
+<li><code>Set.include?(value)</code></li>
+<li><code>Set.member?(value)</code></li>
+<li><code>Set.each(callback)</code></li>
+<li><code>Set.size()</code></li>
+<li><code>Set.length()</code></li>
+<li><code>Set.empty?()</code></li>
+<li><code>Set.clear()</code></li>
+<li><code>Set.map(callback)</code></li>
+<li><code>Set.select(callback)</code></li>
+<li><code>Set.reject(callback)</code></li>
+<li><code>Set.merge(other)</code></li>
+<li><code>Set.subset(other)</code></li>
+<li><code>Set.superset(other)</code></li>
+<li><code>Set.intersect(other)</code></li>
+<li><code>Set.union(other)</code></li>
+<li><code>Set.intersection(other)</code></li>
+<li><code>Set.difference(other)</code></li>
+<li><code>Set.subset?(other)</code></li>
+<li><code>Set.superset?(other)</code></li>
+<li><code>Set.intersect?(other)</code></li>
+<li><code>Set.symmetric_difference(other)</code></li>
+<li><code>new(values = [])</code></li>
+<li><code>from_values(values)</code></li>
+<li><code>add(target, value)</code></li>
+<li><code>delete(target, value)</code></li>
+<li><code>include?(target, value)</code></li>
+<li><code>union(left, right)</code></li>
+<li><code>intersection(left, right)</code></li>
+<li><code>difference(left, right)</code></li>
+<li><code>symmetric_difference(left, right)</code></li>
+<li><code>subset?(left, right)</code></li>
+<li><code>superset?(left, right)</code></li>
+<li><code>intersect?(left, right)</code></li>
+</ul>
+<h3 id="complete-inventory-sqlite">Complete inventory: <code>sqlite</code></h3>
+<ul>
+<li><code>class Database</code></li>
+<li><code>Database.initialize(path)</code></li>
+<li><code>Database.execute(sql, params = [])</code></li>
+<li><code>Database.query(sql, params = [])</code></li>
+<li><code>Database.prepare(sql)</code></li>
+<li><code>Database.begin()</code></li>
+<li><code>Database.commit()</code></li>
+<li><code>Database.rollback()</code></li>
+<li><code>Database.changes()</code></li>
+<li><code>Database.last_insert_id()</code></li>
+<li><code>Database.close()</code></li>
+<li><code>class Statement</code></li>
+<li><code>Statement.initialize(handle, sql)</code></li>
+<li><code>Statement.bind(params = [])</code></li>
+<li><code>Statement.execute()</code></li>
+<li><code>Statement.query()</code></li>
+<li><code>Statement.close()</code></li>
+<li><code>open(path)</code></li>
+</ul>
+<h3 id="complete-inventory-system">Complete inventory: <code>system</code></h3>
+<ul>
+<li><code>platform()</code></li>
+<li><code>version()</code></li>
+<li><code>argv()</code></li>
+<li><code>cwd()</code></li>
+<li><code>env(name)</code></li>
+<li><code>setenv(name, value)</code></li>
+<li><code>unsetenv(name)</code></li>
+<li><code>home()</code></li>
+<li><code>temp_dir()</code></li>
+<li><code>command_exists(command)</code></li>
+<li><code>pid()</code></li>
+<li><code>ppid()</code></li>
+<li><code>run(command)</code></li>
+<li><code>capture(command)</code></li>
+<li><code>success(command)</code></li>
+<li><code>output(command)</code></li>
+<li><code>spawn(command)</code></li>
+<li><code>wait(pid)</code></li>
+<li><code>waitpid(pid)</code></li>
+<li><code>kill(signal_number, pid)</code></li>
+<li><code>uid()</code></li>
+<li><code>gid()</code></li>
+<li><code>euid()</code></li>
+<li><code>egid()</code></li>
+<li><code>groups()</code></li>
+<li><code>clock_gettime(clock = &quot;monotonic&quot;)</code></li>
+<li><code>trap(signal_number, callback)</code></li>
+<li><code>signals()</code></li>
+<li><code>signal_name(signal_number)</code></li>
+<li><code>login()</code></li>
+<li><code>user(name)</code></li>
+<li><code>user_id(uid_value)</code></li>
+<li><code>shell_split(text)</code></li>
+<li><code>shell_escape(text)</code></li>
+<li><code>shell_join(items)</code></li>
+</ul>
+<h3 id="complete-inventory-text">Complete inventory: <code>text</code></h3>
+<ul>
+<li><code>match(pattern, text)</code></li>
+<li><code>search(pattern, text)</code></li>
+<li><code>find_all(pattern, text)</code></li>
+<li><code>replace_regex(pattern, replacement, text)</code></li>
+<li><code>base64_encode(text)</code></li>
+<li><code>base64_decode(text)</code></li>
+<li><code>hex_encode(text)</code></li>
+<li><code>hex_decode(text)</code></li>
+<li><code>url_encode(text)</code></li>
+<li><code>url_decode(text)</code></li>
+<li><code>scanner(text)</code></li>
+<li><code>shell_split(text)</code></li>
+<li><code>shell_escape(text)</code></li>
+<li><code>shell_join(items)</code></li>
+<li><code>class StringScanner</code></li>
+<li><code>StringScanner.initialize(text)</code></li>
+<li><code>StringScanner.scan(pattern)</code></li>
+<li><code>StringScanner.scan_until(pattern)</code></li>
+<li><code>StringScanner.skip(pattern)</code></li>
+<li><code>StringScanner.skip_until(pattern)</code></li>
+<li><code>StringScanner.check(pattern)</code></li>
+<li><code>StringScanner.check_until(pattern)</code></li>
+<li><code>StringScanner.match?()</code></li>
+<li><code>StringScanner.matched()</code></li>
+<li><code>StringScanner.matched_size()</code></li>
+<li><code>StringScanner.pre_match()</code></li>
+<li><code>StringScanner.post_match()</code></li>
+</ul>
+<h3 id="complete-inventory-time">Complete inventory: <code>time</code></h3>
+<ul>
+<li><code>class Time</code></li>
+<li><code>Time.initialize(timestamp = nil)</code></li>
+<li><code>Time.now()</code></li>
+<li><code>Time.today()</code></li>
+<li><code>Time.strptime(text, format)</code></li>
+<li><code>Time.format(format_string)</code></li>
+<li><code>Time.parts()</code></li>
+<li><code>Time.year()</code></li>
+<li><code>Time.month()</code></li>
+<li><code>Time.day()</code></li>
+<li><code>Time.hour()</code></li>
+<li><code>Time.minute()</code></li>
+<li><code>Time.second()</code></li>
+<li><code>Time.add(milliseconds)</code></li>
+<li><code>Time.subtract(milliseconds)</code></li>
+<li><code>Time.plus(milliseconds)</code></li>
+<li><code>Time.minus(milliseconds)</code></li>
+<li><code>Time.compare(other)</code></li>
+<li><code>Time.succ()</code></li>
+<li><code>Time.add_ms(milliseconds)</code></li>
+<li><code>Time.subtract_ms(milliseconds)</code></li>
+<li><code>class Date</code></li>
+<li><code>Date.initialize(timestamp = nil)</code></li>
+<li><code>Date.parse(text)</code></li>
+<li><code>Date.strptime(text, format)</code></li>
+<li><code>Date.format(format_string = &quot;%Y-%m-%d&quot;)</code></li>
+<li><code>Date.add(days)</code></li>
+<li><code>Date.subtract(days)</code></li>
+<li><code>Date.next_day()</code></li>
+<li><code>Date.prev_day()</code></li>
+<li><code>Date.succ()</code></li>
+<li><code>Date.shift_months(months)</code></li>
+<li><code>Date.add_months(months)</code></li>
+<li><code>Date.subtract_months(months)</code></li>
+<li><code>Date.compare(other)</code></li>
+<li><code>class DateTime</code></li>
+<li><code>DateTime.initialize(timestamp)</code></li>
+<li><code>DateTime.timestamp()</code></li>
+<li><code>DateTime.format(pattern)</code></li>
+<li><code>DateTime.parts()</code></li>
+<li><code>DateTime.year()</code></li>
+<li><code>DateTime.month()</code></li>
+<li><code>DateTime.day()</code></li>
+<li><code>DateTime.hour()</code></li>
+<li><code>DateTime.minute()</code></li>
+<li><code>DateTime.second()</code></li>
+<li><code>DateTime.weekday()</code></li>
+<li><code>DateTime.iso()</code></li>
+<li><code>class DateTimeModule</code></li>
+<li><code>DateTimeModule.now()</code></li>
+<li><code>DateTimeModule.from_timestamp(milliseconds)</code></li>
+<li><code>DateTimeModule.format(milliseconds, pattern)</code></li>
+<li><code>now()</code></li>
+<li><code>today()</code></li>
+<li><code>timestamp()</code></li>
+<li><code>parse(text)</code></li>
+<li><code>date(text)</code></li>
+<li><code>format(value, pattern = &quot;%Y-%m-%d %H:%M:%S&quot;)</code></li>
+<li><code>_time_sleep(milliseconds)</code></li>
+<li><code>sleep(milliseconds)</code></li>
+</ul>
+<h2 id="17-known-implementation-limits-and-caveats">17. Known implementation limits and caveats</h2>
+<p>These are explicit boundaries of the 2.0.2 implementation; do not infer stronger guarantees than stated.</p>
+<ul>
+<li>String indexing is Unicode code-point aware for valid UTF-8, not grapheme-cluster aware. <code>length()</code> counts code points; <code>char_at()</code> and <code>slice()</code> use code-point indices; <code>reverse()</code> reverses code points. Combining sequences and emoji joined by ZWJ can still display as multiple logical units after reversal. <code>upper()</code>/<code>lower()</code> are ASCII-oriented rather than full Unicode case conversion.</li>
+<li><code>String.replace(from, to)</code> rejects an empty <code>from</code> with <code>ValueError</code> to guarantee progress and prevent an infinite loop.</li>
+<li><code>String.to_int()</code> and <code>String.to_float()</code> reject trailing non-whitespace characters. Numeric conversion follows the C++ runtime's locale behavior for floating-point parsing; locale-independent parsing is not promised.</li>
+<li>CSV parsing returns an empty array for empty input and does not create a synthetic record for a final line terminator. It rejects malformed quote placement and unterminated quoted fields. Delimiters are single-byte characters; Unicode delimiters are not supported.</li>
+<li>JSON parsing combines valid UTF-16 surrogate pairs in <code>\uXXXX</code> escapes and rejects isolated surrogates. Validation of raw, unescaped UTF-8 byte sequences is not a complete security boundary.</li>
+<li><code>app.timeout().timeout(seconds, callback)</code> is post-hoc elapsed-time checking. It cannot interrupt a callback or cancel blocking I/O and must not be used to contain non-terminating or untrusted code.</li>
+<li><code>app.parser()</code> rejects unknown options, missing values, and unexpected positional arguments; supports <code>--name=value</code> and <code>--name value</code>; and recognizes boolean options from a boolean default. Short options, required-option declarations, and automatic type conversion are not implemented.</li>
+<li><code>app.benchmark().realtime(callback)</code> measures a Lucy callback without spawning a shell. The current <code>millis()</code> clock has millisecond resolution; short operations can report <code>0.0</code>.</li>
+<li>HTTP, DNS, TLS, process control, file permissions, and signal APIs depend on OS capabilities and external environment. Deterministic CI should mock or isolate these dependencies rather than requiring public internet access.</li>
+</ul>
+<h2 id="runtime-provided-module-discovery">Runtime-provided module discovery</h2>
+<p><code>modules_info()</code> is a native global function (not a standard-library module). It returns a map from each discoverable Lucy module name to its source file path. It searches the current source-file directory (when running a script), configured project/install roots, and <code>LUCY_PATH</code>; it does not enumerate every file on the machine. In the REPL, <code>:modules</code> prints the same kind of discovered module/path information.</p>
+<pre><code class="language-lucy">let module_paths = modules_info()
+for name in module_paths.keys() {
+    println name + &quot; -&gt; &quot; + module_paths[name]
+}
+</code></pre>
+<h2 id="core-class-apis-and-import-compatibility">Core class APIs and import compatibility</h2>
+<p><code>File</code>, <code>Dir</code>, and <code>Path</code> are core singleton-like classes. Their class methods are installed from the canonical <code>fs</code> and <code>system</code> modules, so the public surface is <code>File.read(path)</code>, <code>Dir.cwd()</code>, and <code>Path.basename(path)</code> rather than exposing implementation-only <code>__*__</code> functions. The underlying native functions remain implementation details, not recommended application APIs.</p>
+<p>These classes can be extended with ordinary Lucy class declarations:</p>
+<pre><code class="language-lucy">class File {
+    func read_version() {
+        return File.read(&quot;VERSION&quot;)
+    }
+}
+
+println File.read_version()
+</code></pre>
+<p>A declaration for an existing core class adds or replaces methods on that class; it does not create a separate class or a second <code>File</code> namespace. Treat method replacement as a global change to the current interpreter. Keep additions namespaced with project-specific method names to avoid accidentally replacing standard methods.</p>
+<p>The lowercase modules remain importable. <code>import fs</code>, <code>import system</code>, <code>import text</code>, and <code>import time</code> are supported; their APIs are not removed just because core class methods are available. This is deliberate compatibility behavior, not a requirement to import those modules for basic filesystem operations.</p>
+<h2 id="independent-standard-library-module-versions">Independent standard-library module versions</h2>
+<p><code>stdlib/manifest.json</code> records a semantic version, entry file, stability label, and dependency list for every shipped Lucy source module. The language version and module versions are separate: a compatible fix to <code>fs</code> can be published as an <code>fs</code> patch without claiming that the Lucy language itself changed version. The manifest is metadata; it does not download or hot-swap code by itself. Distributing an updated module means replacing its <code>.lucy</code> file and manifest record as a single tested unit.</p>
+<p>Use the repository helper:</p>
+<pre><code class="language-sh">./build/paw stdlib list
+./build/paw stdlib verify
+./build/paw stdlib set-version fs 1.0.1
+</code></pre>
+<p>Before changing a module version, update its documentation, regression tests, and changelog. Do not bump a version solely to make a release appear newer. The current <code>sqlite</code> module is marked optional because native SQLite support depends on the build configuration.</p>
+<h2 id="lucy-207-hardening-notes">Lucy 2.0.7 hardening notes</h2>
+<ul>
+<li>User-defined function calls have a configurable maximum depth. The default is 16; set <code>LUCY_MAX_CALL_DEPTH</code> to a positive integer to change it (accepted values up to 100000). Exceeding the limit raises <code>RecursionError</code>.</li>
+<li>JSON parsing rejects nesting deeper than 512 levels with <code>JSONDecodeError</code>; the Lucy parser also limits expression and unary-operator nesting to 512 to avoid native-stack exhaustion.</li>
+<li><code>Dir.rmdir(path)</code> removes only an empty directory. Recursive deletion must be requested explicitly with <code>Dir.rmdir(path, true)</code> or <code>fs.rmdir(path, true)</code>.</li>
+<li>Integer addition, subtraction, and multiplication now report <code>OverflowError</code> rather than silently wrapping. Invalid shift counts and out-of-range floating-point-to-integer conversions raise language-level errors.</li>
+<li>Native extension lookup no longer searches the process working directory or the script directory. Use configured installation roots or <code>LUCY_PATH</code> for trusted extension locations; ordinary Lucy imports may still resolve modules relative to their importing source file.</li>
+<li>Printing cyclic arrays/maps uses <code>[...]</code> and <code>{...}</code> markers; equality is type-aware, structural for arrays/maps, cycle-safe, and identity-based for class instances and callable objects.</li>
+</ul>
+</article><div class="docs-page-nav"><a href="runtime_and_errors.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="standard_library_api_inventory.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

@@ -1,0 +1,711 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 — Built-in Functions and Native Value Methods"><title>Lucy 2.0.7 — Built-in Functions and Native Value Methods · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="active">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 — Built-in Functions and Native Value Methods</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-built-in-functions-and-native-value-methods">Lucy 2.0.7 — Built-in Functions and Native Value Methods</h1>
+<p>This reference covers functions compiled into the runtime and the native methods available on primitive values. It complements the source-indexed <a href="stdlib/"><code>stdlib/</code> API pages</a> and <a href="standard_library.html"><code>Standard Library</code></a>. Internal names beginning with <code>__</code> are deliberately omitted; they are implementation details, not public APIs.</p>
+<h2 id="global-functions">Global functions</h2>
+<h3 id="output-and-conversion">Output and conversion</h3>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>print</code></td>
+  <td><code>print(value, ...)</code></td>
+  <td>Writes values separated by spaces; does not append a newline.</td>
+</tr>
+<tr>
+  <td><code>println</code></td>
+  <td><code>println(value, ...)</code></td>
+  <td>Writes values separated by spaces and appends a newline.</td>
+</tr>
+<tr>
+  <td><code>input</code></td>
+  <td><code>input([prompt])</code></td>
+  <td>Optionally writes a prompt, then reads one line from standard input.</td>
+</tr>
+<tr>
+  <td><code>str</code></td>
+  <td><code>str(value)</code></td>
+  <td>Returns the runtime string representation.</td>
+</tr>
+<tr>
+  <td><code>type</code></td>
+  <td><code>type(value)</code></td>
+  <td>Returns the runtime type name, such as <code>string</code>, <code>int</code>, or <code>array</code>.</td>
+</tr>
+<tr>
+  <td><code>typeof</code></td>
+  <td><code>typeof(value)</code></td>
+  <td>Alias of <code>type</code>.</td>
+</tr>
+<tr>
+  <td><code>len</code></td>
+  <td><code>len(value)</code></td>
+  <td>Returns the number of Unicode code points in a valid UTF-8 string, or the number of elements/entries in an array/map.</td>
+</tr>
+<tr>
+  <td><code>int</code></td>
+  <td><code>int(value[, base])</code></td>
+  <td>Converts an integer, truncates a floating-point value, or parses a numeric string. String bases must be 2–36.</td>
+</tr>
+<tr>
+  <td><code>float</code></td>
+  <td><code>float(value)</code></td>
+  <td>Converts a number or a fully consumed numeric string; rejects trailing junk and non-finite string values.</td>
+</tr>
+<tr>
+  <td><code>bin</code></td>
+  <td><code>bin(integer[, width])</code></td>
+  <td>Formats an integer in base 2; optional width zero-pads the digits.</td>
+</tr>
+<tr>
+  <td><code>hex</code></td>
+  <td><code>hex(integer[, width])</code></td>
+  <td>Formats an integer in base 16 using uppercase digits; optional width zero-pads the digits.</td>
+</tr>
+<tr>
+  <td><code>oct</code></td>
+  <td><code>oct(integer[, width])</code></td>
+  <td>Formats an integer in base 8; optional width zero-pads the digits.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="collections-and-numeric-functions">Collections and numeric functions</h3>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>range</code></td>
+  <td><code>range(stop)</code> or <code>range(start, stop[, step])</code></td>
+  <td>Creates an array of integers; <code>stop</code> is exclusive and <code>step</code> cannot be zero.</td>
+</tr>
+<tr>
+  <td><code>sum</code></td>
+  <td><code>sum(array)</code></td>
+  <td>Adds numeric array elements.</td>
+</tr>
+<tr>
+  <td><code>min</code></td>
+  <td><code>min(value, ...)</code></td>
+  <td>Returns the smallest numeric argument; at least one argument is required.</td>
+</tr>
+<tr>
+  <td><code>max</code></td>
+  <td><code>max(value, ...)</code></td>
+  <td>Returns the largest numeric argument; at least one argument is required.</td>
+</tr>
+<tr>
+  <td><code>abs</code></td>
+  <td><code>abs(value)</code></td>
+  <td>Absolute value.</td>
+</tr>
+<tr>
+  <td><code>sqrt</code></td>
+  <td><code>sqrt(value)</code></td>
+  <td>Square root; negative inputs raise <code>ValueError</code>.</td>
+</tr>
+<tr>
+  <td><code>sin</code>, <code>cos</code>, <code>tan</code></td>
+  <td><code>sin(value)</code>, etc.</td>
+  <td>Trigonometric functions; inputs are interpreted in radians.</td>
+</tr>
+<tr>
+  <td><code>floor</code>, <code>ceil</code></td>
+  <td><code>floor(value)</code>, <code>ceil(value)</code></td>
+  <td>Rounds toward negative or positive infinity, respectively.</td>
+</tr>
+<tr>
+  <td><code>exp</code></td>
+  <td><code>exp(value)</code></td>
+  <td>Exponential function.</td>
+</tr>
+<tr>
+  <td><code>log</code>, <code>log10</code></td>
+  <td><code>log(value)</code>, <code>log10(value)</code></td>
+  <td>Natural and base-10 logarithms; inputs must be positive.</td>
+</tr>
+<tr>
+  <td><code>pow</code></td>
+  <td><code>pow(base, exponent)</code></td>
+  <td>Raises <code>base</code> to <code>exponent</code>.</td>
+</tr>
+<tr>
+  <td><code>random_int</code></td>
+  <td><code>random_int(minimum, maximum)</code></td>
+  <td>Returns a pseudo-random integer in the inclusive interval.</td>
+</tr>
+<tr>
+  <td><code>assert</code></td>
+  <td><code>assert(condition[, message])</code></td>
+  <td>Raises <code>AssertionError</code> when the condition is false.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="filesystem-process-and-runtime-inspection">Filesystem, process, and runtime inspection</h3>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>read_file</code></td>
+  <td><code>read_file(path)</code></td>
+  <td>Reads a file as text; throws <code>IOError</code> on failure. Prefer <code>fs.read</code> for the standard-library filesystem API.</td>
+</tr>
+<tr>
+  <td><code>write_file</code></td>
+  <td><code>write_file(path, content)</code></td>
+  <td>Truncates and writes a text file; throws <code>IOError</code> if it cannot open the destination. Prefer <code>fs.write</code> for the standard-library filesystem API.</td>
+</tr>
+<tr>
+  <td><code>exists</code></td>
+  <td><code>exists(path)</code></td>
+  <td>Returns whether the path exists (file or directory).</td>
+</tr>
+<tr>
+  <td><code>cwd</code></td>
+  <td><code>cwd()</code></td>
+  <td>Returns the process current working directory.</td>
+</tr>
+<tr>
+  <td><code>getenv</code></td>
+  <td><code>getenv(name)</code></td>
+  <td>Returns the environment variable value, or <code>nil</code> when it is unset.</td>
+</tr>
+<tr>
+  <td><code>sleep</code></td>
+  <td><code>sleep(milliseconds)</code></td>
+  <td>Blocks the current thread for the requested number of milliseconds.</td>
+</tr>
+<tr>
+  <td><code>millis</code></td>
+  <td><code>millis()</code></td>
+  <td>Returns elapsed milliseconds since the timer's first call in the current process.</td>
+</tr>
+<tr>
+  <td><code>modules_info</code></td>
+  <td><code>modules_info()</code></td>
+  <td>Returns a map of discoverable Lucy module names to source paths. It searches configured roots, not the entire disk.</td>
+</tr>
+<tr>
+  <td><code>exit</code></td>
+  <td><code>exit([code])</code></td>
+  <td>Terminates the current process with the optional exit status.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="predefined-bindings">Predefined bindings</h3>
+<table>
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>PI</code>, <code>E</code></td>
+  <td>Common mathematical constants.</td>
+</tr>
+<tr>
+  <td><code>VERSION</code></td>
+  <td>Current Lucy runtime version string.</td>
+</tr>
+<tr>
+  <td><code>PLATFORM</code></td>
+  <td>Build platform name (<code>windows</code>, <code>macos</code>, <code>linux</code>, or <code>unix</code>).</td>
+</tr>
+<tr>
+  <td><code>ARGV</code>, <code>argv</code></td>
+  <td>The same mutable array of script arguments, excluding the script path itself.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="import-free-core-filesystem-objects-203">Import-free core filesystem objects (2.0.3)</h2>
+<p>These global objects are installed by the runtime and require no <code>import</code>. They are namespace-like facades over the canonical <code>fs</code> and <code>system</code> modules. Existing lowercase APIs remain available.</p>
+<h3 id="dir"><code>Dir</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>cwd</code>, <code>pwd</code></td>
+  <td><code>Dir.cwd()</code>, <code>Dir.pwd()</code></td>
+  <td>Return the current working directory.</td>
+</tr>
+<tr>
+  <td><code>entries</code>, <code>files</code>, <code>dirs</code></td>
+  <td><code>Dir.entries([path])</code></td>
+  <td>Return directory entries, files, or subdirectories. Defaults follow the underlying <code>fs</code> API.</td>
+</tr>
+<tr>
+  <td><code>exist</code></td>
+  <td><code>Dir.exist(path)</code></td>
+  <td>Return whether a filesystem entry exists.</td>
+</tr>
+<tr>
+  <td><code>mkdir</code>, <code>rmdir</code></td>
+  <td><code>Dir.mkdir(path[, parents])</code>, <code>Dir.rmdir(path[, recursive])</code></td>
+  <td>Create or remove a directory. <code>rmdir</code> is non-recursive by default; pass <code>true</code> explicitly to remove a directory tree. Filesystem errors are propagated.</td>
+</tr>
+<tr>
+  <td><code>empty</code>, <code>glob</code>, <code>walk</code></td>
+  <td><code>Dir.empty([path])</code>, <code>Dir.glob(pattern)</code>, <code>Dir.walk([path])</code></td>
+  <td>Directory utility operations forwarded to <code>fs</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file"><code>File</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>read</code>, <code>write</code>, <code>append</code></td>
+  <td><code>File.read(path)</code>, <code>File.write(path, content)</code>, <code>File.append(path, content)</code></td>
+  <td>Read text, overwrite a file, or append text.</td>
+</tr>
+<tr>
+  <td><code>read_lines</code>, <code>write_lines</code></td>
+  <td><code>File.read_lines(path)</code>, <code>File.write_lines(path, lines)</code></td>
+  <td>Read/write line-oriented text.</td>
+</tr>
+<tr>
+  <td><code>exists</code>, <code>exist</code></td>
+  <td><code>File.exists(path)</code></td>
+  <td>Return whether a file or directory exists (same contract as <code>fs.exists</code>).</td>
+</tr>
+<tr>
+  <td><code>size</code></td>
+  <td><code>File.size(path)</code></td>
+  <td>Return the file size using the underlying filesystem API.</td>
+</tr>
+<tr>
+  <td><code>delete</code>, <code>remove</code>, <code>copy</code>, <code>move</code>, <code>touch</code></td>
+  <td><code>File.delete(path)</code>, <code>File.copy(source, destination)</code></td>
+  <td>File operations delegated to <code>fs</code>. <code>delete</code>/<code>remove</code> take one path.</td>
+</tr>
+<tr>
+  <td><code>open</code></td>
+  <td><code>File.open(path[, mode])</code></td>
+  <td>Open a stream using the existing <code>fs.IO</code> abstraction.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="path"><code>Path</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>join</code></td>
+  <td><code>Path.join(parts)</code></td>
+  <td>Join an array of path components.</td>
+</tr>
+<tr>
+  <td><code>absolute</code>, <code>expand</code></td>
+  <td><code>Path.absolute(path)</code>, <code>Path.expand(path)</code></td>
+  <td>Convert a path to an absolute or expanded path using the current platform implementation.</td>
+</tr>
+<tr>
+  <td><code>basename</code>, <code>dirname</code>, <code>extension</code>, <code>stem</code></td>
+  <td><code>Path.basename(path)</code> etc.</td>
+  <td>Extract common path components.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="native-methods-on-values">Native methods on values</h2>
+<p>Every value participates in a shared Object protocol. These methods are available without imports and can be overridden by user-defined methods on the corresponding built-in type:</p>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>to_s()</code>, <code>to_string()</code></td>
+  <td>Return the runtime's user-facing string representation. Both names are aliases.</td>
+</tr>
+<tr>
+  <td><code>inspect()</code></td>
+  <td>Return a diagnostic representation; strings are quoted and common control characters are escaped.</td>
+</tr>
+<tr>
+  <td><code>type()</code>, <code>type_name()</code></td>
+  <td>Return the runtime type identifier (<code>nil</code>, <code>bool</code>, <code>int</code>, <code>double</code>, <code>string</code>, <code>array</code>, <code>map</code>, <code>function</code>, <code>class</code>, <code>instance</code>, or <code>native</code>).</td>
+</tr>
+<tr>
+  <td><code>class_name()</code></td>
+  <td>Return the language-level class name, including the declared class name for user instances.</td>
+</tr>
+<tr>
+  <td><code>nil?()</code></td>
+  <td>Return whether the value is <code>nil</code>.</td>
+</tr>
+<tr>
+  <td><code>is_a?(Class)</code></td>
+  <td>Test a built-in or user-defined class; accepts a class object or its name as a string. <code>Number</code> accepts both <code>Int</code> and <code>Double</code>.</td>
+</tr>
+<tr>
+  <td><code>respond_to?(name)</code></td>
+  <td>Check whether the receiver exposes the named method. Collection-only methods are not reported for unrelated scalar types.</td>
+</tr>
+<tr>
+  <td><code>equals?(other)</code></td>
+  <td>Perform Lucy value equality, including structural equality for supported collection values.</td>
+</tr>
+</tbody>
+</table>
+<p>Function values additionally expose <code>name()</code>, <code>arity()</code>, <code>required_arity()</code>, <code>parameters()</code>, and <code>call(args...)</code>. User-defined functions report their declared parameter counts; native functions without signature metadata report <code>-1</code> for <code>arity()</code> and <code>required_arity()</code>. Class values expose <code>name()</code>, <code>superclass()</code>, <code>methods()</code>, and <code>is_struct?()</code>. User instances expose <code>class_of()</code>, <code>fields()</code> / <code>to_h()</code>, <code>has_field?(name)</code>, and <code>methods()</code>.</p>
+<h3 id="string-methods">String methods</h3>
+<p><code>String</code> additionally supports <code>to_int()</code> / <code>to_i()</code>, <code>to_float()</code> / <code>to_f()</code>, <code>capitalize()</code>, <code>chars()</code>, <code>index_of(text)</code>, and <code>empty?()</code>. <code>chars()</code> splits a UTF-8 string into Unicode code points. <code>index_of()</code> returns a zero-based code-point index or <code>nil</code>. <code>capitalize()</code> currently uppercases an ASCII first character; it does not claim full Unicode case mapping.</p>
+<h3 id="array-methods">Array methods</h3>
+<p><code>Array</code> supports the existing indexed and higher-order methods plus <code>append(value, ...)</code>, <code>prepend(value, ...)</code>, <code>concat(array)</code>, <code>compact()</code>, <code>uniq()</code>, <code>find(predicate)</code>, <code>each_with_index(callback)</code>, and <code>reduce(callback[, initial])</code>. <code>append</code>, <code>prepend</code>, and <code>concat</code> mutate the receiver; <code>compact</code>, <code>uniq</code>, and <code>find</code> do not. <code>reduce</code> passes <code>(accumulator, element)</code> to its callback and returns <code>nil</code> for an empty array without an initial value. <code>each_with_index</code> passes <code>(element, zero_based_index)</code>.</p>
+<p><code>sum()</code>, <code>min()</code>, and <code>max()</code> require finite numeric elements. <code>sort()</code> returns a stable sorted copy and accepts either all-numeric or all-string arrays; mixed or unsupported element types raise <code>TypeError</code>. <code>take(count)</code> and <code>drop(count)</code> return copies and reject negative counts.</p>
+<h3 id="map-methods">Map methods</h3>
+<p><code>Map</code> additionally supports <code>fetch(key[, default])</code>, <code>has_key?(key)</code>, <code>merge(other_map)</code>, <code>each(callback)</code>, <code>to_a()</code>, and <code>empty?()</code>. <code>fetch</code> raises <code>KeyError</code> for a missing key without a default. <code>merge</code> returns a new map and leaves both inputs unchanged. <code>each</code> calls the callback with <code>(key, value)</code>. <code>to_a</code> returns key/value pairs; map iteration order is unspecified.</p>
+<p>Built-in types can be extended with <code>class Type { ... }</code> declarations; extension methods are documented in <a href="language_reference.html#114-built-in-type-extension">the language reference</a> and appear in REPL completion. The lists below describe the native methods available before user extensions are added.</p>
+<h3 id="string"><code>String</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>length</code>, <code>size</code></td>
+  <td><code>value.length()</code></td>
+  <td>Unicode code-point count for valid UTF-8; not grapheme-cluster count.</td>
+</tr>
+<tr>
+  <td><code>upper</code>, <code>upcase</code></td>
+  <td><code>value.upper()</code></td>
+  <td>ASCII case conversion; full Unicode case mapping is not implemented.</td>
+</tr>
+<tr>
+  <td><code>lower</code>, <code>downcase</code></td>
+  <td><code>value.lower()</code></td>
+  <td>ASCII case conversion; full Unicode case mapping is not implemented.</td>
+</tr>
+<tr>
+  <td><code>strip</code>, <code>trim</code></td>
+  <td><code>value.strip()</code></td>
+  <td>Removes leading/trailing ASCII whitespace.</td>
+</tr>
+<tr>
+  <td><code>contains</code></td>
+  <td><code>value.contains(part)</code></td>
+  <td>Substring test.</td>
+</tr>
+<tr>
+  <td><code>starts_with</code>, <code>ends_with</code></td>
+  <td><code>value.starts_with(part)</code></td>
+  <td>Prefix/suffix tests.</td>
+</tr>
+<tr>
+  <td><code>reverse</code></td>
+  <td><code>value.reverse()</code></td>
+  <td>Returns a new string with code points reversed.</td>
+</tr>
+<tr>
+  <td><code>repeat</code></td>
+  <td><code>value.repeat(count)</code></td>
+  <td>Repeats the string; negative counts raise <code>ValueError</code>.</td>
+</tr>
+<tr>
+  <td><code>to_int</code>, <code>to_i</code>, <code>to_float</code>, <code>to_f</code></td>
+  <td><code>value.to_i()</code>, <code>value.to_f()</code></td>
+  <td>Strict numeric conversion; trailing junk is rejected. Float conversion also rejects non-finite results.</td>
+</tr>
+<tr>
+  <td><code>slice</code></td>
+  <td><code>value.slice(start[, end])</code></td>
+  <td>Returns code points from <code>start</code> up to but excluding <code>end</code>; negative indexes count from the end.</td>
+</tr>
+<tr>
+  <td><code>char_at</code></td>
+  <td><code>value.char_at(index)</code></td>
+  <td>Returns one code point or <code>nil</code> for an out-of-range index.</td>
+</tr>
+<tr>
+  <td><code>split</code></td>
+  <td><code>value.split(separator)</code></td>
+  <td>Splits on a non-empty separator.</td>
+</tr>
+<tr>
+  <td><code>replace</code></td>
+  <td><code>value.replace(search, replacement)</code></td>
+  <td>Replaces non-overlapping matches; an empty search string raises <code>ValueError</code>.</td>
+</tr>
+<tr>
+  <td><code>capitalize</code>, <code>chars</code>, <code>index_of</code>, <code>empty?</code></td>
+  <td><code>value.chars()</code>, <code>value.index_of(part)</code></td>
+  <td>First-character ASCII capitalization, UTF-8 code-point array, zero-based code-point search index (<code>nil</code> when absent), and emptiness check.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array"><code>Array</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>push</code></td>
+  <td><code>array.push(value, ...)</code></td>
+  <td>Appends values and returns the new length.</td>
+</tr>
+<tr>
+  <td><code>pop</code>, <code>shift</code></td>
+  <td><code>array.pop()</code>, <code>array.shift()</code></td>
+  <td>Removes and returns the last/first value, or <code>nil</code> for an empty array.</td>
+</tr>
+<tr>
+  <td><code>unshift</code></td>
+  <td><code>array.unshift(value, ...)</code></td>
+  <td>Prepends values and returns the new length.</td>
+</tr>
+<tr>
+  <td><code>insert</code></td>
+  <td><code>array.insert(index, value)</code></td>
+  <td>Inserts at an index; out-of-range indexes are clamped to the array bounds.</td>
+</tr>
+<tr>
+  <td><code>remove_at</code></td>
+  <td><code>array.remove_at(index)</code></td>
+  <td>Removes and returns the value, or <code>nil</code> for an invalid index.</td>
+</tr>
+<tr>
+  <td><code>clear</code></td>
+  <td><code>array.clear()</code></td>
+  <td>Removes all elements.</td>
+</tr>
+<tr>
+  <td><code>first</code>, <code>last</code></td>
+  <td><code>array.first()</code>, <code>array.last()</code></td>
+  <td>Returns an endpoint or <code>nil</code> for an empty array.</td>
+</tr>
+<tr>
+  <td><code>contains</code>, <code>count</code>, <code>index</code></td>
+  <td><code>array.contains(value)</code></td>
+  <td>Tests membership, counts equal values, or returns the first index (<code>nil</code> if absent).</td>
+</tr>
+<tr>
+  <td><code>join</code></td>
+  <td><code>array.join(separator)</code></td>
+  <td>Joins string representations using the separator.</td>
+</tr>
+<tr>
+  <td><code>reverse</code></td>
+  <td><code>array.reverse()</code></td>
+  <td>Reverses the array in place and returns the array.</td>
+</tr>
+<tr>
+  <td><code>length</code>, <code>size</code></td>
+  <td><code>array.length()</code></td>
+  <td>Number of elements.</td>
+</tr>
+<tr>
+  <td><code>slice</code></td>
+  <td><code>array.slice(start[, end])</code></td>
+  <td>Returns a new array for the half-open index range.</td>
+</tr>
+<tr>
+  <td><code>each</code>, <code>map</code>, <code>filter</code></td>
+  <td><code>array.map(callback)</code></td>
+  <td>Calls a callback per element; <code>map</code> returns transformed values and <code>filter</code> keeps truthy matches.</td>
+</tr>
+<tr>
+  <td><code>any</code>, <code>all</code></td>
+  <td><code>array.any(callback)</code>, <code>array.all(callback)</code></td>
+  <td>Tests whether any/all callback results are truthy.</td>
+</tr>
+<tr>
+  <td><code>append</code>, <code>prepend</code>, <code>concat</code></td>
+  <td><code>array.append(values...)</code>, <code>array.concat(other)</code></td>
+  <td>Mutating aliases for append/prepend/concatenation; return the receiver.</td>
+</tr>
+<tr>
+  <td><code>compact</code>, <code>uniq</code></td>
+  <td><code>array.compact()</code>, <code>array.uniq()</code></td>
+  <td>Return copies with <code>nil</code> values or duplicate values removed.</td>
+</tr>
+<tr>
+  <td><code>find</code>, <code>each_with_index</code>, <code>reduce</code></td>
+  <td><code>array.find(predicate)</code>, <code>array.reduce(callback[, initial])</code></td>
+  <td>Find first matching value, iterate with zero-based indexes, or fold values.</td>
+</tr>
+<tr>
+  <td><code>sum</code>, <code>min</code>, <code>max</code></td>
+  <td><code>array.sum()</code>, <code>array.min()</code>, <code>array.max()</code></td>
+  <td>Numeric-only aggregate methods; empty min/max return <code>nil</code>.</td>
+</tr>
+<tr>
+  <td><code>sort</code>, <code>take</code>, <code>drop</code></td>
+  <td><code>array.sort()</code>, <code>array.take(count)</code>, <code>array.drop(count)</code></td>
+  <td>Stable homogeneous numeric/string sort and non-mutating prefix/suffix selection.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="map"><code>Map</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>get</code></td>
+  <td><code>map.get(key)</code></td>
+  <td>Returns the value or <code>nil</code> if absent.</td>
+</tr>
+<tr>
+  <td><code>set</code></td>
+  <td><code>map.set(key, value)</code></td>
+  <td>Stores and returns the value. Keys must be strings.</td>
+</tr>
+<tr>
+  <td><code>has</code></td>
+  <td><code>map.has(key)</code></td>
+  <td>Tests whether a string key exists.</td>
+</tr>
+<tr>
+  <td><code>delete</code></td>
+  <td><code>map.delete(key)</code></td>
+  <td>Removes a key and returns whether it existed.</td>
+</tr>
+<tr>
+  <td><code>keys</code>, <code>values</code></td>
+  <td><code>map.keys()</code>, <code>map.values()</code></td>
+  <td>Returns arrays of keys or values.</td>
+</tr>
+<tr>
+  <td><code>length</code>, <code>size</code></td>
+  <td><code>map.length()</code></td>
+  <td>Number of entries.</td>
+</tr>
+<tr>
+  <td><code>clear</code></td>
+  <td><code>map.clear()</code></td>
+  <td>Removes all entries.</td>
+</tr>
+<tr>
+  <td><code>fetch</code>, <code>has_key?</code></td>
+  <td><code>map.fetch(key[, default])</code>, <code>map.has_key?(key)</code></td>
+  <td>Strict lookup with optional default and key-existence alias.</td>
+</tr>
+<tr>
+  <td><code>merge</code>, <code>each</code>, <code>to_a</code>, <code>empty?</code></td>
+  <td><code>map.merge(other)</code>, <code>map.each(callback)</code>, <code>map.to_a()</code></td>
+  <td>Non-mutating merge, <code>(key, value)</code> iteration, key/value pair conversion, and emptiness check.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="int-double-and-number"><code>Int</code>, <code>Double</code>, and <code>Number</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+  <th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>abs</code>, <code>floor</code>, <code>ceil</code>, <code>round</code></td>
+  <td><code>value.round()</code></td>
+  <td>Numeric absolute value and rounding operations.</td>
+</tr>
+<tr>
+  <td><code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>log</code></td>
+  <td><code>value.sqrt()</code></td>
+  <td>Numeric operations; square root/log domain errors are reported. Trigonometric inputs use radians.</td>
+</tr>
+<tr>
+  <td><code>to_int</code>, <code>to_i</code>, <code>to_float</code>, <code>to_f</code>, <code>to_s</code>, <code>to_string</code></td>
+  <td><code>value.to_i()</code>, <code>value.to_f()</code>, <code>value.to_s()</code></td>
+  <td>Numeric conversions and consistent string conversion.</td>
+</tr>
+<tr>
+  <td><code>is_integer?</code>, <code>positive?</code>, <code>negative?</code>, <code>zero?</code>, <code>even?</code>, <code>odd?</code></td>
+  <td><code>value.is_integer?()</code></td>
+  <td>Numeric predicates; parity methods require an integer receiver.</td>
+</tr>
+<tr>
+  <td><code>clamp</code></td>
+  <td><code>value.clamp(minimum, maximum)</code></td>
+  <td>Returns the receiver bounded to the inclusive interval; minimum must not exceed maximum.</td>
+</tr>
+<tr>
+  <td><code>to_binary</code>, <code>to_hex</code>, <code>to_octal</code></td>
+  <td><code>value.to_hex([width])</code></td>
+  <td>Formats the truncated integer part with optional zero-padding.</td>
+</tr>
+<tr>
+  <td><code>pow</code></td>
+  <td><code>value.pow(exponent)</code></td>
+  <td>Raises the receiver to the supplied exponent.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-lucy">println len(&quot;é🙂&quot;)       # 2 code points
+println hex(255, 4)      # 00FF
+println range(2, 8, 2)   # [2, 4, 6]
+println modules_info()   # module name -&gt; source path map
+
+class String {
+    func shout() {
+        return self.upper() + &quot;!&quot;
+    }
+}
+println &quot;Lucy&quot;.shout()  # LUCY!
+</code></pre>
+<h2 id="contract-and-known-limits">Contract and known limits</h2>
+<ul>
+<li><code>len(string)</code> and <code>String.length()</code> count Unicode code points for valid UTF-8, not user-perceived grapheme clusters.</li>
+<li>String upper/lower methods are ASCII-oriented; do not assume full Unicode case conversion.</li>
+<li><code>float(string)</code> rejects trailing junk and non-finite values, while <code>int(string[, base])</code> requires a complete numeric string.</li>
+<li>Native built-ins are implemented in C++; their internal <code>__*</code> counterparts are not public API. Prefer the flat <code>fs</code>, <code>system</code>, <code>math</code>, <code>random</code>, <code>text</code>, and other standard-library module APIs for new application code.</li>
+</ul>
+</article><div class="docs-page-nav"><a href="audit_followup_2_0_5.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="changelog.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

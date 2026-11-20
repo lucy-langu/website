@@ -1,0 +1,75 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy Regression, Audit, and Release Process"><title>Lucy Regression, Audit, and Release Process · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="active">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy Regression, Audit, and Release Process</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-regression-audit-and-release-process">Lucy Regression, Audit, and Release Process</h1>
+<h2 id="1-release-philosophy">1. Release philosophy</h2>
+<p>Prefer a narrow, reproducible fix over a broad refactor. A release candidate should not mix unrelated language semantics changes with package tooling or documentation work. For 2.0.7, changes should be limited to diagnostics, ecosystem contracts, reliability, documentation, and version consistency.</p>
+<h2 id="2-required-test-layers">2. Required test layers</h2>
+<ol>
+<li><strong>Unit/native tests:</strong> C++ helpers, source spans, parser/runtime edge cases.</li>
+<li><strong>Language regressions:</strong> <code>.lucy</code> programs for valid and expected-error behavior.</li>
+<li><strong>Tool tests:</strong> package manager, project scaffold, standard-library manifest, documentation generator, test runner.</li>
+<li><strong>Integration tests:</strong> project-local package import, native extension build/load, optional SQLite.</li>
+<li><strong>Documentation examples:</strong> execute every example marked runnable.</li>
+<li><strong>Platform builds:</strong> Linux, Windows/MSVC, Windows/MinGW where supported, and macOS.</li>
+</ol>
+<h2 id="3-bug-to-test-workflow">3. Bug-to-test workflow</h2>
+<pre><code class="language-text">issue
+  -&gt; classify subsystem
+  -&gt; reproduce on baseline
+  -&gt; minimize input
+  -&gt; add failing regression
+  -&gt; implement smallest fix
+  -&gt; run focused test
+  -&gt; run complete native + language suite
+  -&gt; update docs/API inventory
+  -&gt; review compatibility
+  -&gt; record platform evidence
+</code></pre>
+<h2 id="4-required-release-metadata-audit">4. Required release metadata audit</h2>
+<p>The following values must agree:</p>
+<ul>
+<li><code>VERSION</code>;</li>
+<li><code>project(... VERSION ...)</code> in <code>CMakeLists.txt</code>;</li>
+<li>CLI <code>--version</code> output;</li>
+<li>runtime global <code>VERSION</code>;</li>
+<li>REPL banner;</li>
+<li><code>stdlib/manifest.json</code> language version;</li>
+<li><code>docs/contracts/core_api.json</code> version field;</li>
+<li>installer/package metadata, if included.</li>
+</ul>
+<p>Historical verification files must retain their historical version numbers. Do not globally replace historical records.</p>
+<h2 id="5-documentation-review">5. Documentation review</h2>
+<p>For every public behavior change, update all affected references:</p>
+<ul>
+<li>language reference;</li>
+<li>programming/getting-started guide;</li>
+<li>builtin and standard-library references;</li>
+<li>per-module API page;</li>
+<li>REPL/tooling docs;</li>
+<li>examples and tests;</li>
+<li>changelog and release verification.</li>
+</ul>
+<p>Mark examples as runnable, illustrative, expected-error, or environment-dependent. Do not present a proposed CLI command as implemented.</p>
+<h2 id="6-cross-platform-evidence">6. Cross-platform evidence</h2>
+<p>For each platform record OS version, architecture, compiler/toolchain, CMake version, build type, feature flags, command, test totals, and CI run URL or log artifact. Use <code>pending</code> when no evidence exists.</p>
+<h2 id="7-release-archive">7. Release archive</h2>
+<ul>
+<li>Start from a clean checkout/export.</li>
+<li>Exclude build directories, caches, temporary logs, and personal environment files.</li>
+<li>Include source, tests, docs, editor assets, licenses, and release scripts.</li>
+<li>Run <code>unzip -t</code> on the final archive.</li>
+<li>Build from the extracted archive, not only the working tree.</li>
+<li>Compare archive contents with the intended tracked source.</li>
+<li>Generate checksums and publish them with the release.</li>
+</ul>
+<h2 id="8-stop-ship-conditions">8. Stop-ship conditions</h2>
+<p>Do not mark the release ready if any of these remain:</p>
+<ul>
+<li>version metadata mismatch;</li>
+<li>failing regression test;</li>
+<li>undocumented behavior change;</li>
+<li>broken clean build;</li>
+<li>lockfile corruption or unsafe archive extraction;</li>
+<li>unverified claim of Windows/macOS support;</li>
+<li>secrets or local paths in release artifacts;</li>
+<li>release notes claim a registry, resolver, LSP, debugger, or formatter that is not actually implemented.</li>
+</ul>
+</article><div class="docs-page-nav"><a href="red_team_audit.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="release_2_0_7.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

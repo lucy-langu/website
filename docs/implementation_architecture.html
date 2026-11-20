@@ -1,0 +1,156 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy 2.0.7 Implementation Architecture"><title>Lucy 2.0.7 Implementation Architecture · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="active">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy 2.0.7 Implementation Architecture</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-207-implementation-architecture">Lucy 2.0.7 Implementation Architecture</h1>
+<p>This document describes the current C++ implementation rather than the ideal future architecture.</p>
+<h2 id="1-pipeline">1. Pipeline</h2>
+<p>The implementation can be understood as:</p>
+<pre><code class="language-text">source
+  ↓
+lexer
+  ↓
+tokens
+  ↓
+parser
+  ↓
+AST
+  ↓
+interpreter/runtime
+  ├── environments and values
+  ├── built-ins and object dispatch
+  ├── standard-library bridge
+  ├── module/package resolver
+  ├── REPL
+  └── native extension boundary
+</code></pre>
+<h2 id="2-lexer">2. Lexer</h2>
+<p><code>src/lexer.cpp</code> turns source text into token objects. It recognizes keywords, identifiers, strings, numbers, punctuation, operators, ranges, interpolation-related forms, backticks, comments, and statement separators.</p>
+<p>The lexer performs important numeric validation. Hexadecimal and binary literals are not allowed to degrade into a prefix plus unrelated identifier when malformed.</p>
+<h2 id="3-parser">3. Parser</h2>
+<p><code>src/parser.cpp</code> constructs AST nodes for declarations, expressions, control flow, functions, classes, structs, imports, exceptions, loops, ranges, lambdas, and assignments.</p>
+<p>The expression parser separates precedence levels including range, arithmetic, shifts, comparison, equality, bitwise operations, logical operations, coalescing, and ternary expressions.</p>
+<h2 id="4-ast">4. AST</h2>
+<p>The public AST declarations live under <code>include/lucy/ast.hpp</code>. The tree contains nodes for statements and expressions, including <code>RangeExpr</code> and the function/class/struct forms required by 2.0.</p>
+<h2 id="5-runtime-subsystem-boundaries">5. Runtime subsystem boundaries</h2>
+<p>The runtime implementation is split by responsibility:</p>
+<ul>
+<li><code>src/environment.cpp</code> implements lexical environment storage, parent-scope lookup, assignment, and name suggestions.</li>
+<li><code>src/type_system.cpp</code> implements runtime type-name matching and contract enforcement.</li>
+<li><code>src/runtime.cpp</code> orchestrates statement execution, expression evaluation, calls, object dispatch, module loading, and host integration.</li>
+<li><code>src/value.cpp</code> implements value representation and operations.</li>
+</ul>
+<p>The split preserves the public <code>Interpreter</code> API and is intended to make contracts independently reviewable and testable. It is not yet a complete separation of frontend, execution engine, and host services.</p>
+<h2 id="6-runtime-values">6. Runtime values</h2>
+<p><code>include/lucy/value.hpp</code> defines the runtime <code>Value</code> representation and the value categories used by the interpreter. <code>src/value.cpp</code> contains value operations and representation logic.</p>
+<p>Runtime method dispatch supports:</p>
+<ul>
+<li>ordinary class instances;</li>
+<li>built-in values such as numbers, strings, arrays, and maps;</li>
+<li>built-in type classes that can be reopened by Lucy source;</li>
+<li>native resource-backed objects.</li>
+</ul>
+<h2 id="7-built-in-type-extension">7. Built-in type extension</h2>
+<p>The runtime maintains built-in type classes and installs them for <code>Object</code>, <code>Nil</code>, <code>Bool</code>, <code>Int</code>, <code>Double</code>, <code>Number</code>, <code>String</code>, <code>Array</code>, <code>Map</code>, <code>Function</code>, <code>Class</code>, <code>Instance</code>, and <code>Native</code>.</p>
+<p>When Lucy code declares:</p>
+<pre><code class="language-lucy">class String {
+    func shout() -&gt; String {
+        return self.upper() + &quot;!&quot;
+    }
+}
+</code></pre>
+<p>the runtime extends the existing built-in class instead of replacing the primitive type. The method receiver is bound to the actual primitive value.</p>
+<p>This is the public object model; application code does not need an internal type-extension function.</p>
+<h2 id="8-standard-library-loading">8. Standard-library loading</h2>
+<p>The interpreter loads the shipped standard modules at startup. This is why a 2.0 program can call <code>fs.read</code>, <code>http.get</code>, or <code>data.parse</code> without importing those shipped modules first.</p>
+<p>User modules and packages still participate in normal import resolution.</p>
+<h2 id="range-and-slicing-implementation">Range and slicing implementation</h2>
+<p><code>RangeExpr</code> represents <code>a..b</code> and <code>a...b</code>. Array indexing detects range expressions and constructs a new array. Negative endpoints are normalized against the collection length.</p>
+<p>The built-in <code>range(start, stop, step)</code> creates an integer array with an exclusive stop and rejects a zero step.</p>
+<h2 id="loop-implementation">Loop implementation</h2>
+<p><code>for</code> and <code>foreach</code> evaluate an array/range or string and bind each element. Strings are snapshotted as UTF-8 code points (not individual bytes), so Unicode characters remain intact. The optional second loop variable receives the zero-based item index:</p>
+<pre><code class="language-lucy">for value, index in values {
+    # value and index are available here
+}
+</code></pre>
+<h2 id="10-repl">10. REPL</h2>
+<p><code>src/repl.cpp</code> implements the interactive editor and completion behavior. Completion candidates are derived from known keywords, standard modules, module members, and built-in value members. Dotted completion can cycle through multiple matches.</p>
+<p>The completion implementation avoids executing arbitrary user expressions merely to produce a candidate list.</p>
+<h2 id="11-native-extension-boundary">11. Native extension boundary</h2>
+<p><code>include/lucy/extension.hpp</code> and <code>src/extension.cpp</code> implement the public native extension boundary. The runtime can load shared modules and expose functions, constants, and native objects.</p>
+<p>The runtime library is also built as a reusable shared library (<code>lucy_runtime</code>), separating the runtime implementation from the CLI executable.</p>
+<h2 id="12-native-standard-library-bridge">12. Native standard-library bridge</h2>
+<p><code>src/stdlib_native.cpp</code> contains native implementations needed for operating-system and external-library operations. The Pure-Lucy modules in <code>stdlib/</code> present the user-facing API.</p>
+<p>This division keeps the public API expressive while keeping platform-specific mechanisms behind the runtime boundary.</p>
+<h2 id="13-optional-sqlite">13. Optional SQLite</h2>
+<p>CMake controls SQLite through <code>LUCY_ENABLE_SQLITE</code>. When enabled, SQLite3 is found and linked to <code>lucy_runtime</code>. When disabled, the runtime remains buildable without that dependency.</p>
+<h2 id="14-source-map">14. Source map</h2>
+<table>
+<thead>
+<tr>
+  <th>Path</th>
+  <th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>src/lexer.cpp</code></td>
+  <td>lexical analysis</td>
+</tr>
+<tr>
+  <td><code>src/parser.cpp</code></td>
+  <td>AST construction</td>
+</tr>
+<tr>
+  <td><code>src/runtime.cpp</code></td>
+  <td>interpreter execution, calls, dispatch, and orchestration</td>
+</tr>
+<tr>
+  <td><code>src/environment.cpp</code></td>
+  <td>lexical environments and name lookup</td>
+</tr>
+<tr>
+  <td><code>src/type_system.cpp</code></td>
+  <td>runtime type contracts</td>
+</tr>
+<tr>
+  <td><code>src/value.cpp</code></td>
+  <td>runtime value behavior</td>
+</tr>
+<tr>
+  <td><code>src/phase2.cpp</code></td>
+  <td>native/library support layer</td>
+</tr>
+<tr>
+  <td><code>src/stdlib_native.cpp</code></td>
+  <td>native standard-library facilities</td>
+</tr>
+<tr>
+  <td><code>src/repl.cpp</code></td>
+  <td>interactive editor and completion</td>
+</tr>
+<tr>
+  <td><code>src/extension.cpp</code></td>
+  <td>C++ extension loading/API</td>
+</tr>
+<tr>
+  <td><code>src/main.cpp</code></td>
+  <td>CLI entry point</td>
+</tr>
+<tr>
+  <td><code>include/lucy/*.hpp</code></td>
+  <td>public/runtime headers</td>
+</tr>
+<tr>
+  <td><code>stdlib/*.lucy</code></td>
+  <td>Pure-Lucy standard library</td>
+</tr>
+<tr>
+  <td><code>tests/*.lucy</code></td>
+  <td>language/runtime regression tests</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-architectural-rule">15. Architectural rule</h2>
+<p>When adding a feature, decide first whether it belongs in the language core, runtime, Pure-Lucy library, or native extension layer. Avoid adding a native wrapper for functionality that can be expressed cleanly in Lucy.</p>
+<h2 id="runtime-memory-ownership">Runtime memory ownership</h2>
+<p>Runtime objects use <code>std::shared_ptr</code> ownership. A function owns its lexical closure; environments own bound values; classes and instances own method/field values. This permits escaping closures but can create reference cycles. The interpreter tracks environments weakly and clears tracked environments at interpreter shutdown to break environment/function cycles. This is not a tracing garbage collector and does not promise prompt cycle reclamation in a long-lived REPL process. See <a href="https://github.com/nimacpp/lucy/blob/main/docs/adr/0002-runtime-memory-ownership.md">ADR 0002</a>.</p>
+<h2 id="runtime-contract-tests">Runtime contract tests</h2>
+<p><code>tests/runtime_core_test.cpp</code> exercises lexical parent lookup, assignment propagation, immutable bindings, and runtime type-contract helpers independently of source parsing. Configure with <code>-DLUCY_ENABLE_SANITIZERS=ON</code> on GCC or Clang to enable AddressSanitizer and UndefinedBehaviorSanitizer for the runtime and test executables.</p>
+</article><div class="docs-page-nav"><a href="history_and_migration.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="language_reference.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

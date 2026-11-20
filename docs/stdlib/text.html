@@ -1,0 +1,332 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: `text` standard library — Lucy 2.0.7 · module 1.1.0"><title>`text` standard library — Lucy 2.0.7 · module 1.1.0 · Lucy Docs</title><link rel="icon" href="../../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../../styles.css" rel="stylesheet"><link href="../../docs.css" rel="stylesheet"><link href="../../site-2.css" rel="stylesheet"><link href="../../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html"><span class="brand-mark"><img alt="Lucy" src="../../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="../getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="../language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="../language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="../programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="../real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="../runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="../object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="../standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="../standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="../builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="../paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="../ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="../ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="../ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="../packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="../tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="../command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="../package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="../dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="../lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="../changelog.html" class="">Lucy Changelog</a><a href="../history_and_migration.html" class="">Lucy History and Migration</a><a href="../release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="../verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="../verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="../verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="../verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="../verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="../environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="../repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="../developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="../implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="../debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="../regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="../phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="../red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="../audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="../audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="../audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="../project-overview.html" class="">Lucy</a><a href="../projects.html" class="">End-to-end Lucy projects</a><a href="../extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="../editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>`text` standard library — Lucy 2.0.7 · module 1.1.0</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="text-standard-library-lucy-207-module-110"><code>text</code> standard library — Lucy 2.0.7 · module 1.1.0</h1>
+<p>Regular expressions, Base64/hex/URL encoding, shell escaping, and string scanner.</p>
+<h2 id="availability-and-imports">Availability and imports</h2>
+<p>The shipped module is loaded automatically in Lucy 2.x. Explicit <code>import</code> remains available when you want to make dependencies visible:</p>
+<pre><code class="language-lucy">import text
+</code></pre>
+<p>Names beginning with <code>_</code> or <code>__</code> are implementation details unless a public API explicitly documents them.</p>
+<h2 id="quick-example">Quick example</h2>
+<pre><code class="language-lucy">println text.match(&quot;^lucy&quot;, &quot;lucy-lang&quot;)
+println text.hex_encode(&quot;Lucy&quot;)
+println text.url_encode(&quot;hello world&quot;)
+</code></pre>
+<h2 id="module-level-functions">Module-level functions</h2>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>match</code></td>
+  <td><code>match(pattern, text)</code></td>
+</tr>
+<tr>
+  <td><code>search</code></td>
+  <td><code>search(pattern, text)</code></td>
+</tr>
+<tr>
+  <td><code>find_all</code></td>
+  <td><code>find_all(pattern, text)</code></td>
+</tr>
+<tr>
+  <td><code>replace_regex</code></td>
+  <td><code>replace_regex(pattern, replacement, text)</code></td>
+</tr>
+<tr>
+  <td><code>base64_encode</code></td>
+  <td><code>base64_encode(text)</code></td>
+</tr>
+<tr>
+  <td><code>base64_decode</code></td>
+  <td><code>base64_decode(text)</code></td>
+</tr>
+<tr>
+  <td><code>hex_encode</code></td>
+  <td><code>hex_encode(text)</code></td>
+</tr>
+<tr>
+  <td><code>hex_decode</code></td>
+  <td><code>hex_decode(text)</code></td>
+</tr>
+<tr>
+  <td><code>url_encode</code></td>
+  <td><code>url_encode(text)</code></td>
+</tr>
+<tr>
+  <td><code>url_decode</code></td>
+  <td><code>url_decode(text)</code></td>
+</tr>
+<tr>
+  <td><code>scanner</code></td>
+  <td><code>scanner(text)</code></td>
+</tr>
+<tr>
+  <td><code>shell_split</code></td>
+  <td><code>shell_split(text)</code></td>
+</tr>
+<tr>
+  <td><code>shell_escape</code></td>
+  <td><code>shell_escape(text)</code></td>
+</tr>
+<tr>
+  <td><code>shell_join</code></td>
+  <td><code>shell_join(items)</code></td>
+</tr>
+<tr>
+  <td><code>blank</code></td>
+  <td><code>blank(value)</code></td>
+</tr>
+<tr>
+  <td><code>present</code></td>
+  <td><code>present(value)</code></td>
+</tr>
+<tr>
+  <td><code>truncate</code></td>
+  <td><code>truncate(value, max_length, suffix = &quot;...&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>pad_left</code></td>
+  <td><code>pad_left(value, width, fill = &quot; &quot;)</code></td>
+</tr>
+<tr>
+  <td><code>pad_right</code></td>
+  <td><code>pad_right(value, width, fill = &quot; &quot;)</code></td>
+</tr>
+<tr>
+  <td><code>remove_prefix</code></td>
+  <td><code>remove_prefix(value, prefix)</code></td>
+</tr>
+<tr>
+  <td><code>remove_suffix</code></td>
+  <td><code>remove_suffix(value, suffix)</code></td>
+</tr>
+<tr>
+  <td><code>before</code></td>
+  <td><code>before(value, delimiter)</code></td>
+</tr>
+<tr>
+  <td><code>after</code></td>
+  <td><code>after(value, delimiter)</code></td>
+</tr>
+<tr>
+  <td><code>count_occurrences</code></td>
+  <td><code>count_occurrences(value, needle)</code></td>
+</tr>
+<tr>
+  <td><code>equals_ignore_case</code></td>
+  <td><code>equals_ignore_case(left, right)</code></td>
+</tr>
+<tr>
+  <td><code>words</code></td>
+  <td><code>words(value)</code></td>
+</tr>
+<tr>
+  <td><code>join</code></td>
+  <td><code>join(items, separator = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>lines</code></td>
+  <td><code>lines(value)</code></td>
+</tr>
+<tr>
+  <td><code>ensure_prefix</code></td>
+  <td><code>ensure_prefix(value, prefix)</code></td>
+</tr>
+<tr>
+  <td><code>ensure_suffix</code></td>
+  <td><code>ensure_suffix(value, suffix)</code></td>
+</tr>
+<tr>
+  <td><code>indent</code></td>
+  <td><code>indent(value, prefix = &quot;    &quot;)</code></td>
+</tr>
+<tr>
+  <td><code>dedent</code></td>
+  <td><code>dedent(value)</code></td>
+</tr>
+<tr>
+  <td><code>snake_case</code></td>
+  <td><code>snake_case(value)</code></td>
+</tr>
+<tr>
+  <td><code>kebab_case</code></td>
+  <td><code>kebab_case(value)</code></td>
+</tr>
+<tr>
+  <td><code>title_case</code></td>
+  <td><code>title_case(value)</code></td>
+</tr>
+<tr>
+  <td><code>reverse_words</code></td>
+  <td><code>reverse_words(value)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes-and-methods">Classes and methods</h2>
+<h3 id="stringscanner"><code>StringScanner</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>initialize</code></td>
+  <td><code>initialize(text)</code></td>
+</tr>
+<tr>
+  <td><code>scan</code></td>
+  <td><code>scan(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>scan_until</code></td>
+  <td><code>scan_until(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>skip</code></td>
+  <td><code>skip(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>skip_until</code></td>
+  <td><code>skip_until(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>check</code></td>
+  <td><code>check(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>check_until</code></td>
+  <td><code>check_until(pattern)</code></td>
+</tr>
+<tr>
+  <td><code>match?</code></td>
+  <td><code>match?()</code></td>
+</tr>
+<tr>
+  <td><code>matched</code></td>
+  <td><code>matched()</code></td>
+</tr>
+<tr>
+  <td><code>matched_size</code></td>
+  <td><code>matched_size()</code></td>
+</tr>
+<tr>
+  <td><code>pre_match</code></td>
+  <td><code>pre_match()</code></td>
+</tr>
+<tr>
+  <td><code>post_match</code></td>
+  <td><code>post_match()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contract-and-error-handling">Contract and error handling</h2>
+<p>Validate inputs at the application boundary. Runtime errors are reported as Lucy exceptions or native errors; exact messages may vary by platform and build. Do not assume network access, process privileges, filesystem permissions, or optional native dependencies are available.</p>
+<h2 id="source-of-truth">Source of truth</h2>
+<p>Implementation: <a href="https://github.com/nimacpp/lucy/blob/main/stdlib/text.lucy"><code>stdlib/text.lucy</code></a>. The signatures above are indexed from the current source file. Behavior is ultimately defined by implementation and regression tests; if you change the source API, regenerate this page and add tests for the new contract.</p>
+<h2 id="text-normalization-and-formatting-helpers">Text normalization and formatting helpers</h2>
+<p>These functions are composed from the runtime's existing UTF-8-aware string methods. Case conversion remains ASCII-oriented, matching the core string contract.</p>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>blank(value)</code></td>
+  <td>True when the stripped string is empty.</td>
+</tr>
+<tr>
+  <td><code>present(value)</code></td>
+  <td>Negation of <code>blank</code>.</td>
+</tr>
+<tr>
+  <td><code>truncate(value, max_length, suffix = &quot;...&quot;)</code></td>
+  <td>Limit code-point length and append a suffix when truncated.</td>
+</tr>
+<tr>
+  <td><code>pad_left(value, width, fill = &quot; &quot;)</code></td>
+  <td>Left-pad with one code point.</td>
+</tr>
+<tr>
+  <td><code>pad_right(value, width, fill = &quot; &quot;)</code></td>
+  <td>Right-pad with one code point.</td>
+</tr>
+<tr>
+  <td><code>remove_prefix(value, prefix)</code></td>
+  <td>Remove a matching prefix.</td>
+</tr>
+<tr>
+  <td><code>remove_suffix(value, suffix)</code></td>
+  <td>Remove a matching suffix.</td>
+</tr>
+<tr>
+  <td><code>before(value, delimiter)</code></td>
+  <td>Return text before the first delimiter.</td>
+</tr>
+<tr>
+  <td><code>after(value, delimiter)</code></td>
+  <td>Return text after the first delimiter.</td>
+</tr>
+<tr>
+  <td><code>count_occurrences(value, needle)</code></td>
+  <td>Count non-overlapping occurrences.</td>
+</tr>
+<tr>
+  <td><code>equals_ignore_case(left, right)</code></td>
+  <td>Compare after ASCII-oriented lowercase conversion.</td>
+</tr>
+<tr>
+  <td><code>words(value)</code></td>
+  <td>Split on spaces and discard empty tokens.</td>
+</tr>
+<tr>
+  <td><code>join(items, separator = &quot;&quot;)</code></td>
+  <td>Join stringified values.</td>
+</tr>
+<tr>
+  <td><code>lines(value)</code></td>
+  <td>Normalize CRLF/CR and split into lines.</td>
+</tr>
+<tr>
+  <td><code>ensure_prefix(value, prefix)</code></td>
+  <td>Add a missing prefix.</td>
+</tr>
+<tr>
+  <td><code>ensure_suffix(value, suffix)</code></td>
+  <td>Add a missing suffix.</td>
+</tr>
+<tr>
+  <td><code>indent(value, prefix = &quot;    &quot;)</code></td>
+  <td>Prefix each line.</td>
+</tr>
+<tr>
+  <td><code>dedent(value)</code></td>
+  <td>Remove the minimum leading whitespace count from non-blank lines.</td>
+</tr>
+<tr>
+  <td><code>snake_case(value)</code></td>
+  <td>Convert space/hyphen-separated words to lowercase underscores.</td>
+</tr>
+<tr>
+  <td><code>kebab_case(value)</code></td>
+  <td>Convert space/underscore-separated words to lowercase hyphens.</td>
+</tr>
+<tr>
+  <td><code>title_case(value)</code></td>
+  <td>Capitalize the first ASCII character of each word.</td>
+</tr>
+<tr>
+  <td><code>reverse_words(value)</code></td>
+  <td>Reverse word order.</td>
+</tr>
+</tbody>
+</table>
+</article><div class="docs-page-nav"><a href="system.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="time.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../../version.js"></script><script src="../../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../../lucy-highlight.js"></script><script src="../../docs-complete.js"></script></body></html>

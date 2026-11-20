@@ -1,0 +1,197 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: Lucy Language Specification 2.0.7"><title>Lucy Language Specification 2.0.7 · Lucy Docs</title><link rel="icon" href="../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../styles.css" rel="stylesheet"><link href="../docs.css" rel="stylesheet"><link href="../site-2.css" rel="stylesheet"><link href="../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark"><img alt="Lucy" src="../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="language_specification.html" class="active">Lucy Language Specification 2.0.7</a><a href="language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="changelog.html" class="">Lucy Changelog</a><a href="history_and_migration.html" class="">Lucy History and Migration</a><a href="release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="stdlib/app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="stdlib/crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="stdlib/data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="stdlib/fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="stdlib/math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="stdlib/random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="stdlib/repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="stdlib/result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="stdlib/runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="stdlib/set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="stdlib/sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="stdlib/system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="stdlib/time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="project-overview.html" class="">Lucy</a><a href="projects.html" class="">End-to-end Lucy projects</a><a href="extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>Lucy Language Specification 2.0.7</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="lucy-language-specification-207">Lucy Language Specification 2.0.7</h1>
+<p><strong>Status:</strong> normative baseline for the 2.0.7 language contract<br />
+<strong>Implementation:</strong> C++17 interpreter<br />
+<strong>Scope:</strong> syntax and observable language/runtime behavior implemented by this source tree</p>
+<p>This document defines the compatibility contract for Lucy 2.0.7. The detailed examples and API inventories remain in <code>LANGUAGE_REFERENCE.md</code>, <code>BUILTIN_REFERENCE.md</code>, and <code>STANDARD_LIBRARY.md</code>. If a descriptive example conflicts with executable behavior or a regression test, the conflict must be resolved by changing either the implementation or this specification; it must not be silently treated as a new feature.</p>
+<p>The terms <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>SHOULD</strong>, and <strong>MAY</strong> are normative.</p>
+<h2 id="1-language-identity-and-compilation-pipeline">1. Language identity and compilation pipeline</h2>
+<p>Lucy source is case-sensitive. The implementation pipeline is:</p>
+<pre><code class="language-text">UTF-8 source
+  -&gt; Lexer
+  -&gt; Token stream
+  -&gt; Recursive-descent Parser
+  -&gt; AST
+  -&gt; Interpreter
+  -&gt; Runtime Values / Environments / Native boundary
+</code></pre>
+<p>The 2.0.7 implementation interprets an AST; it does not compile source to machine code or bytecode. A C++17 shared runtime is built separately from the command-line executable.</p>
+<h2 id="2-source-and-lexical-contract">2. Source and lexical contract</h2>
+<ul>
+<li>Source files are interpreted as byte sequences containing UTF-8 text. String operations documented as code-point operations do not imply grapheme-cluster segmentation.</li>
+<li>Identifiers are ASCII-based. An identifier begins with an ASCII letter or <code>_</code>; later characters may also contain decimal digits. A trailing <code>?</code> or <code>!</code> is accepted for supported identifier forms.</li>
+<li><code>#</code> starts a line comment. The lexer also recognizes the <code>=begin</code> / <code>=end</code> multiline-comment form.</li>
+<li>Newline and semicolon are statement separators where the grammar permits a statement boundary. Semicolons are not required after every statement.</li>
+<li>A backslash immediately followed by LF or CRLF continues a logical line. String escapes include <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\v</code>, <code>\0</code>, <code>\\</code>, escaped quotes, <code>\/</code>, <code>\xNN</code>, and <code>\uXXXX</code>; unknown and incomplete escapes are syntax errors.</li>
+<li>Both <code>'...'</code> and <code>&quot;...&quot;</code> produce string values. The supported escape set is documented in the language reference. Invalid or incomplete escapes are syntax errors.</li>
+<li><code>${expression}</code> evaluates a full Lucy expression during interpolation. <code>$identifier</code> and supported dotted shorthand insert a resolved value; shorthand does not implicitly invoke a callable member.</li>
+<li>Integer literals support decimal, hexadecimal (<code>0x</code>), and binary (<code>0b</code>) forms with validated separators. Integer overflow is a syntax error.</li>
+<li>Backtick-delimited command expressions are supported. They are process interaction, not a shell-sandbox guarantee.</li>
+</ul>
+<h2 id="3-core-grammar">3. Core grammar</h2>
+<p>The following EBNF describes the accepted language shape. It is intentionally explanatory around context-sensitive details (such as command-style calls, newline handling, and declaration modifiers); <code>src/parser.cpp</code> remains the executable grammar.</p>
+<pre><code class="language-ebnf">program          = { separator | statement } ;
+separator        = newline | &quot;;&quot; ;
+
+statement        = declaration | assignment | control_statement
+                 | function_decl | class_decl | struct_decl
+                 | import_decl | exception_statement | expression ;
+
+declaration      = ( &quot;let&quot; | &quot;var&quot; | &quot;const&quot; | &quot;global&quot; )
+                   identifier [ &quot;:&quot; type_name ] [ &quot;=&quot; expression ] ;
+
+assignment       = assignable assign_operator expression ;
+assignable       = identifier | postfix_expression ;
+assign_operator  = &quot;=&quot; | &quot;+=&quot; | &quot;-=&quot; | &quot;*=&quot; | &quot;/=&quot; | &quot;%=&quot;
+                 | &quot;**=&quot; | &quot;&amp;=&quot; | &quot;|=&quot; | &quot;^=&quot; | &quot;&lt;&lt;=&quot; | &quot;&gt;&gt;=&quot; ;
+
+function_decl    = [ visibility ] [ &quot;static&quot; ] ( &quot;func&quot; | &quot;function&quot; | &quot;def&quot; )
+                   identifier &quot;(&quot; [ parameters ] &quot;)&quot; [ &quot;-&gt;&quot; type_name ] block ;
+parameters       = parameter { &quot;,&quot; parameter } ;
+parameter        = [ &quot;*&quot; ] identifier [ &quot;:&quot; type_name ] [ &quot;=&quot; expression ] ;
+
+class_decl       = &quot;class&quot; identifier [ &quot;&lt;&quot; identifier ] &quot;{&quot;
+                   { method_decl | separator } &quot;}&quot; ;
+method_decl      = [ visibility ] [ &quot;static&quot; ] function_decl ;
+visibility       = &quot;public&quot; | &quot;protected&quot; | &quot;private&quot; ;
+
+struct_decl      = &quot;struct&quot; identifier &quot;{&quot;
+                   { struct_field | method_decl | separator } &quot;}&quot; ;
+struct_field     = identifier [ &quot;:&quot; type_name ] [ &quot;=&quot; expression ] ;
+
+import_decl      = &quot;import&quot; module_name [ &quot;as&quot; identifier ]
+                 | &quot;from&quot; module_name &quot;import&quot; identifier
+                   { &quot;,&quot; identifier } ;
+
+control_statement = if_statement | unless_statement | while_statement
+                  | post_test_loop | for_statement | switch_statement
+                  | &quot;break&quot; | &quot;continue&quot; | &quot;return&quot; [ expression ] ;
+if_statement     = &quot;if&quot; expression block
+                   { &quot;else&quot; &quot;if&quot; expression block }
+                   [ &quot;else&quot; block ] ;
+unless_statement = &quot;unless&quot; expression block [ &quot;else&quot; block ] ;
+while_statement  = &quot;while&quot; expression block ;
+post_test_loop   = ( &quot;repeat&quot; | &quot;do&quot; ) block &quot;while&quot; expression ;
+for_statement    = ( &quot;for&quot; | &quot;foreach&quot; ) identifier [ &quot;,&quot; identifier ]
+                   &quot;in&quot; expression block ;
+switch_statement = &quot;switch&quot; expression &quot;{&quot;
+                   { &quot;case&quot; expression &quot;:&quot; statement }
+                   [ &quot;default&quot; &quot;:&quot; statement ] &quot;}&quot; ;
+
+exception_statement = &quot;throw&quot; expression
+                    | &quot;try&quot; block
+                      [ &quot;catch&quot; [ type_name ] [ &quot;as&quot; identifier ] block ]
+                      [ &quot;finally&quot; block ] ;
+
+block            = &quot;{&quot; { separator | statement } &quot;}&quot; ;
+expression       = ternary_expression ;
+ternary_expression = coalesce_expression
+                     [ &quot;?&quot; expression &quot;:&quot; expression ] ;
+coalesce_expression = logical_or_expression [ &quot;??&quot; coalesce_expression ] ;
+logical_or_expression = logical_and_expression
+                        { ( &quot;or&quot; | &quot;||&quot; ) logical_and_expression } ;
+logical_and_expression = bit_or_expression
+                         { ( &quot;and&quot; | &quot;&amp;&amp;&quot; ) bit_or_expression } ;
+bit_or_expression  = bit_xor_expression { &quot;|&quot; bit_xor_expression } ;
+bit_xor_expression = bit_and_expression { &quot;^&quot; bit_and_expression } ;
+bit_and_expression = equality_expression { &quot;&amp;&quot; equality_expression } ;
+equality_expression = comparison_expression
+                      { ( &quot;==&quot; | &quot;!=&quot; | &quot;===&quot; | &quot;!==&quot; ) comparison_expression } ;
+comparison_expression = shift_expression
+                         { ( &quot;&lt;&quot; | &quot;&lt;=&quot; | &quot;&gt;&quot; | &quot;&gt;=&quot; | &quot;&lt;=&gt;&quot; | &quot;in&quot; )
+                           shift_expression } ;
+shift_expression = range_expression { ( &quot;&lt;&lt;&quot; | &quot;&gt;&gt;&quot; ) range_expression } ;
+range_expression = additive_expression [ ( &quot;..&quot; | &quot;...&quot; ) additive_expression ] ;
+additive_expression = multiplicative_expression
+                      { ( &quot;+&quot; | &quot;-&quot; ) multiplicative_expression } ;
+multiplicative_expression = power_expression
+                            { ( &quot;*&quot; | &quot;/&quot; | &quot;%&quot; ) power_expression } ;
+power_expression = unary_expression [ &quot;**&quot; power_expression ] ;
+unary_expression = { &quot;!&quot; | &quot;not&quot; | &quot;~&quot; | &quot;+&quot; | &quot;-&quot; | &quot;++&quot; | &quot;--&quot; }
+                   postfix_expression ;
+postfix_expression = primary
+                     { call_suffix | member_suffix | index_suffix
+                       | &quot;++&quot; | &quot;--&quot; } ;
+call_suffix      = &quot;(&quot; [ arguments ] &quot;)&quot; ;
+member_suffix    = &quot;.&quot; identifier ;
+index_suffix     = &quot;[&quot; expression &quot;]&quot; ;
+primary          = literal | identifier | &quot;self&quot; | &quot;super&quot; &quot;.&quot; identifier
+                 | &quot;(&quot; expression &quot;)&quot; | array_literal | map_literal
+                 | lambda_expression | backtick_command ;
+lambda_expression = &quot;lambda&quot; [ &quot;(&quot; [ parameters ] &quot;)&quot; | identifier ]
+                    &quot;=&gt;&quot; expression ;
+</code></pre>
+<p>The parser accepts additional convenience forms (including command-style calls) where they can be parsed unambiguously. Do not infer arbitrary whitespace-insensitive syntax from this grammar.</p>
+<h2 id="4-operator-precedence-and-evaluation">4. Operator precedence and evaluation</h2>
+<p>From lower to higher precedence:</p>
+<ol>
+<li>Ternary <code>?:</code></li>
+<li>Null coalescing <code>??</code></li>
+<li>Logical OR <code>or</code>, <code>||</code></li>
+<li>Logical AND <code>and</code>, <code>&amp;&amp;</code></li>
+<li>Bitwise OR <code>|</code></li>
+<li>Bitwise XOR <code>^</code></li>
+<li>Bitwise AND <code>&amp;</code></li>
+<li>Equality <code>==</code>, <code>!=</code>, <code>===</code>, <code>!==</code></li>
+<li>Comparison <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;=&gt;</code>, <code>in</code></li>
+<li>Shift <code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
+<li>Range <code>..</code>, <code>...</code></li>
+<li>Addition/subtraction <code>+</code>, <code>-</code></li>
+<li>Multiplication/division/modulo <code>*</code>, <code>/</code>, <code>%</code></li>
+<li>Exponentiation <code>**</code></li>
+<li>Unary operators</li>
+<li>Calls, member access, indexing, postfix increment/decrement</li>
+</ol>
+<p><code>and</code>/<code>or</code> and their symbolic aliases short-circuit. <code>??</code> evaluates its right operand only when the left side is nil or the supported missing-name case. Function arguments are evaluated before the call. Evaluation order for independent map entries is not a public sequencing guarantee.</p>
+<h2 id="5-values-bindings-and-type-contracts">5. Values, bindings, and type contracts</h2>
+<p>The runtime value categories are nil, boolean, integer, floating-point number, string, array, map, function, class, instance, and native object.</p>
+<ul>
+<li><code>let</code> and <code>const</code> bindings are immutable bindings. <code>var</code> bindings are assignable.</li>
+<li>Type annotations are runtime contracts, not static compile-time type checking.</li>
+<li>Type contracts are checked for typed variable initialization/assignment, function parameters and return values, and typed struct fields.</li>
+<li>Built-in type names include <code>Any</code>, <code>Nil</code>, <code>Bool</code>, <code>Int</code>, <code>Double</code>/<code>Float</code>, <code>Number</code>, <code>String</code>, <code>Array</code>, <code>Map</code>, <code>Function</code>, <code>Class</code>, <code>Instance</code>, and <code>Native</code>; user-defined class names are accepted for instance contracts.</li>
+<li><code>nil</code> is a value. A missing ordinary name raises <code>NameError</code>; the left operand of <code>??</code> has the documented missing-name fallback behavior.</li>
+<li>Truthiness, equality, indexing, iteration, and collection semantics are defined in <code>LANGUAGE_REFERENCE.md</code> and are part of this contract.</li>
+</ul>
+<h2 id="6-functions-and-scope">6. Functions and scope</h2>
+<p>Functions are first-class values. Calls support positional arguments, named arguments, defaults, and a final variadic parameter. Functions capture lexical environments by reference. Recursion is supported, but tail-call optimization is not guaranteed.</p>
+<p>A block introduces a nested lexical environment according to the interpreter's block execution rules. <code>global</code> declarations target the interpreter's global environment. Function parameters and local declarations are scoped to the function environment.</p>
+<h2 id="7-object-model">7. Object model</h2>
+<ul>
+<li>Classes support single inheritance.</li>
+<li><code>Type.new(...)</code> creates an instance and invokes the available <code>initialize</code> constructor convention.</li>
+<li>Instance methods bind <code>self</code> to the receiver.</li>
+<li><code>static func</code> declares class-level behavior.</li>
+<li><code>super.method(...)</code> begins lookup at the parent of the class that defined the currently executing method.</li>
+<li><code>public</code>, <code>protected</code>, and <code>private</code> visibility modifiers are supported for methods.</li>
+<li>Built-in types are represented by runtime classes that can be reopened to add methods. Reopening a built-in class adds methods; it does not add per-instance fields or replace primitive storage.</li>
+<li>Structs are class-like runtime objects with struct metadata; they are not a separate C++-style value representation.</li>
+</ul>
+<p>Multiple inheritance, interfaces, traits/mixins, method overloading, abstract classes, and implicit <code>super</code> forwarding are not part of 2.0.7.</p>
+<h2 id="8-modules-exceptions-and-host-interaction">8. Modules, exceptions, and host interaction</h2>
+<p>Standard modules are loaded automatically by the interpreter; explicit imports remain supported. User modules are Lucy source files. Package resolution can locate project-local packages, but the runtime's package resolver does not imply a complete remote package manager or security sandbox.</p>
+<p>Exceptions use textual error categories. <code>try/catch/finally</code> and <code>throw</code> are supported. The caught value is currently a string containing the diagnostic message; Lucy 2.0.7 does not expose a public custom exception-class hierarchy or structured exception object.</p>
+<p>Backticks and <code>system</code> process APIs invoke host process facilities. Their availability and exact behavior depend on the operating system and configured runtime. They MUST NOT be treated as a security boundary. The interpreter is not generally thread-safe; no language-level async/await, scheduler, generator, or concurrency contract is provided.</p>
+<h2 id="9-runtime-and-native-extension-boundary">9. Runtime and native extension boundary</h2>
+<p>The interpreter is implemented in C++17. The runtime uses C++ standard-library containers and smart pointers for values, classes, instances, functions, and environments. There is no language-level garbage collector or deterministic resource-management syntax in 2.0.7. The interpreter breaks registered environment references during shutdown; reference cycles and long-lived allocation behavior remain subjects for future memory-model work.</p>
+<p>The C++ extension API exposes <code>ExtensionAPI</code>, <code>ExtensionModuleBuilder</code>, <code>NativeFunction</code>, and <code>NativeObject</code>. Its API version is currently <code>1</code>. This version identifies the declared extension interface; it is not a promise that arbitrary binaries remain ABI-compatible across all runtime builds. Extensions SHOULD be rebuilt against the exact Lucy runtime release they target.</p>
+<p>Native extensions execute inside the host process and inherit its privileges. Loading an extension is equivalent to loading native code; only load trusted extensions.</p>
+<h2 id="10-compatibility-and-versioning-policy">10. Compatibility and versioning policy</h2>
+<p>For the 2.x line:</p>
+<ul>
+<li>Patch releases MUST preserve documented language semantics and public API behavior, except for correcting behavior that is demonstrably inconsistent with the published contract.</li>
+<li>Minor releases MAY add backward-compatible syntax, runtime APIs, and tooling.</li>
+<li>A breaking change to established syntax, semantics, runtime value representation, or native extension contract requires a major version or an explicitly documented migration path.</li>
+<li>A bug fix that changes behavior relied upon by existing programs MUST be recorded in the changelog and migration notes.</li>
+<li>Historical verification reports are immutable evidence; they MUST NOT be rewritten to claim validation on platforms that were not tested.</li>
+</ul>
+<p>A release is not considered verified for an operating system/compiler combination until its build and test suite have actually run there.</p>
+<h2 id="11-conformance">11. Conformance</h2>
+<p>The conformance baseline consists of:</p>
+<ol>
+<li>This specification.</li>
+<li>The executable regression suite under <code>tests/</code>.</li>
+<li>The standard-library manifest and API inventory.</li>
+<li>The implementation and platform-specific verification records.</li>
+</ol>
+<p>Every newly documented language feature MUST have at least one positive test. Every intentionally rejected syntax or type contract SHOULD have a negative test. Documentation examples MUST be labelled as executable, illustrative, expected-error, or environment-dependent.</p>
+</article><div class="docs-page-nav"><a href="language_reference.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="lsp_spec.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../version.js"></script><script src="../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../lucy-highlight.js"></script><script src="../docs-complete.js"></script></body></html>

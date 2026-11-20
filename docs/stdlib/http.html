@@ -1,0 +1,266 @@
+<!doctype html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lucy documentation: `http` standard library — Lucy 2.0.7"><title>`http` standard library — Lucy 2.0.7 · Lucy Docs</title><link rel="icon" href="../../assets/lucy-white.png"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" rel="stylesheet"><link href="../../styles.css" rel="stylesheet"><link href="../../docs.css" rel="stylesheet"><link href="../../site-2.css" rel="stylesheet"><link href="../../docs-complete.css" rel="stylesheet"></head><body><nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index.html"><span class="brand-mark"><img alt="Lucy" src="../../assets/lucy-white.png"></span><span>Lucy</span><span class="version-pill" data-lucy-version></span></a><button class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2"><li class="nav-item"><a class="nav-link" href="../../index.html#language">Language</a></li><li class="nav-item"><a class="nav-link" href="../../index.html#ecosystem">Ecosystem</a></li><li class="nav-item"><a class="nav-link" href="../../docs/index.html">Docs</a></li><li class="nav-item"><a class="nav-link" href="../../download/index.html">Download</a></li><li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="https://github.com/nimacpp/lucy" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i> GitHub</a></li></ul></div></div></nav><div class="docs-reading-progress"><span id="docsReadingProgress"></span></div><div class="docs-shell docs-multipage"><aside class="docs-sidebar" id="docsSidebar"><div class="docs-search"><i class="bi bi-search"></i><input id="docsSearch" autocomplete="off" placeholder="Search documentation…"></div><nav class="docs-nav"><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Learn Lucy</h6><a href="../getting_started.html" class="">Lucy 2.0.7 — Getting Started</a><a href="../language_specification.html" class="">Lucy Language Specification 2.0.7</a><a href="../language_reference.html" class="">Lucy 2.0.7 — Complete Language Reference</a><a href="../programming_guide.html" class="">Lucy 2.0.7 Programming Guide</a><a href="../real_world_workflows.html" class="">Lucy 2.0.7 — Real-world workflows and engineering patterns</a><a href="../runtime_and_errors.html" class="">Lucy 2.0.7 Runtime, Types, and Errors</a><a href="../object_model_and_diagnostics.html" class="">Lucy 2.0.7 object model and diagnostics</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Standard Library</h6><a href="../standard_library.html" class="">Lucy 2.0.7 — Standard Library Reference</a><a href="../standard_library_api_inventory.html" class="">Lucy 2.0.7 Standard Library API Inventory</a><a href="../builtin_reference.html" class="">Lucy 2.0.7 — Built-in Functions and Native Value Methods</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Paw &amp; Ecosystem</h6><a href="../paw.html" class="">Paw — Lucy&#x27;s official toolchain</a><a href="../ecosystem_tooling.html" class="">Lucy Ecosystem Tooling</a><a href="../ecosystem_2_0_7_status.html" class="">Lucy 2.0.7 Ecosystem Status</a><a href="../ecosystem_verification.html" class="">Lucy 2.0.7 + Paw — ecosystem verification</a><a href="../packages_and_extensions.html" class="">Lucy 2.0.7 Packages and Native Extensions</a><a href="../tools_and_automation.html" class="">Lucy Tooling and Automation</a><a href="../command_metadata_and_binstubs.html" class="">Legacy project command metadata</a><a href="../package_registry_spec.html" class="">Lucy Package Registry — Protocol and Service Specification</a><a href="../dependency_resolver_spec.html" class="">Lucy Dependency Resolver — Deterministic Resolution Specification</a><a href="../lsp_spec.html" class="">Lucy Language Server Protocol — Editor Integration Specification</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Versions &amp; History</h6><a href="../changelog.html" class="">Lucy Changelog</a><a href="../history_and_migration.html" class="">Lucy History and Migration</a><a href="../release_2_0_7.html" class="">Lucy 2.0.7 — Ecosystem and Stability Release</a><a href="../verification_2_0_7.html" class="">Lucy 2.0.7 — Release Verification</a><a href="../verification_2_0_6.html" class="">Lucy 2.0.6 — Release verification</a><a href="../verification_2_0_3.html" class="">Lucy 2.0.3 — verification record</a><a href="../verification_2_0_2.html" class="">Lucy 2.0.2 verification record</a><a href="../verification_2_0_1.html" class="">Lucy 2.0.1 verification record</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Advanced &amp; Maintainers</h6><a href="../environment_and_installation.html" class="">Lucy 2.0.7 Environment and Installation</a><a href="../repl_and_tooling.html" class="">Lucy 2.0.7 — REPL, CLI, Tooling, Packages, and Developer Workflow</a><a href="../developing_lucy.html" class="">Lucy 2.0.7 — Developing, Debugging, Testing, and Releasing Lucy</a><a href="../implementation_architecture.html" class="">Lucy 2.0.7 Implementation Architecture</a><a href="../debugging_and_diagnostics.html" class="">Lucy 2.0.7 — Debugging and Diagnostics Handbook</a><a href="../regression_and_release_process.html" class="">Lucy Regression, Audit, and Release Process</a><a href="../phase_1_2_implementation.html" class="">Lucy 2.0.7 — Phase 1 and Phase 2 implementation report</a><a href="../red_team_audit.html" class="">Lucy 2.0.1 — Red-team audit findings and 2.0.0 historical reproductions</a><a href="../audit_followup_2_0_3.html" class="">Lucy 2.0.3 — audit follow-up</a><a href="../audit_followup_2_0_4.html" class="">Lucy 2.0.4 — Round 2 audit follow-up</a><a href="../audit_followup_2_0_5.html" class="">Lucy 2.0.5 — Windows build follow-up</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Module API pages</h6><a href="app.html" class="">`app` standard library — Lucy 2.0.7</a><a href="crypto.html" class="">`crypto` standard library — Lucy 2.0.7</a><a href="data.html" class="">`data` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="flow.html" class="">`flow` standard library — Lucy 2.0.7</a><a href="fs.html" class="">`fs` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="http.html" class="">`http` standard library — Lucy 2.0.7</a><a href="math.html" class="">`math` standard library — Lucy 2.0.7</a><a href="random.html" class="">`random` standard library — Lucy 2.0.7</a><a href="repl.html" class="">`repl` standard library — Lucy 2.0.7</a><a href="result.html" class="">`result` standard library — Lucy 2.0.7</a><a href="runtime.html" class="">`runtime` standard library — Lucy 2.0.7</a><a href="set.html" class="">`set` standard library — Lucy 2.0.7</a><a href="sqlite.html" class="">`sqlite` standard library — Lucy 2.0.7</a><a href="system.html" class="">`system` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="text.html" class="">`text` standard library — Lucy 2.0.7 · module 1.1.0</a><a href="time.html" class="">`time` standard library — Lucy 2.0.7</a></div><div class="docs-nav-group"><h6><i class="bi bi-journal-code me-2"></i>Project &amp; Extra Guides</h6><a href="../project-overview.html" class="">Lucy</a><a href="../projects.html" class="">End-to-end Lucy projects</a><a href="../extensions-guide.html" class="">Lucy 2.0 Extensions</a><a href="../editor-support.html" class="">Lucy Editor Syntax Support</a></div></nav></aside><main class="docs-main docs-article"><button class="btn btn-outline-secondary btn-sm mb-3" id="tocToggle"><i class="bi bi-list"></i> Contents</button><header class="docs-article-head"><span class="section-kicker"><i class="bi bi-book-half me-1"></i> LUCY DOCUMENTATION</span><h1>`http` standard library — Lucy 2.0.7</h1><div class="article-meta"><span><i class="bi bi-tag"></i> Series <span data-lucy-series></span></span><span><i class="bi bi-journal-check"></i> Source-aligned</span></div></header><article class="markdown-content"><h1 id="http-standard-library-lucy-207"><code>http</code> standard library — Lucy 2.0.7</h1>
+<p>HTTP request helpers, client objects, sockets, DNS resolution, and reverse lookup.</p>
+<h2 id="availability-and-imports">Availability and imports</h2>
+<p>The shipped module is loaded automatically in Lucy 2.x. Explicit <code>import</code> remains available when you want to make dependencies visible:</p>
+<pre><code class="language-lucy">import http
+</code></pre>
+<p>Names beginning with <code>_</code> or <code>__</code> are implementation details unless a public API explicitly documents them.</p>
+<h2 id="quick-example">Quick example</h2>
+<pre><code class="language-lucy">let response = http.get(&quot;https://example.com&quot;)
+println response.status
+println response.ok
+</code></pre>
+<h2 id="module-level-functions">Module-level functions</h2>
+<table>
+<thead>
+<tr>
+  <th>Function</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>request</code></td>
+  <td><code>request(method, url, body = &quot;&quot;, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>get</code></td>
+  <td><code>get(url, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>post</code></td>
+  <td><code>post(url, body = &quot;&quot;, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>put</code></td>
+  <td><code>put(url, body = &quot;&quot;, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>patch</code></td>
+  <td><code>patch(url, body = &quot;&quot;, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>delete</code></td>
+  <td><code>delete(url, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>head</code></td>
+  <td><code>head(url, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>client</code></td>
+  <td><code>client(url = &quot;&quot;, proxy = nil)</code></td>
+</tr>
+<tr>
+  <td><code>connect</code></td>
+  <td><code>connect(host, port)</code></td>
+</tr>
+<tr>
+  <td><code>bind</code></td>
+  <td><code>bind(host, port)</code></td>
+</tr>
+<tr>
+  <td><code>listen</code></td>
+  <td><code>listen(socket, backlog = 16)</code></td>
+</tr>
+<tr>
+  <td><code>accept</code></td>
+  <td><code>accept(socket)</code></td>
+</tr>
+<tr>
+  <td><code>recv</code></td>
+  <td><code>recv(socket, size = 4096)</code></td>
+</tr>
+<tr>
+  <td><code>send</code></td>
+  <td><code>send(socket, data)</code></td>
+</tr>
+<tr>
+  <td><code>close</code></td>
+  <td><code>close(socket)</code></td>
+</tr>
+<tr>
+  <td><code>resolve</code></td>
+  <td><code>resolve(host)</code></td>
+</tr>
+<tr>
+  <td><code>reverse</code></td>
+  <td><code>reverse(address)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes-and-methods">Classes and methods</h2>
+<h3 id="httprequest"><code>HTTPRequest</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>initialize</code></td>
+  <td><code>initialize(method, url, body = &quot;&quot;, headers = nil, options = nil)</code></td>
+</tr>
+<tr>
+  <td><code>execute</code></td>
+  <td><code>execute()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="http"><code>HTTP</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>initialize</code></td>
+  <td><code>initialize(url = &quot;&quot;, proxy = nil)</code></td>
+</tr>
+<tr>
+  <td><code>headers</code></td>
+  <td><code>headers(value)</code></td>
+</tr>
+<tr>
+  <td><code>timeout</code></td>
+  <td><code>timeout(seconds)</code></td>
+</tr>
+<tr>
+  <td><code>connect_timeout</code></td>
+  <td><code>connect_timeout(seconds)</code></td>
+</tr>
+<tr>
+  <td><code>proxy</code></td>
+  <td><code>proxy(proxy_url)</code></td>
+</tr>
+<tr>
+  <td><code>user_agent</code></td>
+  <td><code>user_agent(value)</code></td>
+</tr>
+<tr>
+  <td><code>follow_redirects</code></td>
+  <td><code>follow_redirects(value)</code></td>
+</tr>
+<tr>
+  <td><code>insecure</code></td>
+  <td><code>insecure(value = true)</code></td>
+</tr>
+<tr>
+  <td><code>get</code></td>
+  <td><code>get(path = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>post</code></td>
+  <td><code>post(path = &quot;&quot;, body = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>put</code></td>
+  <td><code>put(path = &quot;&quot;, body = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>patch</code></td>
+  <td><code>patch(path = &quot;&quot;, body = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>delete</code></td>
+  <td><code>delete(path = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>head</code></td>
+  <td><code>head(path = &quot;&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>request</code></td>
+  <td><code>request(method, path = &quot;&quot;, body = &quot;&quot;, headers = nil)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="socket"><code>Socket</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>initialize</code></td>
+  <td><code>initialize()</code></td>
+</tr>
+<tr>
+  <td><code>connect</code></td>
+  <td><code>connect(host, port)</code></td>
+</tr>
+<tr>
+  <td><code>bind</code></td>
+  <td><code>bind(host, port)</code></td>
+</tr>
+<tr>
+  <td><code>listen</code></td>
+  <td><code>listen(backlog = 16)</code></td>
+</tr>
+<tr>
+  <td><code>accept</code></td>
+  <td><code>accept()</code></td>
+</tr>
+<tr>
+  <td><code>recv</code></td>
+  <td><code>recv(size = 4096)</code></td>
+</tr>
+<tr>
+  <td><code>send</code></td>
+  <td><code>send(data)</code></td>
+</tr>
+<tr>
+  <td><code>close</code></td>
+  <td><code>close()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="socketapi"><code>SocketAPI</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>new</code></td>
+  <td><code>new()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="resolv"><code>Resolv</code></h3>
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>getaddress</code></td>
+  <td><code>getaddress(host)</code></td>
+</tr>
+<tr>
+  <td><code>getname</code></td>
+  <td><code>getname(address)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contract-and-error-handling">Contract and error handling</h2>
+<p>Validate inputs at the application boundary. Runtime errors are reported as Lucy exceptions or native errors; exact messages may vary by platform and build. Do not assume network access, process privileges, filesystem permissions, or optional native dependencies are available.</p>
+<h3 id="network-cautions">Network cautions</h3>
+<p>HTTP, sockets, DNS, and TLS depend on the host environment. Set explicit request timeouts where supported, validate response status/content, and do not treat examples using public websites as deterministic tests.</p>
+<h2 id="source-of-truth">Source of truth</h2>
+<p>Implementation: <a href="https://github.com/nimacpp/lucy/blob/main/stdlib/http.lucy"><code>stdlib/http.lucy</code></a>. The signatures above are indexed from the current source file. Behavior is ultimately defined by implementation and regression tests; if you change the source API, regenerate this page and add tests for the new contract.</p>
+</article><div class="docs-page-nav"><a href="fs.html"><i class="bi bi-arrow-left"></i> Previous</a><a href="math.html"><i class="bi bi-arrow-right"></i> Next</a></div></main></div><footer class="site-footer docs-footer"><div class="container"><div class="footer-bottom"><span>Lucy Documentation · <span data-lucy-series></span> series</span><span><a href="../index.html">Home</a> · <a href="https://github.com/nimacpp/lucy">Source</a></span></div></div></footer><button class="docs-back-top" id="docsBackTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../../version.js"></script><script src="../../app.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script><script src="../../lucy-highlight.js"></script><script src="../../docs-complete.js"></script></body></html>

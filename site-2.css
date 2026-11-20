@@ -1,0 +1,19 @@
+
+/* Lucy 2.0 website additions */
+.docs-main-updated { max-width: 1050px; }
+.docs-main-updated .docs-hero { padding: 34px 0 42px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.docs-main-updated .docs-hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); letter-spacing: -.055em; }
+.docs-main-updated .docs-hero p { color: var(--muted); line-height: 1.75; max-width: 850px; }
+.docs-main-updated .docs-section { scroll-margin-top: 100px; padding: 26px 0 40px; border-bottom: 1px solid var(--line); }
+.docs-main-updated .docs-section h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: -.04em; margin-bottom: 1rem; }
+.docs-main-updated .docs-section h3 { margin-top: 1.5rem; font-size: 1.2rem; }
+.docs-main-updated p, .docs-main-updated li { line-height: 1.75; color: var(--muted); }
+.docs-main-updated .docs-code { background: #0b0e14; border: 1px solid rgba(255,255,255,.09); color: #d9dee7; border-radius: 12px; padding: 18px; overflow: auto; font: .85rem/1.75 ui-monospace, monospace; }
+.docs-main-updated .table { margin-top: 1rem; }
+.history-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+.history-cards article { padding: 22px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 16px; }
+.history-cards article h3 { margin: 0 0 10px; font-size: 1.05rem; }
+.history-cards article p { margin: 0; font-size: .9rem; }
+.history-cards article.current { border-color: rgba(139,92,246,.5); box-shadow: inset 0 0 0 1px rgba(139,92,246,.15); }
+.ecosystem-callout { padding: 18px 22px; border-radius: 14px; border: 1px solid rgba(245,158,11,.25); background: rgba(245,158,11,.06); color: var(--muted); line-height: 1.7; }
+@media(max-width: 991px) { .docs-main-updated { padding: 20px; } }
